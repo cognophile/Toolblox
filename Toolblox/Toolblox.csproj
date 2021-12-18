@@ -17,4 +17,20 @@
     <PackageIconUrl>https://cdn-icons.flaticon.com/png/512/2923/premium/2923686.png?token=exp=1639831939~hmac=065fa88bbc29fb8a3486e90e663c34ca</PackageIconUrl>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Blocks\" />
+    <None Remove="Blocks\Extensions\" />
+    <None Remove="Blocks\Extensions\Strings\" />
+    <None Remove="Blocks\Base\" />
+    <None Remove="Blocks\Base\Strings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Blocks\" />
+    <Folder Include="Blocks\Extensions\" />
+    <Folder Include="Blocks\Instances\" />
+    <Folder Include="Blocks\Instances\Strings\" />
+    <Folder Include="Blocks\Extensions\Strings\" />
+    <Folder Include="Blocks\Base\" />
+    <Folder Include="Blocks\Base\Strings\" />
+  </ItemGroup>
 </Project>

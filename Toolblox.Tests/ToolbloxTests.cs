@@ -1,18 +1,27 @@
 ﻿using NUnit.Framework;
+using Toolblox;
 
 namespace Cognophile.Toolblox.Tests
 {
+    [TestFixture]
     public class ToolbloxTests
     {
         [SetUp]
-        public void Setup()
+        public void SetUp()
+        {
+        }
+
+        [TearDown]
+        public void TearDown()
         {
         }
 
         [Test]
-        public void Test1()
+        public void IsNull_WhenArgumentIsNull_ThenBooleanTrueReturned()
         {
-            Assert.Pass();
+            var actual = Toolblox.Strings.IsNull(null);
+
+            Assert.IsTrue(actual);
         }
     }
 }
