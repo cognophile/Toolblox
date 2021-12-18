@@ -1,9 +1,9 @@
 ﻿using System;
-using Toolblox.Blocks.Base.Strings;
+using Cognophile.Toolblox.Blocks.Base.Strings;
 
-namespace Toolblox.Blocks.Statics.Strings
+namespace Cognophile.Toolblox.Blocks.Statics.Strings
 {
-    public class StringBlock : IStringBlock
+    public sealed class StringBlock : IStringBlock
     {
         public bool IsNull(string subject)
         {

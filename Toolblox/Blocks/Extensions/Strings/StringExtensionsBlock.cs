@@ -1,7 +1,7 @@
 ﻿using System;
-using Toolblox.Blocks.Base.Strings;
+using Cognophile.Toolblox.Blocks.Base.Strings;
 
-namespace Toolblox.Blocks.Extensions.Strings
+namespace Cognophile.Toolblox.Blocks.Extensions.Strings
 {
     public static class StringExtensionsBlock
     {

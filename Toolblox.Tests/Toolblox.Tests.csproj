@@ -15,4 +15,12 @@
   <ItemGroup>
     <ProjectReference Include="..\Toolblox\Toolblox.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Extensions\" />
+    <None Remove="Extensions\Strings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Extensions\Strings\" />
+  </ItemGroup>
 </Project>

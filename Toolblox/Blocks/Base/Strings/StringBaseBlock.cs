@@ -1,5 +1,6 @@
 ﻿using System;
-namespace Toolblox.Blocks.Base.Strings
+
+namespace Cognophile.Toolblox.Blocks.Base.Strings
 {
     public static class StringBaseBlock
     {

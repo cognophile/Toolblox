@@ -1,5 +1,6 @@
 ﻿using System;
-namespace Toolblox.Blocks.Statics.Strings
+
+namespace Cognophile.Toolblox.Blocks.Statics.Strings
 {
     public interface IStringBlock
     {

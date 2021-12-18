@@ -1,9 +1,10 @@
-﻿using NUnit.Framework;
+﻿using Cognophile.Toolblox.Blocks.Extensions.Strings;
+using NUnit.Framework;
 
-namespace Cognophile.Toolblox.Tests
+namespace Cognophile.Toolblox.Tests.Extensions.Strings
 {
     [TestFixture]
-    public class ToolbloxTests
+    public class StringExtensionBlockTests
     {
         [SetUp]
         public void SetUp()
@@ -18,7 +19,9 @@ namespace Cognophile.Toolblox.Tests
         [Test]
         public void IsNull_WhenArgumentIsNull_ThenBooleanTrueReturned()
         {
-            var actual = Toolblox.Strings.IsNull(null);
+            string subject = null;
+
+            var actual = subject.IsNull();
 
             Assert.IsTrue(actual);
         }
@@ -26,15 +29,19 @@ namespace Cognophile.Toolblox.Tests
         [Test]
         public void IsNull_WhenArgumentIsEmpty_ThenBooleanFalseReturned()
         {
-            var actual = Toolblox.Strings.IsNull("");
+            string subject = "";
+
+            var actual = subject.IsNull();
 
             Assert.IsFalse(actual);
         }
 
         [Test]
-        public void IsNull_WhenArgumentIsWhitespave_ThenBooleanFalseReturned()
+        public void IsNull_WhenArgumentIsWhitespace_ThenBooleanFalseReturned()
         {
-            var actual = Toolblox.Strings.IsNull("   ");
+            string subject = "   ";
+
+            var actual = subject.IsNull();
 
             Assert.IsFalse(actual);
         }
@@ -42,7 +49,9 @@ namespace Cognophile.Toolblox.Tests
         [Test]
         public void IsNull_WhenArgumentIsValid_ThenBooleanFalseReturned()
         {
-            var actual = Toolblox.Strings.IsNull("Lorem Ipsum");
+            string subject = "Lorem Ipsum";
+
+            var actual = subject.IsNull();
 
             Assert.IsFalse(actual);
         }
@@ -50,29 +59,36 @@ namespace Cognophile.Toolblox.Tests
         [Test]
         public void IsNullOrEmpty_WhenArgumentIsNull_ThenBooleanTrueReturned()
         {
-            var actual = Toolblox.Strings.IsNullOrEmpty(null);
+            string subject = null;
+
+            var actual = subject.IsNullOrEmpty();
 
             Assert.IsTrue(actual);
         }
 
         public void IsNullOrEmpty_WhenArgumentIsEmpty_ThenBooleanTrueReturned()
         {
-            var actual = Toolblox.Strings.IsNullOrEmpty("");
+            string subject = "";
+
+            var actual = subject.IsNullOrEmpty();
 
             Assert.IsTrue(actual);
         }
 
         public void IsNullOrEmpty_WhenArgumentIsWhitespace_ThenBooleanTrueReturned()
         {
-            var actual = Toolblox.Strings.IsNullOrEmpty("   ");
+            string subject = "   ";
+
+            var actual = subject.IsNullOrEmpty();
 
             Assert.IsTrue(actual);
         }
 
-
         public void IsNullOrEmpty_WhenArgumentIsValid_ThenBooleanFalseReturned()
         {
-            var actual = Toolblox.Strings.IsNullOrEmpty("Lorem Ipsum");
+            string subject = "Lorem Ipsum";
+
+            var actual = subject.IsNullOrEmpty();
 
             Assert.IsFalse(actual);
         }
@@ -80,28 +96,36 @@ namespace Cognophile.Toolblox.Tests
         [Test]
         public void IsNullOrWhitespace_WhenArgumentIsNull_ThenBooleanTrueReturned()
         {
-            var actual = Toolblox.Strings.IsNullOrWhitespace(null);
+            string subject = null;
+
+            var actual = subject.IsNullOrWhitespace();
 
             Assert.IsTrue(actual);
         }
 
         public void IsNullOrWhitespace_WhenArgumentIsEmpty_ThenBooleanTrueReturned()
         {
-            var actual = Toolblox.Strings.IsNullOrWhitespace("");
+            string subject = "";
+
+            var actual = subject.IsNullOrWhitespace();
 
             Assert.IsTrue(actual);
         }
 
         public void IsNullOrWhitespace_WhenArgumentIsWhitespace_ThenBooleanTrueReturned()
         {
-            var actual = Toolblox.Strings.IsNullOrWhitespace("   ");
+            string subject = "   ";
+
+            var actual = subject.IsNullOrWhitespace();
 
             Assert.IsTrue(actual);
         }
 
         public void IsNullOrWhitespace_WhenArgumentIsWhitespace_ThenBooleanFalseReturned()
         {
-            var actual = Toolblox.Strings.IsNullOrWhitespace("Lorem Ipsum");
+            string subject = "Lorem Ipsum";
+
+            var actual = subject.IsNullOrWhitespace();
 
             Assert.IsFalse(actual);
         }
