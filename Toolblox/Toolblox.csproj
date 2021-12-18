@@ -14,6 +14,7 @@
     <Summary>A one-stop utilities and helpers library for .NET.</Summary>
     <PackageTags>utilities, helpers, library</PackageTags>
     <Title>Toolblox</Title>
+    <PackageIconUrl>https://cdn-icons.flaticon.com/png/512/2923/premium/2923686.png?token=exp=1639831939~hmac=065fa88bbc29fb8a3486e90e663c34ca</PackageIconUrl>
   </PropertyGroup>
 
 </Project>
