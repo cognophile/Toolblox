@@ -2,6 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PackageId>cognophile_toolblox</PackageId>
+    <PackageVersion>0.0.1</PackageVersion>
+    <Authors>cognophile</Authors>
+    <Description>A one-stop utilities and helpers library for .NET.</Description>
+    <Copyright>cognophile_2021</Copyright>
+    <NeutralLanguage>en-GB</NeutralLanguage>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Owners>cognophile</Owners>
+    <PackageProjectUrl>https://github.com/cognophile/Toolblox</PackageProjectUrl>
+    <Summary>A one-stop utilities and helpers library for .NET.</Summary>
+    <PackageTags>utilities, helpers, library</PackageTags>
+    <Title>Toolblox</Title>
   </PropertyGroup>
 
 </Project>
