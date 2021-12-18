@@ -18,9 +18,13 @@
   <ItemGroup>
     <None Remove="Extensions\" />
     <None Remove="Extensions\Strings\" />
+    <None Remove="Statics\" />
+    <None Remove="Statics\Strings\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Extensions\Strings\" />
+    <Folder Include="Statics\" />
+    <Folder Include="Statics\Strings\" />
   </ItemGroup>
 </Project>
