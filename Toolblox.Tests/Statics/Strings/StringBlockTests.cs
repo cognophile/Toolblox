@@ -24,7 +24,7 @@ namespace Toolblox.Tests.Statics.Strings
         [Test]
         public void IsNull_WhenArgumentIsNull_ThenBooleanTrueReturned()
         {
-            var actual = _subject.IsNull(null);
+            var actual = StringBlock.IsNull(null);
 
             Assert.IsTrue(actual);
         }
@@ -32,7 +32,7 @@ namespace Toolblox.Tests.Statics.Strings
         [Test]
         public void IsNull_WhenArgumentIsEmpty_ThenBooleanFalseReturned()
         {
-            var actual = _subject.IsNull("");
+            var actual = StringBlock.IsNull("");
 
             Assert.IsFalse(actual);
         }
@@ -40,7 +40,7 @@ namespace Toolblox.Tests.Statics.Strings
         [Test]
         public void IsNull_WhenArgumentIsWhitespave_ThenBooleanFalseReturned()
         {
-            var actual = _subject.IsNull("   ");
+            var actual = StringBlock.IsNull("   ");
 
             Assert.IsFalse(actual);
         }
@@ -48,7 +48,7 @@ namespace Toolblox.Tests.Statics.Strings
         [Test]
         public void IsNull_WhenArgumentIsValid_ThenBooleanFalseReturned()
         {
-            var actual = _subject.IsNull("Lorem Ipsum");
+            var actual = StringBlock.IsNull("Lorem Ipsum");
 
             Assert.IsFalse(actual);
         }
@@ -56,21 +56,21 @@ namespace Toolblox.Tests.Statics.Strings
         [Test]
         public void IsNullOrEmpty_WhenArgumentIsNull_ThenBooleanTrueReturned()
         {
-            var actual = _subject.IsNullOrEmpty(null);
+            var actual = StringBlock.IsNullOrEmpty(null);
 
             Assert.IsTrue(actual);
         }
 
         public void IsNullOrEmpty_WhenArgumentIsEmpty_ThenBooleanTrueReturned()
         {
-            var actual = _subject.IsNullOrEmpty("");
+            var actual = StringBlock.IsNullOrEmpty("");
 
             Assert.IsTrue(actual);
         }
 
         public void IsNullOrEmpty_WhenArgumentIsWhitespace_ThenBooleanTrueReturned()
         {
-            var actual = _subject.IsNullOrEmpty("   ");
+            var actual = StringBlock.IsNullOrEmpty("   ");
 
             Assert.IsTrue(actual);
         }
@@ -78,7 +78,7 @@ namespace Toolblox.Tests.Statics.Strings
 
         public void IsNullOrEmpty_WhenArgumentIsValid_ThenBooleanFalseReturned()
         {
-            var actual = _subject.IsNullOrEmpty("Lorem Ipsum");
+            var actual = StringBlock.IsNullOrEmpty("Lorem Ipsum");
 
             Assert.IsFalse(actual);
         }
@@ -86,28 +86,28 @@ namespace Toolblox.Tests.Statics.Strings
         [Test]
         public void IsNullOrWhitespace_WhenArgumentIsNull_ThenBooleanTrueReturned()
         {
-            var actual = _subject.IsNullOrWhitespace(null);
+            var actual = StringBlock.IsNullOrWhitespace(null);
 
             Assert.IsTrue(actual);
         }
 
         public void IsNullOrWhitespace_WhenArgumentIsEmpty_ThenBooleanTrueReturned()
         {
-            var actual = _subject.IsNullOrWhitespace("");
+            var actual = StringBlock.IsNullOrWhitespace("");
 
             Assert.IsTrue(actual);
         }
 
         public void IsNullOrWhitespace_WhenArgumentIsWhitespace_ThenBooleanTrueReturned()
         {
-            var actual = _subject.IsNullOrWhitespace("   ");
+            var actual = StringBlock.IsNullOrWhitespace("   ");
 
             Assert.IsTrue(actual);
         }
 
         public void IsNullOrWhitespace_WhenArgumentIsWhitespace_ThenBooleanFalseReturned()
         {
-            var actual = _subject.IsNullOrWhitespace("Lorem Ipsum");
+            var actual = StringBlock.IsNullOrWhitespace("Lorem Ipsum");
 
             Assert.IsFalse(actual);
         }
