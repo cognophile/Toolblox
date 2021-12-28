@@ -6,11 +6,81 @@ A one-stop library for common utilities for developing .NET applications.
 ---
 
 ### Introduction
+`Toolblox` aims to be the only utility-providing library you need for any .NET project by covering as much commonly required behaviour as possible.
+
+#### Behavioural Summary
+* Strings
+* Numbers
+* Collections
+* Objects
+* Dates
+* Validation
+* JSON
+* Exceptions
+* Guards
+* MVC
+* Tests
+
+### Support
+If you find this library useful and wish to take a moment to say a simple thanks, or support its development, then a star or donation would be hugely appreciated!
+
+<a href="https://www.buymeacoffee.com/cognophile"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=cognophile&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"></a>
 
 ### Installation
 
 ### Documentation
+Documentation of the available behaviours can be found within the wiki, here.
 
+#### Usage
+`Toolblox` can be interfaced with in multiple ways, either via an instance, a static call, or an extension method. 
+
+#### Instances
+```csharp
+using Cognophile.Toolblox;
+...
+
+public static void DoSomething(string myString)
+{
+    ...
+    Toolblox blox = new();
+    bool result = blox.Strings.IsNull(myString);
+    ...
+}
+```
+
+#### Statically
+```csharp
+using Cognophile.Toolblox;
+...
+
+public static void DoSomething(string myString)
+{
+    ...
+    var result = Toolblox.Strings.IsNull(myString);
+    ...
+}
+```
+
+#### Extensions
+```csharp
+using Cognophile.Toolblox.Extensions;
+...
+
+public static void DoSomething(string myString)
+{
+    ...
+    var result = myString.IsNull();
+    ...
+}
+```
+
+### Dependencies 
+* Aradlis GuardClauses
+
+### Contributing
+Contributions of all kinds are welcome - whether it be submitting a suggestion for how the library could be improved or extended, or by submitting a pull request with the completed work to the project. However, before submitting any suggestions, please read through `CONTRIBUTING.md` to ensure your work is in the best state to be accepted.
+
+###
 
 ---
 <sub>Icon attribution: <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></sub>
