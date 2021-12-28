@@ -19,7 +19,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Strings
         {
             Guard.Against.Null(subject, nameof(subject));
 
-            return subject.Equals(string.Empty);
+            return subject == "";
         }
 
         public static bool IsNullOrEmpty(string subject)
