@@ -99,7 +99,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Strings
             return string.Join(separator, parts);
         }
 
-        public static string MakeTitlecase(string subject)
+        public static string Titlecase(string subject)
         {
             Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
 

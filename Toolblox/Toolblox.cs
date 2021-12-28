@@ -18,26 +18,8 @@ namespace Cognophile.Toolblox
     public class Toolblox : IToolblox
     {
         /// <summary>
-        /// Access to common string-based utilities and behaviours.
+        /// Access to common string-based extension behaviours.
         /// </summary>
         public static StringBlock Strings { get; } = new();
-
-        //public static NumberBlock Numbers { get; } = new();
-
-        //public static CollectionBlock Collections { get; } = new();
-
-        //public static ObjectBlock Objects { get; } = new();
-
-        //public static DateBlock Dates { get; } = new();
-
-        //public static JsonBlock Json { get; } = new();
-
-        //public static ValidationBlock Validation { get; } = new();
-
-        //public static TestBlock Tests { get; } = new();
-
-        //public static MvcBlock Mvc { get; } = new();
-
-        //public static GuardBlock Guard { get; } = new();
     }
 }

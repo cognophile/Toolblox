@@ -57,7 +57,7 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Strings
         }
 
         /// <summary>
-        /// Determines whether the given subject is has title casing.
+        /// Determines whether the given subject has title casing.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string has title casing.</returns>
@@ -70,6 +70,7 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Strings
         /// Determines whether the given subject matches the given regex pattern.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
+        /// <param name="pattern">The Regex pattern to inspect the string against.</param>
         /// <returns>Boolean indicating whether the called-upon string matches the given regex pattern.</returns>
         public static bool Matches(this string subject, string pattern)
         {
@@ -79,7 +80,8 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Strings
         /// <summary>
         /// Determines whether the given subject contains the given substring.
         /// </summary>
-        /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
+        /// <param name="haystack">The string upon which to assert the behaviour of the method.</param>
+        /// <param name="needle">The substring to locate within the original string.</param>
         /// <returns>Boolean indicating whether the called-upon string contains the given substring.</returns>
         public static bool Contains(this string haystack, string needle)
         {
@@ -89,9 +91,9 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Strings
         /// <summary>
         /// Retrieves the section of the string located between the given bookends.
         /// </summary>
-        /// <param name="subject">The string upon which the method should operate..</param>
+        /// <param name="subject">The string upon which the method should operate.</param>
         /// <param name="left">The string to start the subsection at.</param>
-        /// <param name="right">The string the end the subsection at.</param>
+        /// <param name="right">The string to end the subsection at.</param>
         /// <returns>String representing the substring located between the bookends. Returns empty if a matching section cannot be found.</returns>
         public static string Between(this string subject, string left, string right)
         {
@@ -99,10 +101,10 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Strings
         }
 
         /// <summary>
-        /// Explode the given string into a collection, delimited by the given seperator(s).
+        /// Explode the given string into a collection, delimited by the given separator(s).
         /// </summary>
         /// <param name="subject">The string upon which the method should operate.</param>
-        /// <param name="separators">The array of seperators to split the string by.</param>
+        /// <param name="separators">The array of separators to split the string by.</param>
         /// <returns>Collection of substrings representing the delimiter exploded string.</returns>
         public static ICollection<string> Explode(this string subject, char[] separators)
         {
@@ -112,11 +114,11 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Strings
         /// <summary>
         /// Convert the given string to title case.
         /// </summary>
-        /// <param name="subject">he string upon which the method should operate.</param>
+        /// <param name="subject">The string upon which the method should operate.</param>
         /// <returns>The given string in title case.</returns>
-        public static string MakeTitlecase(this string subject)
+        public static string Titlecase(this string subject)
         {
-            return StringBaseBlock.MakeTitlecase(subject);
+            return StringBaseBlock.Titlecase(subject);
         }
     }
 }
