@@ -19,7 +19,6 @@ A one-stop library for common utilities for developing .NET applications.
 * Exceptions: Access to common exception extension behaviours.
 * Guards: Access to guard clause behaviours.
 * MVC: Access to common MVC extension behaviours.
-* Tests: Access to common unit testing extension behaviours.
 * Guid: Access to common guid extension behaviours.
 * Http: Access to common HTTP extension behaviours.
 * Enum: Access to common enum extension behaviours.
