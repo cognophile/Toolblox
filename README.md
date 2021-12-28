@@ -3,6 +3,8 @@
 ## Toolblox
 A one-stop library for common utilities for developing .NET applications.
 
+![Master Build](https://github.com/cognophile/Toolblox/actions/workflows/build.yml/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cognophile_Toolblox&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cognophile_Toolblox)
 ---
 
 ### Introduction
