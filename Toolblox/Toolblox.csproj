@@ -8,17 +8,16 @@
     <Description>A one-stop library for common utilities for developing .NET applications</Description>
     <Copyright>cognophile © 2021</Copyright>
     <NeutralLanguage>en-GB</NeutralLanguage>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Owners>cognophile</Owners>
     <PackageProjectUrl>https://github.com/cognophile/Toolblox</PackageProjectUrl>
     <Summary>A one-stop library for common utilities for developing .NET applications</Summary>
     <PackageTags>utilities, helpers, library</PackageTags>
     <Title>Toolblox</Title>
     <PackageIconUrl>https://cdn-icons.flaticon.com/png/512/2923/premium/2923686.png?token=exp=1639831939~hmac=065fa88bbc29fb8a3486e90e663c34ca</PackageIconUrl>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/cognophile/Toolblox</RepositoryUrl>
-    <PackageLicenseFile>..\LICENSE.md</PackageLicenseFile>
+    <PackageIcon>blocks.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,8 +38,6 @@
     <Folder Include="Blocks\Extensions\Strings\" />
     <Folder Include="Blocks\Base\" />
     <Folder Include="Blocks\Base\Strings\" />
-    <Folder Include="Assets\" />
-    <Folder Include="Assets\Images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -58,5 +55,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Assets\Images\blocks.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>
