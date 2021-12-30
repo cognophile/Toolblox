@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <PackageId>cognophile_toolblox</PackageId>
     <PackageVersion>0.0.1</PackageVersion>
     <Authors>cognophile</Authors>
     <Description>A one-stop library for common utilities for developing .NET applications</Description>
-    <Copyright>cognophile_2021</Copyright>
+    <Copyright>cognophile © 2021</Copyright>
     <NeutralLanguage>en-GB</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Owners>cognophile</Owners>
@@ -15,6 +15,10 @@
     <PackageTags>utilities, helpers, library</PackageTags>
     <Title>Toolblox</Title>
     <PackageIconUrl>https://cdn-icons.flaticon.com/png/512/2923/premium/2923686.png?token=exp=1639831939~hmac=065fa88bbc29fb8a3486e90e663c34ca</PackageIconUrl>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/cognophile/Toolblox</RepositoryUrl>
+    <PackageLicenseFile>..\LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,6 +43,20 @@
     <Folder Include="Assets\Images\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Ardalis.GuardClauses" Version="3.3.0" />
+    <PackageReference Include="coverlet.collector" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.msbuild" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>

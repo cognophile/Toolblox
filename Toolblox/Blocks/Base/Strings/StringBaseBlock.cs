@@ -31,13 +31,11 @@ namespace Cognophile.Toolblox.Blocks.Base.Strings
         {
             Guard.Against.NullOrEmpty(subject, nameof(subject));
 
-            return Regex.IsMatch(subject, @"/^\s*$/");
+            return subject.All(char.IsWhiteSpace);
         }
 
         public static bool IsNullOrWhitespace(string subject)
         {
-            Guard.Against.NullOrEmpty(subject, nameof(subject));
-
             return string.IsNullOrWhiteSpace(subject);
         }
 
@@ -48,6 +46,13 @@ namespace Cognophile.Toolblox.Blocks.Base.Strings
             return subject == CultureInfo.CurrentCulture.TextInfo.ToTitleCase(subject);
         }
 
+        public static bool IsCapitalised(string subject)
+        {
+            Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
+
+            return subject.First() == char.ToUpper(subject.First());
+        }
+
         public static bool Matches(string subject, string pattern)
         {
             Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
@@ -55,40 +60,39 @@ namespace Cognophile.Toolblox.Blocks.Base.Strings
 
             return Regex.IsMatch(subject, @$"{pattern}");
         }
-
-        public static bool Contains(string haystack, string needle)
-        {
-            return haystack.Contains(needle);
-        }
         #endregion
 
         #region Fetching Members
         public static string Between(string subject, string left, string right)
         {
+            Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
+            Guard.Against.NullOrWhiteSpace(left, nameof(left));
+            Guard.Against.NullOrWhiteSpace(right, nameof(right));
+
             const int isFound = -1;
             int startIndex = subject.IndexOf(left);
 
             if (!startIndex.Equals(isFound))
             {
                 startIndex += left.Length;
-
                 int endIndex = subject.IndexOf(right, startIndex);
+
                 if (endIndex > startIndex)
                 {
-                    return subject[startIndex..endIndex];
+                    return subject[startIndex..endIndex].Trim();
                 }
             }
 
-            return string.Empty;
+            return null;
         }
         #endregion
 
         #region Mutative Members
-        public static ICollection<string> Explode(string subject, char[] separators)
+        public static ICollection<string> Explode(string subject, char separator)
         {
             Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
 
-            return subject.Split(separators).ToList();
+            return subject.Split(separator).ToList();
         }
 
         public static string Implode(char separator, ICollection<string> parts)
@@ -102,9 +106,24 @@ namespace Cognophile.Toolblox.Blocks.Base.Strings
         public static string Titlecase(string subject)
         {
             Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
+            if (IsTitlecase(subject)) 
+            {
+                return subject;
+            }
 
             TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
             return textInfo.ToTitleCase(subject);
+        }
+
+        public static string Capitalise(string subject)
+        {
+            Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
+            if (IsCapitalised(subject)) 
+            {
+                return subject;
+            }
+
+            return string.Concat(subject[0].ToString().ToUpper(), subject.AsSpan(1));
         }
         #endregion
     }

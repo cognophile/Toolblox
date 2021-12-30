@@ -67,6 +67,16 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Strings
         }
 
         /// <summary>
+        /// Determines whether the first character of the given string is uppercase.
+        /// </summary>
+        /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
+        /// <returns>Boolean indicating whether the called-upon string has an upper case first character.</returns>
+        public static bool IsCapitalised(this string subject)
+        {
+            return StringBaseBlock.IsCapitalised(subject);
+        }
+
+        /// <summary>
         /// Determines whether the given subject matches the given regex pattern.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
@@ -75,17 +85,6 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Strings
         public static bool Matches(this string subject, string pattern)
         {
             return StringBaseBlock.Matches(subject, pattern);
-        }
-
-        /// <summary>
-        /// Determines whether the given subject contains the given substring.
-        /// </summary>
-        /// <param name="haystack">The string upon which to assert the behaviour of the method.</param>
-        /// <param name="needle">The substring to locate within the original string.</param>
-        /// <returns>Boolean indicating whether the called-upon string contains the given substring.</returns>
-        public static bool Contains(this string haystack, string needle)
-        {
-            return StringBaseBlock.Contains(haystack, needle);
         }
 
         /// <summary>
@@ -106,9 +105,9 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Strings
         /// <param name="subject">The string upon which the method should operate.</param>
         /// <param name="separators">The array of separators to split the string by.</param>
         /// <returns>Collection of substrings representing the delimiter exploded string.</returns>
-        public static ICollection<string> Explode(this string subject, char[] separators)
+        public static ICollection<string> Explode(this string subject, char separator)
         {
-            return StringBaseBlock.Explode(subject, separators);
+            return StringBaseBlock.Explode(subject, separator);
         }
 
         /// <summary>
@@ -119,6 +118,16 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Strings
         public static string Titlecase(this string subject)
         {
             return StringBaseBlock.Titlecase(subject);
+        }
+
+        /// <summary>
+        /// Convert the given string to have a capitalised first character.
+        /// </summary>
+        /// <param name="subject">The string upon which the method should operate.</param>
+        /// <returns>The given string with the initial character capitalised.</returns>
+        public static string Capitalise(this string subject)
+        {
+            return StringBaseBlock.Capitalise(subject);
         }
     }
 }
