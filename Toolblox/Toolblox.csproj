@@ -31,12 +31,10 @@
     <None Remove="Ardalis.GuardClauses" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Blocks\" />
     <Folder Include="Blocks\Extensions\" />
     <Folder Include="Blocks\Statics\" />
     <Folder Include="Blocks\Statics\Strings\" />
     <Folder Include="Blocks\Extensions\Strings\" />
-    <Folder Include="Blocks\Base\" />
     <Folder Include="Blocks\Base\Strings\" />
   </ItemGroup>
   <ItemGroup>
@@ -44,7 +42,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="Assets\Images\blocks.png" Pack="true" PackagePath=""/>
+    <None Include="Assets\Images\blocks.png" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Ardalis.GuardClauses" Version="3.3.0" />

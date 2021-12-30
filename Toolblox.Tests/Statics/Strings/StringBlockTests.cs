@@ -501,6 +501,34 @@ namespace Toolblox.Tests.Statics.Strings
         }
 
         [Test]
+        public void Implode_WhenValidSubstringsAndSeparatorProvided_ThenExpectedStringReturned()
+        {
+            var subject = new List<string>() { "This", "is", "my", "string" };
+
+            var actual = StringBlock.Implode(subject, ' ');
+
+            Assert.AreEqual("This is my string", actual);
+        }
+
+        [Test]
+        public void Implode_WhenSubstringCollectionIsEmpty_ThenEmptyStringReturned()
+        {
+            var subject = new List<string>();
+
+            var actual = StringBlock.Implode(subject, ' ');
+
+            Assert.IsEmpty(actual);
+        }
+
+        [Test]
+        public void Implode_WhenSubjectIsNull_ThenArgumentNullExceptionThrown()
+        {
+            ICollection<string> subject = null;
+            
+            Assert.Throws<ArgumentNullException>(() => StringBlock.Implode(subject, ' '));
+        }
+
+        [Test]
         public void Titlecase_WhenArgumentIsNull_ThenArgumentNullExceptionThrown()
         {
             string subject = null;

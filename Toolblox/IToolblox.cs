@@ -5,5 +5,6 @@ namespace Cognophile.Toolblox
 {
     public interface IToolblox
     {
+
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cognophile.Toolblox.Blocks.Base.Strings;
+using Toolblox.Blocks.Base;
 
 namespace Cognophile.Toolblox.Blocks.Statics.Strings
 {
-    public sealed class StringBlock
+    public sealed class StringBlock : IBlock
     {
         /// <summary>
         /// Determines whether the given subject is null.
@@ -113,12 +114,12 @@ namespace Cognophile.Toolblox.Blocks.Statics.Strings
         /// <summary>
         /// Implode the given collection of strings to a single string using the given separator.
         /// </summary>
-        /// <param name="separator">The delimiter character to join the strings by.</param>
         /// <param name="substrings">The substrings to be joined together.</param>
+        /// <param name="separator">The delimiter character to join the strings by.</param>
         /// <returns>String representing the concatenated strings with the given seperator.</returns>
-        public static string Implode(char separator, ICollection<string> substrings)
+        public static string Implode(ICollection<string> substrings, char separator)
         {
-            return StringBaseBlock.Implode(separator, substrings);
+            return StringBaseBlock.Implode(substrings, separator);
         }
 
         /// <summary>

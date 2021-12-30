@@ -95,12 +95,12 @@ namespace Cognophile.Toolblox.Blocks.Base.Strings
             return subject.Split(separator).ToList();
         }
 
-        public static string Implode(char separator, ICollection<string> parts)
+        public static string Implode(ICollection<string> substrings, char separator)
         {
             Guard.Against.Null(separator, nameof(separator));
-            Guard.Against.Null(parts, nameof(parts));
+            Guard.Against.Null(substrings, nameof(substrings));
 
-            return string.Join(separator, parts);
+            return string.Join(separator, substrings);
         }
 
         public static string Titlecase(string subject)
