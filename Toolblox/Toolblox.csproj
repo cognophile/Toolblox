@@ -44,6 +44,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+    <None Include="Assets\Images\blocks.png" Pack="true" PackagePath=""/>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Ardalis.GuardClauses" Version="3.3.0" />

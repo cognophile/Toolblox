@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cognophile.Toolblox.Blocks.Statics.Strings;
+using System;
 
 namespace Cognophile.Toolblox
 {
