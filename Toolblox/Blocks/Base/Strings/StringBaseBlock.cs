@@ -53,6 +53,48 @@ namespace Cognophile.Toolblox.Blocks.Base.Strings
             return subject.First() == char.ToUpper(subject.First());
         }
 
+        public static bool IsAlpha(string subject)
+        {
+            Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
+
+            return subject.All(char.IsLetter);
+        }
+
+        public static bool IsNumeric(string subject)
+        {
+            Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
+
+            return subject.All(char.IsDigit);
+        }
+
+        public static bool IsSymbols(string subject)
+        {
+            Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
+
+            return subject.All(i => char.IsSymbol(i) || char.IsPunctuation(i));
+        }
+
+        public static bool IsNumericSymbols(string subject)
+        {
+            Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
+
+            return subject.All(i => char.IsDigit(i) || char.IsSymbol(i) || char.IsPunctuation(i));
+        }
+
+        public static bool IsAlphaNumeric(string subject)
+        {
+            Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
+
+            return subject.All(char.IsLetterOrDigit);
+        }
+
+        public static bool IsAlphaNumericSymbols(string subject)
+        {
+            Guard.Against.NullOrWhiteSpace(subject, nameof(subject));
+
+            return subject.All(i => char.IsLetterOrDigit(i) || char.IsSymbol(i) || char.IsPunctuation(i));
+        }
+
         public static bool Matches(string subject, string pattern)
         {
             Guard.Against.NullOrWhiteSpace(subject, nameof(subject));

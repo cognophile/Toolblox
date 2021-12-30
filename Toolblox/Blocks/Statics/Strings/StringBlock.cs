@@ -78,6 +78,66 @@ namespace Cognophile.Toolblox.Blocks.Statics.Strings
         }
 
         /// <summary>
+        /// Determines whether the given subject is formed of alpha-only characters.
+        /// </summary>
+        /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
+        /// <returns>Boolean indicating whether the called-upon string contains only alpha characters.</returns>
+        public static bool IsAlpha(string subject)
+        {
+            return StringBaseBlock.IsAlpha(subject);
+        }
+
+        /// <summary>
+        /// Determines whether the given subject is formed of numeric-only characters.
+        /// </summary>
+        /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
+        /// <returns>Boolean indicating whether the called-upon string contains only numeric characters.</returns>
+        public static bool IsNumeric(string subject)
+        {
+            return StringBaseBlock.IsNumeric(subject);
+        }
+
+        /// <summary>
+        /// Determines whether the given subject is formed of symbol-only characters.
+        /// </summary>
+        /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
+        /// <returns>Boolean indicating whether the called-upon string contains only symbolic characters.</returns>
+        public static bool IsSymbols(string subject)
+        {
+            return StringBaseBlock.IsSymbols(subject);
+        }
+
+        /// <summary>
+        /// Determines whether the given subject is formed of only numeric or symbol characters.
+        /// </summary>
+        /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
+        /// <returns>Boolean indicating whether the called-upon string contains only numeric or symbolic characters.</returns>
+        public static bool IsNumericSymbols(string subject)
+        {
+            return StringBaseBlock.IsNumericSymbols(subject);
+        }
+
+        /// <summary>
+        /// Determines whether the given subject is formed of alphanumeric characters.
+        /// </summary>
+        /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
+        /// <returns>Boolean indicating whether the called-upon string contains alphanumeric characters.</returns>
+        public static bool IsAlphaNumeric(string subject)
+        {
+            return StringBaseBlock.IsAlphaNumeric(subject);
+        }
+
+        /// <summary>
+        /// Determines whether the given subject is formed of alphanumeric or symbol characters.
+        /// </summary>
+        /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
+        /// <returns>Boolean indicating whether the called-upon string contains alphanumeric or symbol characters.</returns>
+        public static bool IsAlphaNumericSymbols(string subject)
+        {
+            return StringBaseBlock.IsAlphaNumericSymbols(subject);
+        }
+
+        /// <summary>
         /// Determines whether the given subject matches the given regex pattern.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>

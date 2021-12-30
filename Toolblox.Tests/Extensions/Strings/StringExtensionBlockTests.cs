@@ -290,6 +290,340 @@ namespace Cognophile.Toolblox.Tests.Extensions.Strings
         }
 
         [Test]
+        public void IsAlpha_WhenArgumentIsNull_ThenArgumentNullExceptionThrown()
+        {
+            string subject = null;
+
+            Assert.Throws<ArgumentNullException>(() => subject.IsAlpha());
+        }
+
+        [Test]
+        public void IsAlpha_WhenArgumentIsEmpty_ThenArgumentExceptionThrown()
+        {
+            string subject = "";
+
+            Assert.Throws<ArgumentException>(() => subject.IsAlpha());
+        }
+
+        [Test]
+        public void IsAlpha_WhenArgumentIsWhitespace_ThenArgumentExceptionThrown()
+        {
+            string subject = "   ";
+
+            Assert.Throws<ArgumentException>(() => subject.IsAlpha());
+        }
+
+        [Test]
+        public void IsAlpha_WhenIsAlphaOnly_ThenBooleanTrueReturned()
+        {
+            string subject = "alpha";
+
+            var actual = subject.IsAlpha();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsAlpha_WhenArgumentIsNotAlphaOnly_ThenBooleanFalseReturned()
+        {
+            string subject = "123";
+
+            var actual = subject.IsAlpha();
+
+            Assert.IsFalse(actual);
+        }
+
+        [Test]
+        public void IsNumeric_WhenArgumentIsNull_ThenArgumentNullExceptionThrown()
+        {
+            string subject = null;
+
+            Assert.Throws<ArgumentNullException>(() => subject.IsNumeric());
+        }
+
+        [Test]
+        public void IsNumeric_WhenArgumentIsEmpty_ThenArgumentExceptionThrown()
+        {
+            string subject = "";
+
+            Assert.Throws<ArgumentException>(() => subject.IsNumeric());
+        }
+
+        [Test]
+        public void IsNumeric_WhenArgumentIsWhitespace_ThenArgumentExceptionThrown()
+        {
+            string subject = "   ";
+
+            Assert.Throws<ArgumentException>(() => subject.IsNumeric());
+        }
+
+        [Test]
+        public void IsNumeric_WhenIsNumericOnly_ThenBooleanTrueReturned()
+        {
+            string subject = "123";
+
+            var actual = subject.IsNumeric();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsNumeric_WhenArgumentIsNotNumericOnly_ThenBooleanFalseReturned()
+        {
+            string subject = "alpha";
+
+            var actual = subject.IsNumeric();
+
+            Assert.IsFalse(actual);
+        }
+
+        [Test]
+        public void IsSymbols_WhenArgumentIsNull_ThenArgumentNullExceptionThrown()
+        {
+            string subject = null;
+
+            Assert.Throws<ArgumentNullException>(() => subject.IsSymbols());
+        }
+
+        [Test]
+        public void IsSymbols_WhenArgumentIsEmpty_ThenArgumentExceptionThrown()
+        {
+            string subject = "";
+
+            Assert.Throws<ArgumentException>(() => subject.IsSymbols());
+        }
+
+        [Test]
+        public void IsSymbols_WhenArgumentIsWhitespace_ThenArgumentExceptionThrown()
+        {
+            string subject = "   ";
+
+            Assert.Throws<ArgumentException>(() => subject.IsSymbols());
+        }
+
+        [Test]
+        public void IsSymbols_WhenIsSymbolsOnly_ThenBooleanTrueReturned()
+        {
+            string subject = "$£!,.;";
+
+            var actual = subject.IsSymbols();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsSymbols_WhenArgumentIsNotSymbolsOnly_ThenBooleanFalseReturned()
+        {
+            string subject = "alpha";
+
+            var actual = subject.IsSymbols();
+
+            Assert.IsFalse(actual);
+        }
+
+        [Test]
+        public void IsNumericSymbols_WhenArgumentIsNull_ThenArgumentNullExceptionThrown()
+        {
+            string subject = null;
+
+            Assert.Throws<ArgumentNullException>(() => subject.IsNumericSymbols());
+        }
+
+        [Test]
+        public void IsNumericSymbols_WhenArgumentIsEmpty_ThenArgumentExceptionThrown()
+        {
+            string subject = "";
+
+            Assert.Throws<ArgumentException>(() => subject.IsNumericSymbols());
+        }
+
+        [Test]
+        public void IsNumericSymbols_WhenArgumentIsWhitespace_ThenArgumentExceptionThrown()
+        {
+            string subject = "   ";
+
+            Assert.Throws<ArgumentException>(() => subject.IsNumericSymbols());
+        }
+
+        [Test]
+        public void IsNumericSymbols_WhenIsSymbolsOnly_ThenBooleanTrueReturned()
+        {
+            string subject = "$£!,.;";
+
+            var actual = subject.IsNumericSymbols();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsNumericSymbols_WhenIsNumericOnly_ThenBooleanTrueReturned()
+        {
+            string subject = "123";
+
+            var actual = subject.IsNumericSymbols();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsNumericSymbols_WhenIsNumericSymbolsOnly_ThenBooleanTrueReturned()
+        {
+            string subject = "£123.00";
+
+            var actual = subject.IsNumericSymbols();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsNumericSymbols_WhenArgumentIsNotNumericSymbolsOnly_ThenBooleanFalseReturned()
+        {
+            string subject = "alpha";
+
+            var actual = subject.IsNumericSymbols();
+
+            Assert.IsFalse(actual);
+        }
+
+        [Test]
+        public void IsAlphaNumeric_WhenArgumentIsNull_ThenArgumentNullExceptionThrown()
+        {
+            string subject = null;
+
+            Assert.Throws<ArgumentNullException>(() => subject.IsAlphaNumeric());
+        }
+
+        [Test]
+        public void IsAlphaNumeric_WhenArgumentIsEmpty_ThenArgumentExceptionThrown()
+        {
+            string subject = "";
+
+            Assert.Throws<ArgumentException>(() => subject.IsAlphaNumeric());
+        }
+
+        [Test]
+        public void IsAlphaNumeric_WhenArgumentIsWhitespace_ThenArgumentExceptionThrown()
+        {
+            string subject = "   ";
+
+            Assert.Throws<ArgumentException>(() => subject.IsAlphaNumeric());
+        }
+
+        [Test]
+        public void IsAlphaNumeric_WhenIsAlphaNumeric_ThenBooleanTrueReturned()
+        {
+            string subject = "alpha123";
+
+            var actual = subject.IsAlphaNumeric();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsAlphaNumeric_WhenArgumentIsNumericOnly_ThenBooleanTrueReturned()
+        {
+            string subject = "123";
+
+            var actual = subject.IsAlphaNumeric();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsAlphaNumeric_WhenArgumentIsNotAlphaNumeric_ThenBooleanFalseReturned()
+        {
+            string subject = "alpha-123";
+
+            var actual = subject.IsAlphaNumeric();
+
+            Assert.IsFalse(actual);
+        }
+
+        [Test]
+        public void IsAlphaNumeric_WhenArgumentIsAlphaOnly_ThenBooleanTrueReturned()
+        {
+            string subject = "alpha";
+
+            var actual = subject.IsAlphaNumeric();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsAlphaNumericSymbols_WhenArgumentIsNull_ThenArgumentNullExceptionThrown()
+        {
+            string subject = null;
+
+            Assert.Throws<ArgumentNullException>(() => subject.IsAlphaNumericSymbols());
+        }
+
+        [Test]
+        public void IsAlphaNumericSymbols_WhenArgumentIsEmpty_ThenArgumentExceptionThrown()
+        {
+            string subject = "";
+
+            Assert.Throws<ArgumentException>(() => subject.IsAlphaNumericSymbols());
+        }
+
+        [Test]
+        public void IsAlphaNumericSymbols_WhenArgumentIsWhitespace_ThenArgumentExceptionThrown()
+        {
+            string subject = "   ";
+
+            Assert.Throws<ArgumentException>(() => subject.IsAlphaNumericSymbols());
+        }
+
+        [Test]
+        public void IsAlphaNumericSymbols_WhenIsAlphaNumeric_ThenBooleanTrueReturned()
+        {
+            string subject = "alpha123";
+
+            var actual = subject.IsAlphaNumericSymbols();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsAlphaNumericSymbols_WhenArgumentIsNumericSymbols_ThenBooleanTrueReturned()
+        {
+            string subject = "alpha£123.00";
+
+            var actual = subject.IsAlphaNumericSymbols();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsAlphaNumericSymbols_WhenArgumentIsAlphaOnly_ThenBooleanTrueReturned()
+        {
+            string subject = "alpha";
+
+            var actual = subject.IsAlphaNumericSymbols();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsAlphaNumericSymbols_WhenArgumentIsNumericOnly_ThenBooleanTrueReturned()
+        {
+            string subject = "123";
+
+            var actual = subject.IsAlphaNumericSymbols();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsAlphaNumericSymbols_WhenArgumentIsSymbolsOnly_ThenBooleanTrueReturned()
+        {
+            string subject = "£$,.";
+
+            var actual = subject.IsAlphaNumericSymbols();
+
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
         public void Matches_WhenArgumentMatchesGivenPattern_ThenBooleanTrueReturned()
         {
             string subject = "foo_bar";
