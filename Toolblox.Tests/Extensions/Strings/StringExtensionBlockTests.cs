@@ -636,12 +636,23 @@ namespace Cognophile.Toolblox.Tests.Extensions.Strings
         [Test]
         public void Matches_WhenArgumentDoesNotMatchGivenPattern_ThenBooleanFalseReturned()
         {
-            string subject = "foobar";
+            string subject = "123";
 
             var actual = subject.Matches("([a-zA-Z]*)_([a-zA-Z]*)");
 
             Assert.IsFalse(actual);
         }
+
+        [Test]
+        public void Matches_WhenArgumentIsNotValidPattern_ThenBooleanFalseReturned()
+        {
+            string subject = "foo_bar";
+
+            var actual = subject.Matches("foo bar baz");
+
+            Assert.IsFalse(actual);
+        }
+
 
         [Test]
         public void Matches_WhenPatternArgumentIsNull_ThenArgumentNullExceptionThrown()

@@ -640,9 +640,19 @@ namespace Toolblox.Tests.Statics.Strings
         [Test]
         public void Matches_WhenArgumentDoesNotMatchGivenPattern_ThenBooleanFalseReturned()
         {
-            string subject = "foobar";
+            string subject = "123";
 
             var actual = StringBlock.Matches(subject, "([a-zA-Z]*)_([a-zA-Z]*)");
+
+            Assert.IsFalse(actual);
+        }
+
+        [Test]
+        public void Matches_WhenArgumentIsNotValidPattern_ThenBooleanFalseReturned()
+        {
+            string subject = "foo_bar";
+
+            var actual = StringBlock.Matches(subject, "foo bar baz");
 
             Assert.IsFalse(actual);
         }
