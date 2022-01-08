@@ -29,6 +29,13 @@
     <None Remove="Assets\" />
     <None Remove="Assets\Images\" />
     <None Remove="Ardalis.GuardClauses" />
+    <None Remove="Blocks\Base\Numbers\" />
+    <None Remove="Blocks\Base\Objects\" />
+    <None Remove="Blocks\Base\Boolean\" />
+    <None Remove="Blocks\Base\Dates\" />
+    <None Remove="Blocks\Base\Json\" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Blocks\Base\Collections\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Blocks\Extensions\" />
@@ -36,6 +43,14 @@
     <Folder Include="Blocks\Statics\Strings\" />
     <Folder Include="Blocks\Extensions\Strings\" />
     <Folder Include="Blocks\Base\Strings\" />
+    <Folder Include="Assets\" />
+    <Folder Include="Assets\Images\" />
+    <Folder Include="Blocks\Base\Numbers\" />
+    <Folder Include="Blocks\Base\Objects\" />
+    <Folder Include="Blocks\Base\Boolean\" />
+    <Folder Include="Blocks\Base\Dates\" />
+    <Folder Include="Blocks\Base\Json\" />
+    <Folder Include="Blocks\Base\Collections\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -46,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Ardalis.GuardClauses" Version="3.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="coverlet.collector" Version="3.1.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
