@@ -36,6 +36,18 @@
     <None Remove="Blocks\Base\Json\" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Blocks\Base\Collections\" />
+    <None Remove="Blocks\Statics\Boolean\" />
+    <None Remove="Blocks\Statics\Collections\" />
+    <None Remove="Blocks\Statics\Dates\" />
+    <None Remove="Blocks\Statics\Json\" />
+    <None Remove="Blocks\Statics\Numbers\" />
+    <None Remove="Blocks\Statics\Objects\" />
+    <None Remove="Blocks\Extensions\Boolean\" />
+    <None Remove="Blocks\Extensions\Collections\" />
+    <None Remove="Blocks\Extensions\Dates\" />
+    <None Remove="Blocks\Extensions\Json\" />
+    <None Remove="Blocks\Extensions\Numbers\" />
+    <None Remove="Blocks\Extensions\Objects\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Blocks\Extensions\" />
@@ -51,6 +63,18 @@
     <Folder Include="Blocks\Base\Dates\" />
     <Folder Include="Blocks\Base\Json\" />
     <Folder Include="Blocks\Base\Collections\" />
+    <Folder Include="Blocks\Statics\Boolean\" />
+    <Folder Include="Blocks\Statics\Collections\" />
+    <Folder Include="Blocks\Statics\Dates\" />
+    <Folder Include="Blocks\Statics\Json\" />
+    <Folder Include="Blocks\Statics\Numbers\" />
+    <Folder Include="Blocks\Statics\Objects\" />
+    <Folder Include="Blocks\Extensions\Boolean\" />
+    <Folder Include="Blocks\Extensions\Collections\" />
+    <Folder Include="Blocks\Extensions\Dates\" />
+    <Folder Include="Blocks\Extensions\Json\" />
+    <Folder Include="Blocks\Extensions\Numbers\" />
+    <Folder Include="Blocks\Extensions\Objects\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">

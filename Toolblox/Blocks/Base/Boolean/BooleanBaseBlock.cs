@@ -1,4 +1,4 @@
-﻿namespace Toolblox.Blocks.Base.Boolean
+﻿namespace Cognophile.Toolblox.Blocks.Base.Boolean
 {
     public static class BooleanBaseBlock
     {

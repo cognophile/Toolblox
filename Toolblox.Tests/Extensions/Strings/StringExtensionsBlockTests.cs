@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Cognophile.Toolblox.Tests.Extensions.Strings
 {
     [TestFixture]
-    public class StringExtensionBlockTests
+    public class StringExtensionsBlockTests
     {
         [SetUp]
         public void SetUp()

@@ -1,4 +1,5 @@
-﻿using Cognophile.Toolblox.Blocks.Statics.Strings;
+﻿using Cognophile.Toolblox.Blocks.Statics.Boolean;
+using Cognophile.Toolblox.Blocks.Statics.Strings;
 
 /// <summary>
 /// Toolblox
@@ -21,5 +22,10 @@ namespace Cognophile.Toolblox
         /// Access to common string-based extension behaviours.
         /// </summary>
         public static StringBlock Strings { get; } = new();
+
+        /// <summary>
+        /// Access to common boolean-based extension behaviours.
+        /// </summary>
+        public static BooleanBlock Booleans { get; } = new();
     }
 }

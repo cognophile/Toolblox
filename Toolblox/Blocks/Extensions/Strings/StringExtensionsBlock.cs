@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Cognophile.Toolblox.Blocks.Base.Strings;
 
 namespace Cognophile.Toolblox.Blocks.Extensions.Strings

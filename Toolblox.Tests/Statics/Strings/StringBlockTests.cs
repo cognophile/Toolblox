@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Cognophile.Toolblox.Blocks.Statics.Strings;
 using NUnit.Framework;
 
-namespace Toolblox.Tests.Statics.Strings
+namespace Cognophile.Toolblox.Tests.Statics.Strings
 {
     [TestFixture]
     public class StringBlockTests

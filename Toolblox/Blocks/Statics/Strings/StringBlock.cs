@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Cognophile.Toolblox.Blocks.Base;
 using Cognophile.Toolblox.Blocks.Base.Strings;
-using Toolblox.Blocks.Base;
 
 namespace Cognophile.Toolblox.Blocks.Statics.Strings
 {

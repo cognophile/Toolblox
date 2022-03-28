@@ -28,11 +28,15 @@
     <None Remove="Extensions\Strings\" />
     <None Remove="Statics\" />
     <None Remove="Statics\Strings\" />
+    <None Remove="Extensions\Boolean\" />
+    <None Remove="Statics\Boolean\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Extensions\Strings\" />
     <Folder Include="Statics\" />
     <Folder Include="Statics\Strings\" />
+    <Folder Include="Extensions\Boolean\" />
+    <Folder Include="Statics\Boolean\" />
   </ItemGroup>
 </Project>
