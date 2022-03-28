@@ -1,7 +1,6 @@
-﻿using System;
-namespace Toolblox.Blocks.Base.Boolean
+﻿namespace Toolblox.Blocks.Base.Boolean
 {
-    public static class BooleanBlock
+    public static class BooleanBaseBlock
     {
         public static string ToTextual(bool subject)
         {

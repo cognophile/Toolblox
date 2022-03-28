@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Toolblox.Blocks.Base.Json
 {
-    public static class JsonBlock
+    public static class JsonBaseBlock
     {
         /// <summary>
         /// Determine whether a given string contains valid JSON

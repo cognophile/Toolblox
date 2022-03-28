@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace Toolblox.Blocks.Base.Collections
 {
-    public static class CollectionsBlock
+    public static class CollectionsBaseBlock
     {
         public static bool IsEmpty<T>(IEnumerable<T> collection)
         {
-            return collection.Count().Equals(0);
+            return !collection.Any();
         }
 
         public static T GetByPropertyMin<T, P>(IEnumerable<T> collection, Func<T, P> func) where P : IComparable

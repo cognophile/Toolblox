@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Reflection;
 
 namespace Toolblox.Blocks.Base.Dates
 {
-    public static class DatesBlock
+    public static class DatesBaseBlock
     {
         public static bool IsPast(DateTime subject)
         {

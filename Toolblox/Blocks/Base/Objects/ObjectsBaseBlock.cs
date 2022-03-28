@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace Toolblox.Blocks.Base.Objects
 {
-    public static class ObjectsBlock
+    public static class ObjectsBaseBlock
     {
         public static bool IsNull(object subject)
         {

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Globalization;
+
 namespace Toolblox.Blocks.Base.Numbers
 {
-    public static class NumbersBlock
+    public static class NumbersBaseBlock
     {
         public static bool IsZero(int subject)
         {
@@ -91,6 +93,36 @@ namespace Toolblox.Blocks.Base.Numbers
         public static T ParseAs<T>(object subject)
         {
             return (T)Convert.ChangeType(subject, typeof(T));
+        }
+
+        public static string AsCurrency(int subject, string culture = null)
+        {
+            if (culture is null)
+            {
+                culture = CultureInfo.CurrentCulture.Name;
+            }
+
+            return subject.ToString("C", CultureInfo.CreateSpecificCulture(culture));
+        }
+
+        public static string AsCurrency(double subject, string culture = null)
+        {
+            if (culture is null)
+            {
+                culture = CultureInfo.CurrentCulture.Name;
+            }
+
+            return subject.ToString("C", CultureInfo.CreateSpecificCulture(culture));
+        }
+
+        public static string AsCurrency(decimal subject, string culture = null)
+        {
+            if (culture is null)
+            {
+                culture = CultureInfo.CurrentCulture.Name;
+            }
+
+            return subject.ToString("C", CultureInfo.CreateSpecificCulture(culture));
         }
     }
 }
