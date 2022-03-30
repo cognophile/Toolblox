@@ -102,6 +102,16 @@ namespace Cognophile.Toolblox.Blocks.Base.Strings
 
             return Regex.IsMatch(subject, @$"{pattern}");
         }
+
+        public static string AsNullWhenEmpty(string subject)
+        {
+            return string.IsNullOrEmpty(subject) ? null : subject;
+        }
+
+        public static string AsNullWhenWhitespace(string subject)
+        {
+            return string.IsNullOrWhiteSpace(subject) ? null : subject;
+        }
         #endregion
 
         #region Fetching Members

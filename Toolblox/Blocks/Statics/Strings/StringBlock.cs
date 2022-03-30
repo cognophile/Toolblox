@@ -148,6 +148,26 @@ namespace Cognophile.Toolblox.Blocks.Statics.Strings
         }
 
         /// <summary>
+        /// Determines whether the given subject is Null or Empty
+        /// </summary>
+        /// <param name="subject"><The string upon which to assert the behaviour of the method./param>
+        /// <returns>When null or empty, then returns null. When populated, then returns the subject.</returns>
+        public static string AsNullWhenEmpty(string subject)
+        {
+            return StringBaseBlock.AsNullWhenEmpty(subject);
+        }
+
+        /// <summary>
+        /// Determines whether the given subject is Null, Empty, or Whitespace
+        /// </summary>
+        /// <param name="subject"><The string upon which to assert the behaviour of the method./param>
+        /// <returns>When null, empty, or whitespace, then returns null. When populated, then returns the subject.</returns>
+        public static string AsNullWhenWhitespace(string subject)
+        {
+            return StringBaseBlock.AsNullWhenWhitespace(subject);
+        }
+
+        /// <summary>
         /// Retrieves the section of the string located between the given bookends.
         /// </summary>
         /// <param name="subject">The string upon which the method should operate.</param>

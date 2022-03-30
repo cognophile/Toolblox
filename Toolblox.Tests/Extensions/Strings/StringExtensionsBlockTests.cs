@@ -703,6 +703,76 @@ namespace Cognophile.Toolblox.Tests.Extensions.Strings
         }
 
         [Test]
+        public void AsNullWhenEmpty_WhenArgumentIsNull_ThenExpectedValueReturned()
+        {
+            string subject = null;
+
+            var actual = subject.AsNullWhenEmpty();
+
+            Assert.That(actual, Is.Null);
+        }
+
+        [Test]
+        public void AsNullWhenEmpty_WhenArgumentIsEmpty_ThenExpectedValueReturned()
+        {
+            string subject = "";
+
+            var actual = subject.AsNullWhenEmpty();
+
+            Assert.That(actual, Is.Null);
+        }
+
+        [Test]
+        public void AsNullWhenEmpty_WhenArgumentIsPopulated_ThenExpectedValueReturned()
+        {
+            string subject = "Foobar";
+
+            var actual = subject.AsNullWhenEmpty();
+
+            Assert.That(actual, Is.EqualTo(subject));
+        }
+
+        [Test]
+        public void AsNullWhenWhitespace_WhenArgumentIsNull_ThenExpectedValueReturned()
+        {
+            string subject = null;
+
+            var actual = subject.AsNullWhenWhitespace();
+
+            Assert.That(actual, Is.Null);
+        }
+
+        [Test]
+        public void AsNullWhenWhitespace_WhenArgumentIsEmpty_ThenExpectedValueReturned()
+        {
+            string subject = "";
+
+            var actual = subject.AsNullWhenWhitespace();
+
+            Assert.That(actual, Is.Null);
+        }
+
+        [Test]
+        public void AsNullWhenWhitespace_WhenArgumentIsWhitespace_ThenExpectedValueReturned()
+        {
+            string subject = "   ";
+
+            var actual = subject.AsNullWhenWhitespace();
+
+            Assert.That(actual, Is.Null);
+        }
+
+        [Test]
+        public void AsNullWhenWhitespace_WhenArgumentIsPopulated_ThenExpectedValueReturned()
+        {
+            string subject = "Foobar";
+
+            var actual = subject.AsNullWhenWhitespace();
+
+            Assert.That(actual, Is.EqualTo(subject));
+        }
+
+        [Test]
         public void Between_WhenArgumentIsNull_ThenArgumentNullExceptionThrown()
         {
             string subject = null;
