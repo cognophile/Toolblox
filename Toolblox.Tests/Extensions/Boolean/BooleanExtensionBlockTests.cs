@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace Cognophile.Toolblox.Tests.Extensions.Boolean
 {
     [TestFixture]
-    public class BooleanExtensionBlockTests
+    public class CollectionsExtensionBlockTests
     {
         [SetUp]
         public void SetUp()

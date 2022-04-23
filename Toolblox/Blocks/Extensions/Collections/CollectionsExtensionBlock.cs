@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using Toolblox.Blocks.Base.Collections;
 
-namespace Toolblox.Blocks.Base.Collections
+namespace Toolblox.Blocks.Extensions.Collections
 {
-    public static class CollectionsBaseBlock
+    public static class CollectionsExtensionBlock
     {
         /// <summary>
         /// Determines whether the subject called upon is empty
@@ -12,9 +12,9 @@ namespace Toolblox.Blocks.Base.Collections
         /// <typeparam name="T"></typeparam>
         /// <param name="collection"></param>
         /// <returns>Boolean value representing the state of the collection</returns>
-        public static bool IsEmpty<T>(IEnumerable<T> collection)
+        public static bool IsEmpty<T>(this IEnumerable<T> collection)
         {
-            return !collection.Any();
+            return CollectionsBaseBlock.IsEmpty(collection);
         }
 
         /// <summary>
@@ -25,10 +25,11 @@ namespace Toolblox.Blocks.Base.Collections
         /// <param name="collection"></param>
         /// <param name="func"></param>
         /// <returns>An element of type TSource with the lowest value</returns>
-        public static T GetByPropertyMin<T, P>(IEnumerable<T> collection, Func<T, P> func) where P : IComparable
+        public static T GetByPropertyMin<T, P>(this IEnumerable<T> collection, Func<T, P> func) where P : IComparable
         {
-            return collection.Aggregate((a, b) => func(a).CompareTo(func(b)) < 0 ? a : b);
+            return CollectionsBaseBlock.GetByPropertyMin<T, P>(collection, func);
         }
+
 
         /// <summary>
         /// Retrieves the element of the collection with the highest value for the given property
@@ -38,9 +39,9 @@ namespace Toolblox.Blocks.Base.Collections
         /// <param name="collection"></param>
         /// <param name="func"></param>
         /// <returns>An element of type TSource with the highest value</returns>
-        public static T GetByPropertyMax<T, P>(IEnumerable<T> collection, Func<T, P> func) where P : IComparable
+        public static T GetByPropertyMax<T, P>(this IEnumerable<T> collection, Func<T, P> func) where P : IComparable
         {
-            return collection.Aggregate((a, b) => func(a).CompareTo(func(b)) > 0 ? a : b);
+            return CollectionsBaseBlock.GetByPropertyMax<T, P>(collection, func);
         }
 
         /// <summary>
@@ -50,10 +51,9 @@ namespace Toolblox.Blocks.Base.Collections
         /// <param name="collection"></param>
         /// <param name="func"></param>
         /// <returns>Enumeration containing enumerations representing the predicate-divised partitions</returns>
-        public static IEnumerable<IEnumerable<T>> PartitionBy<T>(IEnumerable<T> collection, Func<T, bool> func)
+        public static IEnumerable<IEnumerable<T>> PartitionBy<T>(this IEnumerable<T> collection, Func<T, bool> func)
         {
-            yield return collection.Where(func);
-            yield return collection.Where(x => !func(x));
+            return CollectionsBaseBlock.PartitionBy<T>(collection, func);
         }
     }
 }

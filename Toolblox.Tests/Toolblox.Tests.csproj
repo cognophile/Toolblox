@@ -30,6 +30,9 @@
     <None Remove="Statics\Strings\" />
     <None Remove="Extensions\Boolean\" />
     <None Remove="Statics\Boolean\" />
+    <None Remove="Extensions\Collections\" />
+    <None Remove="Utilities\" />
+    <None Remove="Statics\Collections\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
@@ -38,5 +41,8 @@
     <Folder Include="Statics\Strings\" />
     <Folder Include="Extensions\Boolean\" />
     <Folder Include="Statics\Boolean\" />
+    <Folder Include="Extensions\Collections\" />
+    <Folder Include="TestUtilities\" />
+    <Folder Include="Statics\Collections\" />
   </ItemGroup>
 </Project>
