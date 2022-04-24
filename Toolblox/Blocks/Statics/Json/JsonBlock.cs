@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Text.Json;
+using Cognophile.Toolblox.Blocks.Base;
 using Cognophile.Toolblox.Blocks.Base.Json;
 
-namespace Cognophile.Toolblox.Blocks.Extensions.Json
+namespace Cognophile.Toolblox.Blocks.Statics.Json
 {
-    public static class JsonExtensionBlock
+    public class JsonBlock : IBlock
     {
         /// <summary>
         /// Determine whether a given string contains valid JSON
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value indicating whether the given string is parsable JSON</returns>
-        public static bool IsParsable(this string subject)
+        public static bool IsParsable(string subject)
         {
             return JsonBaseBlock.IsParsable(subject);
         }
@@ -23,7 +24,7 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Json
         /// <param name="subject"></param>
         /// <param name="pascalCase"></param>
         /// <returns></returns>
-        public static string Serialize<T>(this T subject, bool pascalCase = true)
+        public static string Serialize<T>(T subject, bool pascalCase = true)
         {
             return JsonBaseBlock.Serialize(subject, pascalCase);
         }
@@ -35,7 +36,7 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Json
         /// <param name="json"></param>
         /// <param name="caseInsensitive"></param>
         /// <returns></returns>
-        public static T Deserialize<T>(this string json, bool caseInsensitive = true) where T : new()
+        public static T Deserialize<T>(string json, bool caseInsensitive = true) where T : new()
         {
             return JsonBaseBlock.Deserialize<T>(json, caseInsensitive);
         }
@@ -47,7 +48,7 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Json
         /// <param name="json"></param>
         /// <param name="caseInsensitive"></param>
         /// <returns></returns>
-        public static T Deserialize<T>(this JsonElement json, bool caseInsensitive = true) where T : new()
+        public static T Deserialize<T>(JsonElement json, bool caseInsensitive = true) where T : new()
         {
             return JsonBaseBlock.Deserialize<T>(json, caseInsensitive);
         }

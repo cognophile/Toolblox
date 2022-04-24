@@ -47,14 +47,14 @@ namespace Cognophile.Toolblox.Blocks.Base.Json
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="json"></param>
-        /// <param name="caseSensitive"></param>
+        /// <param name="caseInsensitive"></param>
         /// <returns></returns>
-        public static T Deserialize<T>(string json, bool caseSensitive = true) where T : new()
+        public static T Deserialize<T>(string json, bool caseInsensitive = true) where T : new()
         {
             try
             {
                 JsonSerializerOptions options = new();
-                if (!caseSensitive)
+                if (caseInsensitive)
                 {
                     options.PropertyNameCaseInsensitive = true;
                 }
@@ -72,14 +72,14 @@ namespace Cognophile.Toolblox.Blocks.Base.Json
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="json"></param>
-        /// <param name="caseSensitive"></param>
+        /// <param name="caseInsensitive"></param>
         /// <returns></returns>
-        public static T Deserialize<T>(JsonElement json, bool caseSensitive = true) where T : new()
+        public static T Deserialize<T>(JsonElement json, bool caseInsensitive = true) where T : new()
         {
             try
             {
                 JsonSerializerOptions options = new();
-                if (!caseSensitive)
+                if (caseInsensitive)
                 {
                     options.PropertyNameCaseInsensitive = true;
                 }

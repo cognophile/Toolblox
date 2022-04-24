@@ -39,6 +39,7 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Dates
         /// Determines whether the subject came before the given comparitor
         /// </summary>
         /// <param name="subject"></param>
+        /// <param name="comparitor"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
         public static bool IsBefore(this DateTime subject, DateTime comparitor)
         {
@@ -49,6 +50,7 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Dates
         /// Determines whether the subject comes after the given comparitor
         /// </summary>
         /// <param name="subject"></param>
+        /// <param name="comparitor"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
         public static bool IsAfter(this DateTime subject, DateTime comparitor)
         {
@@ -59,6 +61,7 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Dates
         /// Determines whether the subject is equal to the provided comparitor
         /// </summary>
         /// <param name="subject"></param>
+        /// <param name="comparitor"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
         public static bool IsEqual(this DateTime subject, DateTime comparitor)
         {

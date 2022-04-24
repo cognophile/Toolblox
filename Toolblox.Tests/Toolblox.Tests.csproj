@@ -35,6 +35,8 @@
     <None Remove="Statics\Collections\" />
     <None Remove="Extensions\Dates\" />
     <None Remove="Statics\Dates\" />
+    <None Remove="Extensions\Json\" />
+    <None Remove="Statics\Json\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
@@ -48,5 +50,7 @@
     <Folder Include="Statics\Collections\" />
     <Folder Include="Extensions\Dates\" />
     <Folder Include="Statics\Dates\" />
+    <Folder Include="Extensions\Json\" />
+    <Folder Include="Statics\Json\" />
   </ItemGroup>
 </Project>
