@@ -1,6 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 using Cognophile.Toolblox.Blocks.Statics.Objects;
+using Cognophile.Toolblox.Tests.TestUtilities;
 
 namespace Cognophile.Toolblox.Tests.Extensions.Objects
 {
@@ -51,6 +52,45 @@ namespace Cognophile.Toolblox.Tests.Extensions.Objects
             var actual = ObjectBlock.IsNull(subject);
 
             Assert.That(actual, Is.False);
+        }
+
+        [Test]
+        public void Clone_WhenSubjectIsNull_ThenExpectedTypeReturned()
+        {
+            FakeEntity subject = null;
+
+            var actual = ObjectBlock.Clone(subject);
+
+            Assert.That(actual, Is.Null);
+        }
+
+        [Test]
+        public void Clone_WhenSubjectIsValid_ThenExpectedTypeReturned()
+        {
+            FakeEntity subject = new()
+            {
+                ExampleInt = 1,
+                ExampleString = "Foobar"
+            };
+
+            var actual = ObjectBlock.Clone(subject);
+
+            Assert.That(actual, Is.InstanceOf<FakeEntity>());
+        }
+
+        [Test]
+        public void Clone_WhenSubjectIsValid_ThenExpectedValueReturned()
+        {
+            FakeEntity subject = new()
+            {
+                ExampleInt = 1,
+                ExampleString = "Foobar"
+            };
+
+            var actual = ObjectBlock.Clone(subject);
+
+            Assert.That(actual.ExampleInt, Is.EqualTo(1));
+            Assert.That(actual.ExampleString, Is.EqualTo("Foobar"));
         }
     }
 }
