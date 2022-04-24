@@ -1,7 +1,7 @@
 ﻿using System;
 using Cognophile.Toolblox.Blocks.Base;
 using NUnit.Framework;
-using Toolblox.Blocks.Statics.Dates;
+using Cognophile.Toolblox.Blocks.Statics.Dates;
 
 namespace Cognophile.Toolblox.Tests.Statics.Dates
 {

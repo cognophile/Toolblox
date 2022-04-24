@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json;
 
-namespace Toolblox.Blocks.Base.Objects
+namespace Cognophile.Toolblox.Blocks.Base.Objects
 {
     public static class ObjectsBaseBlock
     {

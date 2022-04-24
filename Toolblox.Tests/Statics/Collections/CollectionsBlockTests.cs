@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Cognophile.Toolblox.Blocks.Base;
 using NUnit.Framework;
-using Toolblox.Blocks.Statics.Collections;
-using Toolblox.Tests.TestUtilities;
+using Cognophile.Toolblox.Blocks.Base;
+using Cognophile.Toolblox.Blocks.Statics.Collections;
+using Cognophile.Toolblox.Tests.TestUtilities;
 
-namespace Toolblox.Tests.Statics.Collections
+namespace Cognophile.Toolblox.Tests.Statics.Collections
 {
     [TestFixture]
     public class CollectionsBlockTests

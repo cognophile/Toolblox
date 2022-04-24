@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cognophile.Toolblox.Blocks.Base;
-using Toolblox.Blocks.Base.Collections;
+using Cognophile.Toolblox.Blocks.Base.Collections;
 
-namespace Toolblox.Blocks.Statics.Collections
+namespace Cognophile.Toolblox.Blocks.Statics.Collections
 {
     public sealed class CollectionsBlock : IBlock
     {

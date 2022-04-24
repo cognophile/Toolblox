@@ -1,6 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
-using Toolblox.Blocks.Extensions.Dates;
+using Cognophile.Toolblox.Blocks.Extensions.Dates;
 
 namespace Cognophile.Toolblox.Tests.Extensions.Dates
 {

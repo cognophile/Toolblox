@@ -1,7 +1,7 @@
 ﻿using System;
-using Toolblox.Blocks.Base.Dates;
+using Cognophile.Toolblox.Blocks.Base.Dates;
 
-namespace Toolblox.Blocks.Extensions.Dates
+namespace Cognophile.Toolblox.Blocks.Extensions.Dates
 {
     public static class DatesExtensionBlock
     {

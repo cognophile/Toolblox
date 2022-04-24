@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Toolblox.Tests.TestUtilities
+namespace Cognophile.Toolblox.Tests.TestUtilities
 {
     internal static class Fixtures
     {

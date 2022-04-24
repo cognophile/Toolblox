@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Toolblox.Blocks.Base.Numbers
+namespace Cognophile.Toolblox.Blocks.Base.Numbers
 {
     public static class NumbersBaseBlock
     {

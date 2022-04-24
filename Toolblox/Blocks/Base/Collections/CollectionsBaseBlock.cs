@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Toolblox.Blocks.Base.Collections
+namespace Cognophile.Toolblox.Blocks.Base.Collections
 {
     public static class CollectionsBaseBlock
     {

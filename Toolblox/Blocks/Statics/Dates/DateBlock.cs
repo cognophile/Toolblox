@@ -1,8 +1,8 @@
 ﻿using System;
 using Cognophile.Toolblox.Blocks.Base;
-using Toolblox.Blocks.Base.Dates;
+using Cognophile.Toolblox.Blocks.Base.Dates;
 
-namespace Toolblox.Blocks.Statics.Dates
+namespace Cognophile.Toolblox.Blocks.Statics.Dates
 {
     public sealed class DateBlock : IBlock
     {

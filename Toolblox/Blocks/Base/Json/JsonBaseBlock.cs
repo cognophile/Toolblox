@@ -2,7 +2,7 @@
 using System.Text.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Toolblox.Blocks.Base.Json
+namespace Cognophile.Toolblox.Blocks.Base.Json
 {
     public static class JsonBaseBlock
     {

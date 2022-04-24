@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
-using Toolblox.Blocks.Extensions.Collections;
-using Toolblox.Tests.TestUtilities;
+using Cognophile.Toolblox.Blocks.Extensions.Collections;
+using Cognophile.Toolblox.Tests.TestUtilities;
 
 namespace Cognophile.Toolblox.Tests.Extensions.Collection
 {

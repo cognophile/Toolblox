@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Toolblox.Blocks.Base.Collections;
+using Cognophile.Toolblox.Blocks.Base.Collections;
 
-namespace Toolblox.Blocks.Extensions.Collections
+namespace Cognophile.Toolblox.Blocks.Extensions.Collections
 {
     public static class CollectionsExtensionBlock
     {
