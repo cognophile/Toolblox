@@ -100,7 +100,7 @@ namespace Cognophile.Toolblox.Tests.Extensions.Collection
                 Fixtures.GetEntityFixture(123, "foo")
             };
 
-            var actual = subject.GetByPropertyMin(p => p.ExampleInt);
+            var actual = subject.GetByPropertyMax(p => p.ExampleInt);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -113,7 +113,7 @@ namespace Cognophile.Toolblox.Tests.Extensions.Collection
                 Fixtures.GetEntityFixture(123, "foo")
             };
 
-            var actual = subject.GetByPropertyMin(p => p.ExampleInt);
+            var actual = subject.GetByPropertyMax(p => p.ExampleInt);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(123));
         }
@@ -128,7 +128,7 @@ namespace Cognophile.Toolblox.Tests.Extensions.Collection
                 Fixtures.GetEntityFixture(789, "gop")
             };
 
-            var actual = subject.GetByPropertyMin(p => p.ExampleInt);
+            var actual = subject.GetByPropertyMax(p => p.ExampleInt);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -143,7 +143,7 @@ namespace Cognophile.Toolblox.Tests.Extensions.Collection
                 Fixtures.GetEntityFixture(789, "gop")
             };
 
-            var actual = subject.GetByPropertyMin(p => p.ExampleInt);
+            var actual = subject.GetByPropertyMax(p => p.ExampleInt);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(789));
         }

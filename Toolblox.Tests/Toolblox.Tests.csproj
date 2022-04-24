@@ -33,6 +33,8 @@
     <None Remove="Extensions\Collections\" />
     <None Remove="Utilities\" />
     <None Remove="Statics\Collections\" />
+    <None Remove="Extensions\Dates\" />
+    <None Remove="Statics\Dates\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
@@ -44,5 +46,7 @@
     <Folder Include="Extensions\Collections\" />
     <Folder Include="TestUtilities\" />
     <Folder Include="Statics\Collections\" />
+    <Folder Include="Extensions\Dates\" />
+    <Folder Include="Statics\Dates\" />
   </ItemGroup>
 </Project>

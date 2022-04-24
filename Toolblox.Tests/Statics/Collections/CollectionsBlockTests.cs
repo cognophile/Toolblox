@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cognophile.Toolblox.Blocks.Base;
 using NUnit.Framework;
 using Toolblox.Blocks.Statics.Collections;
 using Toolblox.Tests.TestUtilities;
@@ -15,6 +16,12 @@ namespace Toolblox.Tests.Statics.Collections
 
         [TearDown]
         public void TearDown() { }
+
+        [Test]
+        public void Class_WhenReferenced_ThenExpectedTypeImplemented()
+        {
+            Assert.That(new CollectionsBlock(), Is.InstanceOf<IBlock>());
+        }
 
         [Test]
         public void IsEmpty_WhenSourceIsEmpty_ThenExpectedTypeReturned()
@@ -100,7 +107,7 @@ namespace Toolblox.Tests.Statics.Collections
                 Fixtures.GetEntityFixture(123, "foo")
             };
 
-            var actual = CollectionsBlock.GetByPropertyMin(subject, p => p.ExampleInt);
+            var actual = CollectionsBlock.GetByPropertyMax(subject, p => p.ExampleInt);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -113,7 +120,7 @@ namespace Toolblox.Tests.Statics.Collections
                 Fixtures.GetEntityFixture(123, "foo")
             };
 
-            var actual = CollectionsBlock.GetByPropertyMin(subject, p => p.ExampleInt);
+            var actual = CollectionsBlock.GetByPropertyMax(subject, p => p.ExampleInt);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(123));
         }
@@ -128,7 +135,7 @@ namespace Toolblox.Tests.Statics.Collections
                 Fixtures.GetEntityFixture(789, "gop")
             };
 
-            var actual = CollectionsBlock.GetByPropertyMin(subject, p => p.ExampleInt);
+            var actual = CollectionsBlock.GetByPropertyMax(subject, p => p.ExampleInt);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -143,7 +150,7 @@ namespace Toolblox.Tests.Statics.Collections
                 Fixtures.GetEntityFixture(789, "gop")
             };
 
-            var actual = CollectionsBlock.GetByPropertyMin(subject, p => p.ExampleInt);
+            var actual = CollectionsBlock.GetByPropertyMax(subject, p => p.ExampleInt);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(789));
         }

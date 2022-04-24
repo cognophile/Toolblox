@@ -1,18 +1,18 @@
 ﻿using System;
-using Cognophile.Toolblox.Blocks.Extensions.Strings;
+using Toolblox.Blocks.Base.Dates;
 
-namespace Toolblox.Blocks.Base.Dates
+namespace Toolblox.Blocks.Extensions.Dates
 {
-    public static class DatesBaseBlock
+    public static class DatesExtensionBlock
     {
         /// <summary>
         /// Determines whether the subject is a date in the past
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
-        public static bool IsPast(DateTime subject)
+        public static bool IsPast(this DateTime subject)
         {
-            return subject < DateTime.UtcNow;
+            return DatesBaseBlock.IsPast(subject);
         }
 
         /// <summary>
@@ -20,9 +20,9 @@ namespace Toolblox.Blocks.Base.Dates
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
-        public static bool IsToday(DateTime subject)
+        public static bool IsToday(this DateTime subject)
         {
-            return subject.Date == DateTime.Now.Date;
+            return DatesBaseBlock.IsToday(subject);
         }
 
         /// <summary>
@@ -30,9 +30,9 @@ namespace Toolblox.Blocks.Base.Dates
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
-        public static bool IsFuture(DateTime subject)
+        public static bool IsFuture(this DateTime subject)
         {
-            return subject > DateTime.UtcNow;
+            return DatesBaseBlock.IsFuture(subject);
         }
 
         /// <summary>
@@ -40,9 +40,9 @@ namespace Toolblox.Blocks.Base.Dates
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
-        public static bool IsBefore(DateTime subject, DateTime comparitor)
+        public static bool IsBefore(this DateTime subject, DateTime comparitor)
         {
-            return subject < comparitor;
+            return DatesBaseBlock.IsBefore(subject, comparitor);
         }
 
         /// <summary>
@@ -50,9 +50,9 @@ namespace Toolblox.Blocks.Base.Dates
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
-        public static bool IsAfter(DateTime subject, DateTime comparitor)
+        public static bool IsAfter(this DateTime subject, DateTime comparitor)
         {
-            return subject > comparitor;
+            return DatesBaseBlock.IsAfter(subject, comparitor);
         }
 
         /// <summary>
@@ -60,9 +60,9 @@ namespace Toolblox.Blocks.Base.Dates
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
-        public static bool IsEqual(DateTime subject, DateTime comparitor)
+        public static bool IsEqual(this DateTime subject, DateTime comparitor)
         {
-            return subject == comparitor;
+            return DatesBaseBlock.IsEqual(subject, comparitor);
         }
 
         /// <summary>
@@ -70,9 +70,9 @@ namespace Toolblox.Blocks.Base.Dates
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>The equivelent unix representation</returns>
-        public static long ToUnix(DateTime subject)
+        public static long ToUnix(this DateTime subject)
         {
-            return ((DateTimeOffset)subject).ToUnixTimeSeconds();
+            return DatesBaseBlock.ToUnix(subject);
         }
 
         /// <summary>
@@ -81,10 +81,9 @@ namespace Toolblox.Blocks.Base.Dates
         /// <param name="subject"></param>
         /// <param name="pattern"></param>
         /// <returns>The subject DateTime in the requested format</returns>
-        public static string FormatAs(DateTime subject, string pattern)
+        public static string FormatAs(this DateTime subject, string pattern)
         {
-            if (pattern.IsNullOrWhitespace()) return subject.ToString();
-            return subject.ToString(pattern);
+            return DatesBaseBlock.FormatAs(subject, pattern);
         }
     }
 }

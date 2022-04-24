@@ -1,9 +1,10 @@
 ﻿using System;
-using Cognophile.Toolblox.Blocks.Extensions.Strings;
+using Cognophile.Toolblox.Blocks.Base;
+using Toolblox.Blocks.Base.Dates;
 
-namespace Toolblox.Blocks.Base.Dates
+namespace Toolblox.Blocks.Statics.Dates
 {
-    public static class DatesBaseBlock
+    public sealed class DateBlock : IBlock
     {
         /// <summary>
         /// Determines whether the subject is a date in the past
@@ -12,7 +13,7 @@ namespace Toolblox.Blocks.Base.Dates
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
         public static bool IsPast(DateTime subject)
         {
-            return subject < DateTime.UtcNow;
+            return DatesBaseBlock.IsPast(subject);
         }
 
         /// <summary>
@@ -22,7 +23,7 @@ namespace Toolblox.Blocks.Base.Dates
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
         public static bool IsToday(DateTime subject)
         {
-            return subject.Date == DateTime.Now.Date;
+            return DatesBaseBlock.IsToday(subject);
         }
 
         /// <summary>
@@ -32,7 +33,7 @@ namespace Toolblox.Blocks.Base.Dates
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
         public static bool IsFuture(DateTime subject)
         {
-            return subject > DateTime.UtcNow;
+            return DatesBaseBlock.IsFuture(subject);
         }
 
         /// <summary>
@@ -42,7 +43,7 @@ namespace Toolblox.Blocks.Base.Dates
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
         public static bool IsBefore(DateTime subject, DateTime comparitor)
         {
-            return subject < comparitor;
+            return DatesBaseBlock.IsBefore(subject, comparitor);
         }
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Toolblox.Blocks.Base.Dates
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
         public static bool IsAfter(DateTime subject, DateTime comparitor)
         {
-            return subject > comparitor;
+            return DatesBaseBlock.IsAfter(subject, comparitor);
         }
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Toolblox.Blocks.Base.Dates
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
         public static bool IsEqual(DateTime subject, DateTime comparitor)
         {
-            return subject == comparitor;
+            return DatesBaseBlock.IsEqual(subject, comparitor);
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Toolblox.Blocks.Base.Dates
         /// <returns>The equivelent unix representation</returns>
         public static long ToUnix(DateTime subject)
         {
-            return ((DateTimeOffset)subject).ToUnixTimeSeconds();
+            return DatesBaseBlock.ToUnix(subject);
         }
 
         /// <summary>
@@ -83,8 +84,7 @@ namespace Toolblox.Blocks.Base.Dates
         /// <returns>The subject DateTime in the requested format</returns>
         public static string FormatAs(DateTime subject, string pattern)
         {
-            if (pattern.IsNullOrWhitespace()) return subject.ToString();
-            return subject.ToString(pattern);
+            return DatesBaseBlock.FormatAs(subject, pattern);
         }
     }
 }

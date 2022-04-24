@@ -1,19 +1,23 @@
-﻿using Cognophile.Toolblox.Blocks.Base.Boolean;
+﻿using Cognophile.Toolblox.Blocks.Base;
+using Cognophile.Toolblox.Blocks.Base.Boolean;
+using Cognophile.Toolblox.Blocks.Statics.Boolean;
 using NUnit.Framework;
 
 namespace Cognophile.Toolblox.Tests.Statics.Boolean
 {
     [TestFixture]
-    public class BooleanlockTests
+    public class BooleanBlockTests
     {
         [SetUp]
-        public void SetUp()
-        {
-        }
+        public void SetUp() { }
 
         [TearDown]
-        public void TearDown()
+        public void TearDown() { }
+
+        [Test]
+        public void Class_WhenReferenced_ThenExpectedTypeImplemented()
         {
+            Assert.That(new BooleanBlock(), Is.InstanceOf<IBlock>());
         }
 
         [Test]
@@ -21,7 +25,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Boolean
         {
             bool subject = true;
 
-            var actual = BooleanBaseBlock.ToTextual(subject);
+            var actual = BooleanBlock.ToTextual(subject);
 
             Assert.IsInstanceOf<string>(actual);
         }
@@ -31,7 +35,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Boolean
         {
             bool subject = true;
 
-            var actual = BooleanBaseBlock.ToTextual(subject);
+            var actual = BooleanBlock.ToTextual(subject);
 
             Assert.That(actual, Is.EqualTo("Yes"));
         }
@@ -41,7 +45,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Boolean
         {
             bool subject = false;
 
-            var actual = BooleanBaseBlock.ToTextual(subject);
+            var actual = BooleanBlock.ToTextual(subject);
 
             Assert.IsInstanceOf<string>(actual);
         }
@@ -51,7 +55,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Boolean
         {
             bool subject = false;
 
-            var actual = BooleanBaseBlock.ToTextual(subject);
+            var actual = BooleanBlock.ToTextual(subject);
 
             Assert.That(actual, Is.EqualTo("No"));
         }
