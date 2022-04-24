@@ -5,7 +5,7 @@ using Cognophile.Toolblox.Blocks.Extensions.Dates;
 namespace Cognophile.Toolblox.Tests.Extensions.Dates
 {
     [TestFixture]
-    public class DatesExtensionBlockTests
+    public class ObjectExtensionBlockTests
     {
         [SetUp]
         public void SetUp() { }
