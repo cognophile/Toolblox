@@ -65,6 +65,16 @@ namespace Cognophile.Toolblox.Tests.Extensions.Objects
         }
 
         [Test]
+        public void Clone_WhenSubjectIsNotSerializable_ThenExpectedValueReturned()
+        {
+            FakeUnserializableEntity subject = new(1, "Foobar");
+
+            var actual = ObjectBlock.Clone(subject);
+
+            Assert.That(actual, Is.Null);
+        }
+
+        [Test]
         public void Clone_WhenSubjectIsValid_ThenExpectedTypeReturned()
         {
             FakeEntity subject = new()
