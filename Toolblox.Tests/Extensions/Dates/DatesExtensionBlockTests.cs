@@ -267,16 +267,18 @@ namespace Cognophile.Toolblox.Tests.Extensions.Dates
         public void FormatAs_WhenDateTimeConvertedViaFormatCode_ThenExpectedValueReturned()
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
+            var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString("g");
 
             var actual = subject.FormatAs("g");
 
-            Assert.That(actual, Is.EqualTo("01/01/2020 13:00"));
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [Test]
         public void FormatAs_WhenDateTimeConvertedViaCustomFormat_ThenExpectedValueReturned()
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
+            var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString("g");
 
             var actual = subject.FormatAs("MMMM dd, yyyy HH:mm:ss");
 
@@ -287,30 +289,33 @@ namespace Cognophile.Toolblox.Tests.Extensions.Dates
         public void FormatAs_WhenFormatIsNull_ThenDefaultLongFormatReturned()
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
+            var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString();
 
             var actual = subject.FormatAs(null);
 
-            Assert.That(actual, Is.EqualTo("01/01/2020 13:00:00"));
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [Test]
         public void FormatAs_WhenFormatIsEmpty_ThenExpectedValueReturned()
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
+            var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString();
 
             var actual = subject.FormatAs(string.Empty);
 
-            Assert.That(actual, Is.EqualTo("01/01/2020 13:00:00"));
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [Test]
         public void FormatAs_WhenFormatIsWhitespace_ThenExpectedValueReturned()
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
+            var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString();
 
             var actual = subject.FormatAs("   ");
 
-            Assert.That(actual, Is.EqualTo("01/01/2020 13:00:00"));
+            Assert.That(actual, Is.EqualTo(expected));
         }
     }
 }
