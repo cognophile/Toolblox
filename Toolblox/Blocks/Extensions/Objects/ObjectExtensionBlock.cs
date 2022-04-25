@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Text.Json;
+using Cognophile.Toolblox.Blocks.Base.Objects;
 
-namespace Cognophile.Toolblox.Blocks.Base.Objects
+namespace Cognophile.Toolblox.Blocks.Extensions.Objects
 {
-    public static class ObjectsBaseBlock
+    public static class ObjectExtensionBlock
     {
         /// <summary>
         /// Determines whether the object being called upon is null
@@ -12,7 +12,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Objects
         /// <returns>Boolean representing the null-state of the called-upon reference</returns>
         public static bool IsNull(this object subject)
         {
-            return subject is null;
+            return ObjectsBaseBlock.IsNull(subject);
         }
 
         /// <summary>
@@ -23,15 +23,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Objects
         /// <returns>Returns an instance of the specified type with identical property values</returns>
         public static T Clone<T>(this T subject)
         {
-            try
-            {
-                var serialized = JsonSerializer.Serialize(subject);
-                return JsonSerializer.Deserialize<T>(serialized);
-            }
-            catch (Exception)
-            {
-                return default;
-            }
+            return ObjectsBaseBlock.Clone(subject);
         }
     }
 }

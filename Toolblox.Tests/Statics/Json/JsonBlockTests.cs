@@ -4,6 +4,7 @@ using Cognophile.Toolblox.Tests.TestUtilities;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Text.Json;
+using Cognophile.Toolblox.Blocks.Base;
 
 namespace Cognophile.Toolblox.Tests.Statics.Json
 {
@@ -16,6 +17,11 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         [TearDown]
         public void TearDown() { }
 
+        [Test]
+        public void Class_WhenReferenced_ThenExpectedTypeImplemented()
+        {
+            Assert.That(new JsonBlock(), Is.InstanceOf<IBlock>());
+        }
 
         [Test]
         public void IsParsable_WhenJsonIsNull_ThenExpectedTypeReturned()

@@ -5,7 +5,7 @@ using Cognophile.Toolblox.Blocks.Base.Json;
 
 namespace Cognophile.Toolblox.Blocks.Statics.Json
 {
-    public class JsonBlock : IBlock
+    public sealed class JsonBlock : IBlock
     {
         /// <summary>
         /// Determine whether a given string contains valid JSON

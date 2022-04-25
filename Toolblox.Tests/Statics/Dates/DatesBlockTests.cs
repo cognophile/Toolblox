@@ -274,10 +274,11 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         public void FormatAs_WhenDateTimeConvertedViaFormatCode_ThenExpectedValueReturned()
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
+            var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString("g");
 
             var actual = DateBlock.FormatAs(subject, "g");
 
-            Assert.That(actual, Is.EqualTo("01/01/2020 13:00"));
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [Test]
@@ -294,30 +295,33 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         public void FormatAs_WhenFormatIsNull_ThenDefaultLongFormatReturned()
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
+            var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString();
 
             var actual = DateBlock.FormatAs(subject, null);
 
-            Assert.That(actual, Is.EqualTo("01/01/2020 13:00:00"));
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [Test]
-        public void FormatAs_WhenFormatIsEmpty_Then()
+        public void FormatAs_WhenFormatIsEmpty_ThenExpectedValueReturned()
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
+            var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString();
 
             var actual = DateBlock.FormatAs(subject, string.Empty);
 
-            Assert.That(actual, Is.EqualTo("01/01/2020 13:00:00"));
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [Test]
-        public void FormatAs_WhenFormatIsWhitespace_Then()
+        public void FormatAs_WhenFormatIsWhitespace_ThenExpectedValueReturned()
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
+            var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString();
 
             var actual = DateBlock.FormatAs(subject, "   ");
 
-            Assert.That(actual, Is.EqualTo("01/01/2020 13:00:00"));
+            Assert.That(actual, Is.EqualTo(expected));
         }
     }
 }
