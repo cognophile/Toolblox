@@ -1,8 +1,9 @@
-﻿using Cognophile.Toolblox.Blocks.Base.Numbers;
+﻿using Cognophile.Toolblox.Blocks.Base;
+using Cognophile.Toolblox.Blocks.Base.Numbers;
 
 namespace Cognophile.Toolblox.Blocks.Statics.Numbers
 {
-    public static class NumbersBlock
+    public class NumbersBlock : IBlock
     {
         /// <summary>
         /// Determines whether the subject's value is zero
@@ -172,17 +173,6 @@ namespace Cognophile.Toolblox.Blocks.Statics.Numbers
         public static bool IsMultipleOf(int subject, int multiplier)
         {
             return NumbersBaseBlock.IsMultipleOf(subject, multiplier);
-        }
-
-        /// <summary>
-        /// Attempts to parses the given numeric value to the given type
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="subject"></param>
-        /// <returns>The value converted to the required type</returns>
-        public static T ParseAs<T>(object subject)
-        {
-            return NumbersBaseBlock.ParseAs<T>(subject);
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Threading;
 
 namespace Cognophile.Toolblox.Blocks.Base.Numbers
 {
@@ -176,17 +177,6 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         }
 
         /// <summary>
-        /// Attempts to parses the given numeric value to the given type
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="subject"></param>
-        /// <returns>The value converted to the required type</returns>
-        public static T ParseAs<T>(object subject)
-        {
-            return (T)Convert.ChangeType(subject, typeof(T));
-        }
-
-        /// <summary>
         /// Parses the subject's value to the local currency, by default.
         ///     Optionally, the culture can be overriden. 
         /// </summary>
@@ -197,7 +187,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         {
             if (culture is null)
             {
-                culture = CultureInfo.CurrentCulture.Name;
+                culture = Thread.CurrentThread.CurrentCulture.Name;
             }
 
             return subject.ToString("C", CultureInfo.CreateSpecificCulture(culture));
@@ -214,7 +204,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         {
             if (culture is null)
             {
-                culture = CultureInfo.CurrentCulture.Name;
+                culture = Thread.CurrentThread.CurrentCulture.Name;
             }
 
             return subject.ToString("C", CultureInfo.CreateSpecificCulture(culture));
@@ -231,7 +221,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         {
             if (culture is null)
             {
-                culture = CultureInfo.CurrentCulture.Name;
+                culture = Thread.CurrentThread.CurrentCulture.Name;
             }
 
             return subject.ToString("C", CultureInfo.CreateSpecificCulture(culture));

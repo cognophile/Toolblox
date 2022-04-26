@@ -175,17 +175,6 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Numbers
         }
 
         /// <summary>
-        /// Attempts to parses the given numeric value to the given type
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="subject"></param>
-        /// <returns>The value converted to the required type</returns>
-        public static T ParseAs<T>(this object subject)
-        {
-            return NumbersBaseBlock.ParseAs<T>(subject);
-        }
-
-        /// <summary>
         /// Parses the subject's value to the local currency, by default.
         ///     Optionally, the culture can be overriden. 
         /// </summary>

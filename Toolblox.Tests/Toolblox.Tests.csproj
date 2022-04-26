@@ -40,6 +40,8 @@
     <None Remove="Extensions\Object\" />
     <None Remove="Statics\Objects\" />
     <None Remove="Extensions\Numbers\" />
+    <None Remove="Statics\Numbers\" />
+    <None Remove="Results\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
@@ -58,5 +60,7 @@
     <Folder Include="Extensions\Objects\" />
     <Folder Include="Statics\Objects\" />
     <Folder Include="Extensions\Numbers\" />
+    <Folder Include="Statics\Numbers\" />
+    <Folder Include="Results\" />
   </ItemGroup>
 </Project>
