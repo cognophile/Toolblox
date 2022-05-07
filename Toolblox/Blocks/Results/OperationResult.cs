@@ -1,6 +1,6 @@
 ﻿using System;
 using Cognophile.Toolblox.Blocks.Extensions.Objects;
-using Toolblox.Blocks.Results;
+using Cognophile.Toolblox.Blocks.Results;
 
 namespace Cognophile.Toolblox.Blocks.Results
 {

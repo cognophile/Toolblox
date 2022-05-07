@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Toolblox.Blocks.Results
+namespace Cognophile.Toolblox.Blocks.Results
 {
     public interface IOperationResult<T>
     {

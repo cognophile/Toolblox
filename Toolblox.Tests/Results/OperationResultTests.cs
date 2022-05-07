@@ -2,9 +2,8 @@
 using Cognophile.Toolblox.Blocks.Results;
 using Cognophile.Toolblox.Tests.TestUtilities;
 using NUnit.Framework;
-using Toolblox.Blocks.Results;
 
-namespace Toolblox.Tests.Results
+namespace Cognophile.Toolblox.Tests.Results
 {
     [TestFixture]
     public class OperationResultTests

@@ -2,7 +2,7 @@
 using Cognophile.Toolblox.Blocks.Extensions.Boolean;
 using Cognophile.Toolblox.Blocks.Extensions.Objects;
 
-namespace Toolblox.Blocks.Results
+namespace Cognophile.Toolblox.Blocks.Results
 {
     public abstract class OperationResultBase<T>
     {
