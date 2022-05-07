@@ -221,16 +221,6 @@ namespace Toolblox.Tests.Results
         }
 
         [Test]
-        public void WithSuccess_WhenCalledWithMessage_ThenExpectedStateReturned()
-        {
-            _subject = new OperationResult<FakeEntity>();
-
-            var actual = _subject.WithSuccess(message: "Example");
-
-            Assert.That(actual.HasMessage(), Is.True);
-        }
-
-        [Test]
         public void WithSuccess_WhenCalledWithCodeAndMessage_ThenExpectedStateReturned()
         {
             _subject = new OperationResult<FakeEntity>();
@@ -279,16 +269,6 @@ namespace Toolblox.Tests.Results
             var actual = _subject.WithFailure(404);
 
             Assert.That(actual.HasCode(), Is.True);
-        }
-
-        [Test]
-        public void WithFailure_WhenCalledWithMessage_ThenExpectedStateReturned()
-        {
-            _subject = new OperationResult<FakeEntity>();
-
-            var actual = _subject.WithFailure(message: "Example");
-
-            Assert.That(actual.HasMessage(), Is.True);
         }
 
         [Test]

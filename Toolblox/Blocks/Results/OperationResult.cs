@@ -49,13 +49,32 @@ namespace Cognophile.Toolblox.Blocks.Results
             return Content.IsNotNull();
         }
 
+        public IOperationResult<T> WithContent(T content)
+        {
+            Content = content;
+            return this;
+        }
+
+        public IOperationResult<T> WithException(Exception exception)
+        {
+            Exception = exception;
+            return this;
+        }
+
         public IOperationResult<T> WithSuccess()
         {
             Success = true;
             return this;
         }
 
-        public IOperationResult<T> WithSuccess(int code = 0, string message = null)
+        public IOperationResult<T> WithSuccess(int code)
+        {
+            Success = true;
+            Code = code;
+            return this;
+        }
+
+        public IOperationResult<T> WithSuccess(int code, string message)
         {
             Success = true;
             Code = code;
@@ -69,23 +88,18 @@ namespace Cognophile.Toolblox.Blocks.Results
             return this;
         }
 
-        public IOperationResult<T> WithFailure(int code = 0, string message = null)
+        public IOperationResult<T> WithFailure(int code)
+        {
+            Success = false;
+            Code = code;
+            return this;
+        }
+
+        public IOperationResult<T> WithFailure(int code, string message)
         {
             Success = false;
             Code = code;
             Message = message;
-            return this;
-        }
-
-        public IOperationResult<T> WithContent(T content)
-        {
-            Content = content;
-            return this;
-        }
-
-        public IOperationResult<T> WithException(Exception exception)
-        {
-            Exception = exception;
             return this;
         }
     }

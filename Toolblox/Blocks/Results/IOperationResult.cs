@@ -11,9 +11,11 @@ namespace Toolblox.Blocks.Results
         public bool HasContent();
 
         public IOperationResult<T> WithSuccess();
-        public IOperationResult<T> WithSuccess(int code = 0, string message = null);
+        public IOperationResult<T> WithSuccess(int code);
+        public IOperationResult<T> WithSuccess(int code, string message);
         public IOperationResult<T> WithFailure();
-        public IOperationResult<T> WithFailure(int code = 0, string message = null);
+        public IOperationResult<T> WithFailure(int code);
+        public IOperationResult<T> WithFailure(int code, string message);
         public IOperationResult<T> WithException(Exception exception);
         public IOperationResult<T> WithContent(T content);
     }
