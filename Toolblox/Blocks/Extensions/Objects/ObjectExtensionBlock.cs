@@ -16,6 +16,16 @@ namespace Cognophile.Toolblox.Blocks.Extensions.Objects
         }
 
         /// <summary>
+        /// Determines whether the object being called upon is not null
+        /// </summary>
+        /// <param name="subject"></param>
+        /// <returns>Boolean representing the null-state of the called-upon reference</returns>
+        public static bool IsNotNull(this object subject)
+        {
+            return ObjectsBaseBlock.IsNotNull(subject);
+        }
+
+        /// <summary>
         /// Deep clone the called-upon object
         /// </summary>
         /// <typeparam name="T"></typeparam>

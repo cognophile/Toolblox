@@ -14,5 +14,25 @@ namespace Cognophile.Toolblox.Blocks.Statics.Boolean
         {
             return BooleanBaseBlock.ToTextual(subject);
         }
+
+        /// <summary>
+        /// Determines if the subject is false
+        /// </summary>
+        /// <param name="subject"></param>
+        /// <returns>Boolean representation of the subject state</returns>
+        public static bool IsFalse(bool subject)
+        {
+            return BooleanBaseBlock.IsFalse(subject);
+        }
+
+        /// <summary>
+        /// Determines if the subject is true
+        /// </summary>
+        /// <param name="subject"></param>
+        /// <returns>Boolean representation of the subject state</returns>
+        public static bool IsTrue(bool subject)
+        {
+            return BooleanBaseBlock.IsTrue(subject);
+        }
     }
 }

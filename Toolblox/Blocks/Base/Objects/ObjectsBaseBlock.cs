@@ -10,9 +10,19 @@ namespace Cognophile.Toolblox.Blocks.Base.Objects
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean representing the null-state of the called-upon reference</returns>
-        public static bool IsNull(this object subject)
+        public static bool IsNull(object subject)
         {
             return subject is null;
+        }
+
+        /// <summary>
+        /// Determines whether the object being called upon is not null
+        /// </summary>
+        /// <param name="subject"></param>
+        /// <returns>Boolean representing the null-state of the called-upon reference</returns>
+        public static bool IsNotNull(object subject)
+        {
+            return subject is not null;
         }
 
         /// <summary>
@@ -21,7 +31,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Objects
         /// <typeparam name="T"></typeparam>
         /// <param name="subject"></param>
         /// <returns>Returns an instance of the specified type with identical property values</returns>
-        public static T Clone<T>(this T subject)
+        public static T Clone<T>(T subject)
         {
             try
             {
