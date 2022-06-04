@@ -41,7 +41,7 @@ public static void DoSomething(string myString)
 {
     ...
     Toolblox blox = new();
-    bool result = blox.Strings.IsNull(myString);
+    bool result = blox.StringBlock.IsNull(myString);
     ...
 }
 ```
@@ -61,7 +61,7 @@ public static void DoSomething(string myString)
 
 #### Extensions
 ```csharp
-using Cognophile.Toolblox.Extensions;
+using Cognophile.Toolblox.Blocks.Extensions.Strings;
 ...
 
 public static void DoSomething(string myString)

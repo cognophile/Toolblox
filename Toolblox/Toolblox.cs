@@ -25,6 +25,7 @@ namespace Cognophile.Toolblox
     {
         public Toolblox() { }
 
+        #region Static references
         /// <summary>
         /// Access to common string-based extension behaviours.
         /// </summary>
@@ -59,7 +60,9 @@ namespace Cognophile.Toolblox
         /// Access to common object-based extension behaviours.
         /// </summary>
         public static ObjectBlock Objects { get; } = new();
+        #endregion
 
+        #region Instance references
         /// <summary>
         /// Access to common string-based extension behaviours.
         /// </summary>
@@ -94,5 +97,6 @@ namespace Cognophile.Toolblox
         /// Access to common object-based extension behaviours.
         /// </summary>
         public ObjectBlock ObjectBlock { get; } = new();
+        #endregion
     }
 }
