@@ -11,13 +11,13 @@ A one-stop library for common utilities for developing .NET applications.
 `Toolblox` aims to be the only utility-providing library you need for any .NET project by covering as much commonly required behaviour as possible.
 
 #### Behavioural Summary
-* Strings: Access to common string-based extension behaviours.
-* Numbers: Access to common numeric-based extension behaviours.
+* Boolean: Access to common boolean-based extension behaviours. 
 * Collections: Access to common collection extension behaviours.
-* Objects: Access to generic object extension behaviours.
 * Dates: Access to common date extension behaviours.
-* Validation: Access to common data validation behaviours.
 * JSON: Access to common JSON-based behaviours.
+* Numbers: Access to common numeric-based extension behaviours.
+* Objects: Access to generic object extension behaviours.
+* Strings: Access to common string-based extension behaviours.
 
 ### Support
 If you find this library useful and wish to take a moment to say a simple thanks, or support its development, then a star or donation would be hugely appreciated!
