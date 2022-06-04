@@ -11,20 +11,18 @@ namespace Cognophile.Toolblox.Blocks.Statics.Objects
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean representing the null-state of the called-upon reference</returns>
-        public static bool IsNull(object subject)
-        {
-            return ObjectsBaseBlock.IsNull(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsNull(object subject) => ObjectsBaseBlock.IsNull(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the object being called upon is not null
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean representing the null-state of the called-upon reference</returns>
-        public static bool IsNotNull(object subject)
-        {
-            return ObjectsBaseBlock.IsNotNull(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsNotNull(object subject) => ObjectsBaseBlock.IsNotNull(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Deep clone the called-upon object
@@ -32,9 +30,8 @@ namespace Cognophile.Toolblox.Blocks.Statics.Objects
         /// <typeparam name="T"></typeparam>
         /// <param name="subject"></param>
         /// <returns>Returns an instance of the specified type with identical property values</returns>
-        public static T Clone<T>(T subject)
-        {
-            return ObjectsBaseBlock.Clone(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public T Clone<T>(T subject) => ObjectsBaseBlock.Clone(subject);
+#pragma warning restore CA1822 // Mark members as static
     }
 }

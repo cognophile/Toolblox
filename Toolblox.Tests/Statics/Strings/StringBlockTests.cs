@@ -27,7 +27,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            var actual = StringBlock.IsNull(subject);
+            var actual = _subject.IsNull(subject);
 
             Assert.IsTrue(actual);
         }
@@ -37,7 +37,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            var actual = StringBlock.IsNull(subject);
+            var actual = _subject.IsNull(subject);
 
             Assert.IsFalse(actual);
         }
@@ -47,7 +47,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            var actual = StringBlock.IsNull(subject);
+            var actual = _subject.IsNull(subject);
 
             Assert.IsFalse(actual);
         }
@@ -57,7 +57,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Lorem Ipsum";
 
-            var actual = StringBlock.IsNull(subject);
+            var actual = _subject.IsNull(subject);
 
             Assert.IsFalse(actual);
         }
@@ -67,7 +67,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Foobasr";
 
-            var actual = StringBlock.IsEmpty(subject);
+            var actual = _subject.IsEmpty(subject);
 
             Assert.IsFalse(actual);
         }
@@ -77,7 +77,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            var actual = StringBlock.IsEmpty(subject);
+            var actual = _subject.IsEmpty(subject);
 
             Assert.IsFalse(actual);
         }
@@ -87,7 +87,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            var actual = StringBlock.IsEmpty(subject);
+            var actual = _subject.IsEmpty(subject);
 
             Assert.IsTrue(actual);
         }
@@ -97,7 +97,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.IsEmpty(subject));
+            Assert.Throws<ArgumentNullException>(() => _subject.IsEmpty(subject));
         }
 
         [Test]
@@ -105,7 +105,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            var actual = StringBlock.IsNullOrEmpty(subject);
+            var actual = _subject.IsNullOrEmpty(subject);
 
             Assert.IsTrue(actual);
         }
@@ -114,7 +114,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            var actual = StringBlock.IsNullOrEmpty(subject);
+            var actual = _subject.IsNullOrEmpty(subject);
 
             Assert.IsTrue(actual);
         }
@@ -123,7 +123,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            var actual = StringBlock.IsNullOrEmpty(subject);
+            var actual = _subject.IsNullOrEmpty(subject);
 
             Assert.IsTrue(actual);
         }
@@ -132,7 +132,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Lorem Ipsum";
 
-            var actual = StringBlock.IsNullOrEmpty(subject);
+            var actual = _subject.IsNullOrEmpty(subject);
 
             Assert.IsFalse(actual);
         }
@@ -142,7 +142,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            var actual = StringBlock.IsWhitespace(subject);
+            var actual = _subject.IsWhitespace(subject);
 
             Assert.IsTrue(actual);
         }
@@ -152,7 +152,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Foobar";
 
-            var actual = StringBlock.IsWhitespace(subject);
+            var actual = _subject.IsWhitespace(subject);
 
             Assert.IsFalse(actual);
         }
@@ -162,7 +162,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.IsWhitespace(subject));
+            Assert.Throws<ArgumentNullException>(() => _subject.IsWhitespace(subject));
         }
 
         [Test]
@@ -170,7 +170,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            var actual = StringBlock.IsNullOrWhitespace(subject);
+            var actual = _subject.IsNullOrWhitespace(subject);
 
             Assert.IsTrue(actual);
         }
@@ -180,7 +180,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            var actual = StringBlock.IsNullOrWhitespace(subject);
+            var actual = _subject.IsNullOrWhitespace(subject);
 
             Assert.IsTrue(actual);
         }
@@ -190,7 +190,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            var actual = StringBlock.IsNullOrWhitespace(subject);
+            var actual = _subject.IsNullOrWhitespace(subject);
 
             Assert.IsTrue(actual);
         }
@@ -200,7 +200,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Lorem Ipsum";
 
-            var actual = StringBlock.IsNullOrWhitespace(subject);
+            var actual = _subject.IsNullOrWhitespace(subject);
 
             Assert.IsFalse(actual);
         }
@@ -210,7 +210,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Lorem Ipsum";
 
-            var actual = StringBlock.IsTitlecase(subject);
+            var actual = _subject.IsTitlecase(subject);
 
             Assert.IsTrue(actual);
         }
@@ -220,7 +220,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Lorem ipsum";
 
-            var actual = StringBlock.IsTitlecase(subject);
+            var actual = _subject.IsTitlecase(subject);
 
             Assert.IsFalse(actual);
         }
@@ -230,7 +230,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.IsTitlecase(subject));
+            Assert.Throws<ArgumentNullException>(() => _subject.IsTitlecase(subject));
         }
 
         [Test]
@@ -238,7 +238,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsTitlecase(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsTitlecase(subject));
         }
 
         [Test]
@@ -246,7 +246,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsTitlecase(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsTitlecase(subject));
         }
 
         [Test]
@@ -254,7 +254,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Lorem ipsum";
 
-            var actual = StringBlock.IsCapitalised(subject);
+            var actual = _subject.IsCapitalised(subject);
 
             Assert.IsTrue(actual);
         }
@@ -264,7 +264,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "lorem ipsum";
 
-            var actual = StringBlock.IsCapitalised(subject);
+            var actual = _subject.IsCapitalised(subject);
 
             Assert.IsFalse(actual);
         }
@@ -274,7 +274,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.IsCapitalised(subject));
+            Assert.Throws<ArgumentNullException>(() => _subject.IsCapitalised(subject));
         }
 
         [Test]
@@ -282,7 +282,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsCapitalised(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsCapitalised(subject));
         }
 
         [Test]
@@ -290,7 +290,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsCapitalised(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsCapitalised(subject));
         }
 
         [Test]
@@ -298,7 +298,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.IsAlpha(subject));
+            Assert.Throws<ArgumentNullException>(() => _subject.IsAlpha(subject));
         }
 
         [Test]
@@ -306,7 +306,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsAlpha(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsAlpha(subject));
         }
 
         [Test]
@@ -314,7 +314,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsAlpha(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsAlpha(subject));
         }
 
         [Test]
@@ -322,7 +322,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "alpha";
 
-            var actual = StringBlock.IsAlpha(subject);
+            var actual = _subject.IsAlpha(subject);
 
             Assert.IsTrue(actual);
         }
@@ -332,7 +332,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "123";
 
-            var actual = StringBlock.IsAlpha(subject);
+            var actual = _subject.IsAlpha(subject);
 
             Assert.IsFalse(actual);
         }
@@ -342,7 +342,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.IsNumeric(subject));
+            Assert.Throws<ArgumentNullException>(() => _subject.IsNumeric(subject));
         }
 
         [Test]
@@ -350,7 +350,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsNumeric(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsNumeric(subject));
         }
 
         [Test]
@@ -358,7 +358,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsNumeric(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsNumeric(subject));
         }
 
         [Test]
@@ -366,7 +366,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "123";
 
-            var actual = StringBlock.IsNumeric(subject);
+            var actual = _subject.IsNumeric(subject);
 
             Assert.IsTrue(actual);
         }
@@ -376,7 +376,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "alpha";
 
-            var actual = StringBlock.IsNumeric(subject);
+            var actual = _subject.IsNumeric(subject);
 
             Assert.IsFalse(actual);
         }
@@ -386,7 +386,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.IsSymbols(subject));
+            Assert.Throws<ArgumentNullException>(() => _subject.IsSymbols(subject));
         }
 
         [Test]
@@ -394,7 +394,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsSymbols(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsSymbols(subject));
         }
 
         [Test]
@@ -402,7 +402,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsSymbols(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsSymbols(subject));
         }
 
         [Test]
@@ -410,7 +410,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "$£!,.;";
 
-            var actual = StringBlock.IsSymbols(subject);
+            var actual = _subject.IsSymbols(subject);
 
             Assert.IsTrue(actual);
         }
@@ -420,7 +420,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "alpha";
 
-            var actual = StringBlock.IsSymbols(subject);
+            var actual = _subject.IsSymbols(subject);
 
             Assert.IsFalse(actual);
         }
@@ -430,7 +430,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.IsNumericSymbols(subject));
+            Assert.Throws<ArgumentNullException>(() => _subject.IsNumericSymbols(subject));
         }
 
         [Test]
@@ -438,7 +438,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsNumericSymbols(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsNumericSymbols(subject));
         }
 
         [Test]
@@ -446,7 +446,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsNumericSymbols(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsNumericSymbols(subject));
         }
 
         [Test]
@@ -454,7 +454,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "$£!,.;";
 
-            var actual = StringBlock.IsNumericSymbols(subject);
+            var actual = _subject.IsNumericSymbols(subject);
 
             Assert.IsTrue(actual);
         }
@@ -464,7 +464,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "123";
 
-            var actual = StringBlock.IsNumericSymbols(subject);
+            var actual = _subject.IsNumericSymbols(subject);
 
             Assert.IsTrue(actual);
         }
@@ -474,7 +474,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "£123.00";
 
-            var actual = StringBlock.IsNumericSymbols(subject);
+            var actual = _subject.IsNumericSymbols(subject);
 
             Assert.IsTrue(actual);
         }
@@ -484,7 +484,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "alpha";
 
-            var actual = StringBlock.IsNumericSymbols(subject);
+            var actual = _subject.IsNumericSymbols(subject);
 
             Assert.IsFalse(actual);
         }
@@ -494,7 +494,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.IsAlphaNumeric(subject));
+            Assert.Throws<ArgumentNullException>(() => _subject.IsAlphaNumeric(subject));
         }
 
         [Test]
@@ -502,7 +502,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsAlphaNumeric(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsAlphaNumeric(subject));
         }
 
         [Test]
@@ -510,7 +510,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsAlphaNumeric(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsAlphaNumeric(subject));
         }
 
         [Test]
@@ -518,7 +518,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "alpha123";
 
-            var actual = StringBlock.IsAlphaNumeric(subject);
+            var actual = _subject.IsAlphaNumeric(subject);
 
             Assert.IsTrue(actual);
         }
@@ -528,7 +528,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "123";
 
-            var actual = StringBlock.IsAlphaNumeric(subject);
+            var actual = _subject.IsAlphaNumeric(subject);
 
             Assert.IsTrue(actual);
         }
@@ -538,7 +538,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "alpha-123";
 
-            var actual = StringBlock.IsAlphaNumeric(subject);
+            var actual = _subject.IsAlphaNumeric(subject);
 
             Assert.IsFalse(actual);
         }
@@ -548,7 +548,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "alpha";
 
-            var actual = StringBlock.IsAlphaNumeric(subject);
+            var actual = _subject.IsAlphaNumeric(subject);
 
             Assert.IsTrue(actual);
         }
@@ -558,7 +558,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.IsAlphaNumericSymbols(subject));
+            Assert.Throws<ArgumentNullException>(() => _subject.IsAlphaNumericSymbols(subject));
         }
 
         [Test]
@@ -566,7 +566,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsAlphaNumericSymbols(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsAlphaNumericSymbols(subject));
         }
 
         [Test]
@@ -574,7 +574,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.IsAlphaNumericSymbols(subject));
+            Assert.Throws<ArgumentException>(() => _subject.IsAlphaNumericSymbols(subject));
         }
 
         [Test]
@@ -582,7 +582,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "alpha123";
 
-            var actual = StringBlock.IsAlphaNumericSymbols(subject);
+            var actual = _subject.IsAlphaNumericSymbols(subject);
 
             Assert.IsTrue(actual);
         }
@@ -592,7 +592,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "alpha£123.00";
 
-            var actual = StringBlock.IsAlphaNumericSymbols(subject);
+            var actual = _subject.IsAlphaNumericSymbols(subject);
 
             Assert.IsTrue(actual);
         }
@@ -602,7 +602,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "alpha";
 
-            var actual = StringBlock.IsAlphaNumericSymbols(subject);
+            var actual = _subject.IsAlphaNumericSymbols(subject);
 
             Assert.IsTrue(actual);
         }
@@ -612,7 +612,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "123";
 
-            var actual = StringBlock.IsAlphaNumericSymbols(subject);
+            var actual = _subject.IsAlphaNumericSymbols(subject);
 
             Assert.IsTrue(actual);
         }
@@ -622,7 +622,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "£$,.";
 
-            var actual = StringBlock.IsAlphaNumericSymbols(subject);
+            var actual = _subject.IsAlphaNumericSymbols(subject);
 
             Assert.IsTrue(actual);
         }
@@ -632,7 +632,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "foo_bar";
 
-            var actual = StringBlock.Matches(subject, "([a-zA-Z]*)_([a-zA-Z]*)");
+            var actual = _subject.Matches(subject, "([a-zA-Z]*)_([a-zA-Z]*)");
 
             Assert.IsTrue(actual);
         }
@@ -642,7 +642,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "123";
 
-            var actual = StringBlock.Matches(subject, "([a-zA-Z]*)_([a-zA-Z]*)");
+            var actual = _subject.Matches(subject, "([a-zA-Z]*)_([a-zA-Z]*)");
 
             Assert.IsFalse(actual);
         }
@@ -652,7 +652,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "foo_bar";
 
-            var actual = StringBlock.Matches(subject, "foo bar baz");
+            var actual = _subject.Matches(subject, "foo bar baz");
 
             Assert.IsFalse(actual);
         }
@@ -662,7 +662,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "foo_bar";
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.Matches(subject, null));
+            Assert.Throws<ArgumentNullException>(() => _subject.Matches(subject, null));
         }
 
         [Test]
@@ -670,7 +670,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "foo_bar";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Matches(subject, ""));
+            Assert.Throws<ArgumentException>(() => _subject.Matches(subject, ""));
         }
 
         [Test]
@@ -678,7 +678,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "foo_bar";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Matches(subject, "   "));
+            Assert.Throws<ArgumentException>(() => _subject.Matches(subject, "   "));
         }
 
         [Test]
@@ -686,7 +686,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.Matches(subject, "([a-zA-Z]*)_([a-zA-Z]*)"));
+            Assert.Throws<ArgumentNullException>(() => _subject.Matches(subject, "([a-zA-Z]*)_([a-zA-Z]*)"));
         }
 
         [Test]
@@ -694,7 +694,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Matches(subject, "([a-zA-Z]*)_([a-zA-Z]*)"));
+            Assert.Throws<ArgumentException>(() => _subject.Matches(subject, "([a-zA-Z]*)_([a-zA-Z]*)"));
         }
 
         [Test]
@@ -702,7 +702,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Matches(subject, "([a-zA-Z]*)_([a-zA-Z]*)"));
+            Assert.Throws<ArgumentException>(() => _subject.Matches(subject, "([a-zA-Z]*)_([a-zA-Z]*)"));
         }
 
         [Test]
@@ -710,7 +710,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            var actual = StringBlock.AsNullWhenEmpty(subject);
+            var actual = _subject.AsNullWhenEmpty(subject);
 
             Assert.That(actual, Is.Null);
         }
@@ -720,7 +720,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            var actual = StringBlock.AsNullWhenEmpty(subject);
+            var actual = _subject.AsNullWhenEmpty(subject);
 
             Assert.That(actual, Is.Null);
         }
@@ -730,7 +730,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Foobar";
 
-            var actual = StringBlock.AsNullWhenEmpty(subject);
+            var actual = _subject.AsNullWhenEmpty(subject);
 
             Assert.That(actual, Is.EqualTo(subject));
         }
@@ -740,7 +740,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            var actual = StringBlock.AsNullWhenWhitespace(subject);
+            var actual = _subject.AsNullWhenWhitespace(subject);
 
             Assert.That(actual, Is.Null);
         }
@@ -750,7 +750,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            var actual = StringBlock.AsNullWhenWhitespace(subject);
+            var actual = _subject.AsNullWhenWhitespace(subject);
 
             Assert.That(actual, Is.Null);
         }
@@ -760,7 +760,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            var actual = StringBlock.AsNullWhenWhitespace(subject);
+            var actual = _subject.AsNullWhenWhitespace(subject);
 
             Assert.That(actual, Is.Null);
         }
@@ -770,7 +770,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Foobar";
 
-            var actual = StringBlock.AsNullWhenWhitespace(subject);
+            var actual = _subject.AsNullWhenWhitespace(subject);
 
             Assert.That(actual, Is.EqualTo(subject));
         }
@@ -780,7 +780,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.Between(subject, "a", "b"));
+            Assert.Throws<ArgumentNullException>(() => _subject.Between(subject, "a", "b"));
         }
 
         [Test]
@@ -788,7 +788,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Between(subject, "a", "b"));
+            Assert.Throws<ArgumentException>(() => _subject.Between(subject, "a", "b"));
         }
 
         [Test]
@@ -796,7 +796,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Between(subject, "a", "b"));
+            Assert.Throws<ArgumentException>(() => _subject.Between(subject, "a", "b"));
         }
 
         [Test]
@@ -804,7 +804,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Here is a first test string";
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.Between(subject, null, "b"));
+            Assert.Throws<ArgumentNullException>(() => _subject.Between(subject, null, "b"));
         }
 
         [Test]
@@ -812,7 +812,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Here is a first test string";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Between(subject, "", "b"));
+            Assert.Throws<ArgumentException>(() => _subject.Between(subject, "", "b"));
         }
 
         [Test]
@@ -820,7 +820,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Here is a first test string";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Between(subject, "   ", "b"));
+            Assert.Throws<ArgumentException>(() => _subject.Between(subject, "   ", "b"));
         }
 
         [Test]
@@ -828,7 +828,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Here is a first test string";
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.Between(subject, "a", null));
+            Assert.Throws<ArgumentNullException>(() => _subject.Between(subject, "a", null));
         }
 
         [Test]
@@ -836,7 +836,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Here is a first test string";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Between(subject, "a", ""));
+            Assert.Throws<ArgumentException>(() => _subject.Between(subject, "a", ""));
         }
 
         [Test]
@@ -844,7 +844,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Here is a first test string";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Between(subject, "a", "   "));
+            Assert.Throws<ArgumentException>(() => _subject.Between(subject, "a", "   "));
         }
 
         [Test]
@@ -852,7 +852,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Here is a first test string";
 
-            var actual = StringBlock.Between(subject, "is", "test");
+            var actual = _subject.Between(subject, "is", "test");
 
             Assert.AreEqual("a first", actual);
         }
@@ -862,7 +862,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "Here is a second test string";
 
-            var actual = StringBlock.Between(subject, "is", "first");
+            var actual = _subject.Between(subject, "is", "first");
 
             Assert.IsNull(actual);
         }
@@ -872,7 +872,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.Explode(subject, ' '));
+            Assert.Throws<ArgumentNullException>(() => _subject.Explode(subject, ' '));
         }
 
         [Test]
@@ -880,7 +880,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Explode(subject, ' '));
+            Assert.Throws<ArgumentException>(() => _subject.Explode(subject, ' '));
         }
 
         [Test]
@@ -888,7 +888,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Explode(subject, ' '));
+            Assert.Throws<ArgumentException>(() => _subject.Explode(subject, ' '));
         }
 
         [Test]
@@ -896,7 +896,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "this is a string";
 
-            var actual = StringBlock.Explode(subject, ' ');
+            var actual = _subject.Explode(subject, ' ');
 
             Assert.That(actual, Has.Count.EqualTo(4));
         }
@@ -906,7 +906,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "this is a string";
 
-            var actual = StringBlock.Explode(subject, ' ') as List<string>;
+            var actual = _subject.Explode(subject, ' ') as List<string>;
 
             Assert.AreEqual(0, actual.IndexOf("this"));
             Assert.AreEqual(1, actual.IndexOf("is"));
@@ -919,7 +919,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             var subject = new List<string>() { "This", "is", "my", "string" };
 
-            var actual = StringBlock.Implode(subject, ' ');
+            var actual = _subject.Implode(subject, ' ');
 
             Assert.AreEqual("This is my string", actual);
         }
@@ -929,7 +929,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             var subject = new List<string>();
 
-            var actual = StringBlock.Implode(subject, ' ');
+            var actual = _subject.Implode(subject, ' ');
 
             Assert.IsEmpty(actual);
         }
@@ -939,7 +939,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             ICollection<string> subject = null;
             
-            Assert.Throws<ArgumentNullException>(() => StringBlock.Implode(subject, ' '));
+            Assert.Throws<ArgumentNullException>(() => _subject.Implode(subject, ' '));
         }
 
         [Test]
@@ -947,7 +947,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.Titlecase(subject));
+            Assert.Throws<ArgumentNullException>(() => _subject.Titlecase(subject));
         }
 
         [Test]
@@ -955,7 +955,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Titlecase(subject));
+            Assert.Throws<ArgumentException>(() => _subject.Titlecase(subject));
         }
 
         [Test]
@@ -963,7 +963,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Titlecase(subject));
+            Assert.Throws<ArgumentException>(() => _subject.Titlecase(subject));
         }
 
         [Test]
@@ -971,7 +971,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "This Is A String";
 
-            var actual = StringBlock.Titlecase(subject);
+            var actual = _subject.Titlecase(subject);
 
             Assert.AreEqual(subject, actual);
         }
@@ -982,7 +982,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
             string subject = "this is a string";
             string expected = "This Is A String";
 
-            var actual = StringBlock.Titlecase(subject);
+            var actual = _subject.Titlecase(subject);
 
             Assert.AreEqual(expected, actual);
         }
@@ -992,7 +992,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = null;
 
-            Assert.Throws<ArgumentNullException>(() => StringBlock.Capitalise(subject));
+            Assert.Throws<ArgumentNullException>(() => _subject.Capitalise(subject));
         }
 
         [Test]
@@ -1000,7 +1000,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Capitalise(subject));
+            Assert.Throws<ArgumentException>(() => _subject.Capitalise(subject));
         }
 
         [Test]
@@ -1008,7 +1008,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "   ";
 
-            Assert.Throws<ArgumentException>(() => StringBlock.Capitalise(subject));
+            Assert.Throws<ArgumentException>(() => _subject.Capitalise(subject));
         }
 
         [Test]
@@ -1016,7 +1016,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
         {
             string subject = "This is a string";
 
-            var actual = StringBlock.Capitalise(subject);
+            var actual = _subject.Capitalise(subject);
 
             Assert.AreEqual(subject, actual);
         }
@@ -1027,7 +1027,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Strings
             string subject = "this is a string";
             string expected = "This is a string";
 
-            var actual = StringBlock.Capitalise(subject);
+            var actual = _subject.Capitalise(subject);
 
             Assert.AreEqual(expected, actual);
         }

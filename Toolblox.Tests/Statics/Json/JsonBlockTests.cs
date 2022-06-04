@@ -9,18 +9,26 @@ using Cognophile.Toolblox.Blocks.Base;
 namespace Cognophile.Toolblox.Tests.Statics.Json
 {
     [TestFixture]
-    public class JsonExtensionBlockTests
+    public class JsonBlockTests
     {
+        private JsonBlock _subject;
+
         [SetUp]
-        public void SetUp() { }
+        public void SetUp()
+        {
+            _subject = new();
+        }
 
         [TearDown]
-        public void TearDown() { }
+        public void TearDown()
+        {
+            _subject = null;
+        }
 
         [Test]
         public void Class_WhenReferenced_ThenExpectedTypeImplemented()
         {
-            Assert.That(new JsonBlock(), Is.InstanceOf<IBlock>());
+            Assert.That(_subject, Is.InstanceOf<IBlock>());
         }
 
         [Test]
@@ -28,7 +36,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             string subject = null;
 
-            var actual = JsonBlock.IsParsable(subject);
+            var actual = _subject.IsParsable(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -38,7 +46,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             string subject = null;
 
-            var actual = JsonBlock.IsParsable(subject);
+            var actual = _subject.IsParsable(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -49,7 +57,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             string subject = string.Empty;
 
-            var actual = JsonBlock.IsParsable(subject);
+            var actual = _subject.IsParsable(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -59,7 +67,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             string subject = string.Empty;
 
-            var actual = JsonBlock.IsParsable(subject);
+            var actual = _subject.IsParsable(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -69,7 +77,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             string subject = "   ";
 
-            var actual = JsonBlock.IsParsable(subject);
+            var actual = _subject.IsParsable(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -79,7 +87,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             string subject = "   ";
 
-            var actual = JsonBlock.IsParsable(subject);
+            var actual = _subject.IsParsable(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -90,7 +98,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             string subject = @"{ ""exampleInt"": 1, ""exampleString"": ""Foobar"" }";
 
-            var actual = JsonBlock.IsParsable(subject);
+            var actual = _subject.IsParsable(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -100,7 +108,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             string subject = @"{ ""exampleInt"": 1, ""exampleString"": ""Foobar"" }";
 
-            var actual = JsonBlock.IsParsable(subject);
+            var actual = _subject.IsParsable(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -110,7 +118,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             string subject = @"{ ""exampleInt"": 1, ""exampleString"": ""Foobar"" }";
 
-            var actual = JsonBlock.IsParsable(subject);
+            var actual = _subject.IsParsable(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -120,7 +128,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             string subject = @"{ ""exampleInt"": 1, ""exampleString"": ""Foobar"" }";
 
-            var actual = JsonBlock.IsParsable(subject);
+            var actual = _subject.IsParsable(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -134,7 +142,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
                 ExampleString = "Foobar"
             };
 
-            var actual = JsonBlock.Serialize(subject);
+            var actual = _subject.Serialize(subject);
 
             Assert.That(actual, Is.InstanceOf<string>());
         }
@@ -149,7 +157,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
                 ExampleString = "Foobar"
             };
 
-            string actual = JsonBlock.Serialize(subject);
+            string actual = _subject.Serialize(subject);
 
             Assert.That(actual, Is.EqualTo(expected));
         }
@@ -163,9 +171,9 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
                 ExampleString = "Foobar"
             };
 
-            string actual = JsonBlock.Serialize(subject);
+            string actual = _subject.Serialize(subject);
 
-            Assert.True(JsonBlock.IsParsable(actual));
+            Assert.True(_subject.IsParsable(actual));
         }
 
         [Test]
@@ -177,7 +185,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
                 ExampleString = "Foobar"
             };
 
-            var actual = JsonBlock.Serialize(subject, false);
+            var actual = _subject.Serialize(subject, false);
 
             Assert.That(actual, Is.InstanceOf<string>());
         }
@@ -192,7 +200,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
                 ExampleString = "Foobar"
             };
 
-            string actual = JsonBlock.Serialize(subject, false);
+            string actual = _subject.Serialize(subject, false);
 
             Assert.That(actual, Is.EqualTo(expected));
         }
@@ -207,7 +215,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
                 ExampleString = "Foobar"
             };
 
-            string actual = JsonBlock.Serialize(subject, false);
+            string actual = _subject.Serialize(subject, false);
 
             try
             {
@@ -224,7 +232,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             var subject = @"{""exampleInt"":1,""exampleString"":""Foobar""}";
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject);
+            var actual = _subject.Deserialize<FakeEntity>(subject);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -239,7 +247,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
                 ExampleString = "Foobar"
             };
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject);
+            var actual = _subject.Deserialize<FakeEntity>(subject);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(expected.ExampleInt));
             Assert.That(actual.ExampleString, Is.EqualTo(expected.ExampleString));
@@ -250,7 +258,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             var subject = @"{""ExampleInt"":1,""ExampleString"":""Foobar""}";
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject, false);
+            var actual = _subject.Deserialize<FakeEntity>(subject, false);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -265,7 +273,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
                 ExampleString = "Foobar"
             };
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject, false);
+            var actual = _subject.Deserialize<FakeEntity>(subject, false);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(expected.ExampleInt));
             Assert.That(actual.ExampleString, Is.EqualTo(expected.ExampleString));
@@ -276,7 +284,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             var subject = @"{""exampleInt"":1,""exampleString"":""Foobar""}";
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject, false);
+            var actual = _subject.Deserialize<FakeEntity>(subject, false);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -286,7 +294,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             var subject = @"{ ""exampleInt"": 1, ""exampleString"": ""Foobar""}";
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject, false);
+            var actual = _subject.Deserialize<FakeEntity>(subject, false);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(0));
             Assert.That(actual.ExampleString, Is.Null);
@@ -297,7 +305,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             var subject = @"{""exampleInt"":1 ""exampleString"":""Foobar""}";
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject);
+            var actual = _subject.Deserialize<FakeEntity>(subject);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -307,7 +315,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             var subject = @"{""exampleInt"":1 ""exampleString"":""Foobar""}";
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject);
+            var actual = _subject.Deserialize<FakeEntity>(subject);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(0));
             Assert.That(actual.ExampleString, Is.Null);
@@ -318,7 +326,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             var subject = @"{""exampleInt"":1 ""exampleString"":""Foobar""}";
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject, false);
+            var actual = _subject.Deserialize<FakeEntity>(subject, false);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -328,7 +336,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             var subject = @"{""exampleInt"":1 ""exampleString"":""Foobar""}";
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject, false);
+            var actual = _subject.Deserialize<FakeEntity>(subject, false);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(0));
             Assert.That(actual.ExampleString, Is.Null);
@@ -338,7 +346,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
         {
             var subject = @"{""exampleInt"":1 ""exampleString"":""Foobar""}";
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject, false);
+            var actual = _subject.Deserialize<FakeEntity>(subject, false);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -355,7 +363,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
                 ExampleString = "Foobar"
             };
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject);
+            var actual = _subject.Deserialize<FakeEntity>(subject);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -372,7 +380,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
                 ExampleString = "Foobar"
             };
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject);
+            var actual = _subject.Deserialize<FakeEntity>(subject);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(expected.ExampleInt));
             Assert.That(actual.ExampleString, Is.EqualTo(expected.ExampleString));
@@ -385,7 +393,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
             using JsonDocument document = JsonDocument.Parse(json);
             JsonElement subject = document.RootElement;
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject, false);
+            var actual = _subject.Deserialize<FakeEntity>(subject, false);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -397,7 +405,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
             using JsonDocument document = JsonDocument.Parse(json);
             JsonElement subject = document.RootElement;
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject, false);
+            var actual = _subject.Deserialize<FakeEntity>(subject, false);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(0));
             Assert.That(actual.ExampleString, Is.Null);
@@ -415,7 +423,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
                 ExampleString = "Foobar"
             };
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject, false);
+            var actual = _subject.Deserialize<FakeEntity>(subject, false);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -432,7 +440,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Json
                 ExampleString = "Foobar"
             };
 
-            var actual = JsonBlock.Deserialize<FakeEntity>(subject, false);
+            var actual = _subject.Deserialize<FakeEntity>(subject, false);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(expected.ExampleInt));
             Assert.That(actual.ExampleString, Is.EqualTo(expected.ExampleString));

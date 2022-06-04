@@ -11,130 +11,117 @@ namespace Cognophile.Toolblox.Blocks.Statics.Strings
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string is null.</returns>
-        public static bool IsNull(string subject)
-        {
-            return StringBaseBlock.IsNull(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsNull(string subject) => StringBaseBlock.IsNull(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject is empty.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string is empty.</returns>
-        public static bool IsEmpty(string subject)
-        {
-            return StringBaseBlock.IsEmpty(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsEmpty(string subject) => StringBaseBlock.IsEmpty(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject is null or empty.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string is null or empty.</returns>
-        public static bool IsNullOrEmpty(string subject)
-        {
-            return StringBaseBlock.IsNullOrEmpty(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsNullOrEmpty(string subject) => StringBaseBlock.IsNullOrEmpty(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject is whitespace.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string is whitespace.</returns>
-        public static bool IsWhitespace(string subject)
-        {
-            return StringBaseBlock.IsWhitespace(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsWhitespace(string subject) => StringBaseBlock.IsWhitespace(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject is null, empty, or whitespace.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string is null, empty, or whitespace.</returns>
-        public static bool IsNullOrWhitespace(string subject)
-        {
-            return StringBaseBlock.IsNullOrWhitespace(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsNullOrWhitespace(string subject) => StringBaseBlock.IsNullOrWhitespace(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject has title casing.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string has title casing.</returns>
-        public static bool IsTitlecase(string subject)
-        {
-            return StringBaseBlock.IsTitlecase(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsTitlecase(string subject) => StringBaseBlock.IsTitlecase(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the first character of the given string is uppercase.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string has an upper case first character.</returns>
-        public static bool IsCapitalised(string subject)
-        {
-            return StringBaseBlock.IsCapitalised(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsCapitalised(string subject) => StringBaseBlock.IsCapitalised(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject is formed of alpha-only characters.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string contains only alpha characters.</returns>
-        public static bool IsAlpha(string subject)
-        {
-            return StringBaseBlock.IsAlpha(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsAlpha(string subject) => StringBaseBlock.IsAlpha(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject is formed of numeric-only characters.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string contains only numeric characters.</returns>
-        public static bool IsNumeric(string subject)
-        {
-            return StringBaseBlock.IsNumeric(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsNumeric(string subject) => StringBaseBlock.IsNumeric(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject is formed of symbol-only characters.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string contains only symbolic characters.</returns>
-        public static bool IsSymbols(string subject)
-        {
-            return StringBaseBlock.IsSymbols(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsSymbols(string subject) => StringBaseBlock.IsSymbols(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject is formed of only numeric or symbol characters.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string contains only numeric or symbolic characters.</returns>
-        public static bool IsNumericSymbols(string subject)
-        {
-            return StringBaseBlock.IsNumericSymbols(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsNumericSymbols(string subject) => StringBaseBlock.IsNumericSymbols(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject is formed of alphanumeric characters.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string contains alphanumeric characters.</returns>
-        public static bool IsAlphaNumeric(string subject)
-        {
-            return StringBaseBlock.IsAlphaNumeric(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsAlphaNumeric(string subject) => StringBaseBlock.IsAlphaNumeric(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject is formed of alphanumeric or symbol characters.
         /// </summary>
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <returns>Boolean indicating whether the called-upon string contains alphanumeric or symbol characters.</returns>
-        public static bool IsAlphaNumericSymbols(string subject)
-        {
-            return StringBaseBlock.IsAlphaNumericSymbols(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsAlphaNumericSymbols(string subject) => StringBaseBlock.IsAlphaNumericSymbols(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject matches the given regex pattern.
@@ -142,30 +129,27 @@ namespace Cognophile.Toolblox.Blocks.Statics.Strings
         /// <param name="subject">The string upon which to assert the behaviour of the method.</param>
         /// <param name="pattern">The Regex pattern to inspect the string against.</param>
         /// <returns>Boolean indicating whether the called-upon string matches the given regex pattern.</returns>
-        public static bool Matches(string subject, string pattern)
-        {
-            return StringBaseBlock.Matches(subject, pattern);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool Matches(string subject, string pattern) => StringBaseBlock.Matches(subject, pattern);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject is Null or Empty
         /// </summary>
         /// <param name="subject"><The string upon which to assert the behaviour of the method./param>
         /// <returns>When null or empty, then returns null. When populated, then returns the subject.</returns>
-        public static string AsNullWhenEmpty(string subject)
-        {
-            return StringBaseBlock.AsNullWhenEmpty(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public string AsNullWhenEmpty(string subject) => StringBaseBlock.AsNullWhenEmpty(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the given subject is Null, Empty, or Whitespace
         /// </summary>
         /// <param name="subject"><The string upon which to assert the behaviour of the method./param>
         /// <returns>When null, empty, or whitespace, then returns null. When populated, then returns the subject.</returns>
-        public static string AsNullWhenWhitespace(string subject)
-        {
-            return StringBaseBlock.AsNullWhenWhitespace(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public string AsNullWhenWhitespace(string subject) => StringBaseBlock.AsNullWhenWhitespace(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Retrieves the section of the string located between the given bookends.
@@ -174,10 +158,9 @@ namespace Cognophile.Toolblox.Blocks.Statics.Strings
         /// <param name="left">The string to start the subsection at.</param>
         /// <param name="right">The string to end the subsection at.</param>
         /// <returns>String representing the substring located between the bookends. Returns empty if a matching section cannot be found.</returns>
-        public static string Between(string subject, string left, string right)
-        {
-            return StringBaseBlock.Between(subject, left, right);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public string Between(string subject, string left, string right) => StringBaseBlock.Between(subject, left, right);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Explode the given string into a collection, delimited by the given separator(s).
@@ -185,10 +168,9 @@ namespace Cognophile.Toolblox.Blocks.Statics.Strings
         /// <param name="subject">The string upon which the method should operate.</param>
         /// <param name="separators">The array of separators to split the string by.</param>
         /// <returns>Collection of substrings representing the delimiter exploded string.</returns>
-        public static ICollection<string> Explode(string subject, char separator)
-        {
-            return StringBaseBlock.Explode(subject, separator);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public ICollection<string> Explode(string subject, char separator) => StringBaseBlock.Explode(subject, separator);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Implode the given collection of strings to a single string using the given separator.
@@ -196,29 +178,26 @@ namespace Cognophile.Toolblox.Blocks.Statics.Strings
         /// <param name="substrings">The substrings to be joined together.</param>
         /// <param name="separator">The delimiter character to join the strings by.</param>
         /// <returns>String representing the concatenated strings with the given seperator.</returns>
-        public static string Implode(ICollection<string> substrings, char separator)
-        {
-            return StringBaseBlock.Implode(substrings, separator);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public string Implode(ICollection<string> substrings, char separator) => StringBaseBlock.Implode(substrings, separator);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Convert the given string to title case.
         /// </summary>
         /// <param name="subject">The string upon which the method should operate.</param>
         /// <returns>The given string in title case.</returns>
-        public static string Titlecase(string subject)
-        {
-            return StringBaseBlock.Titlecase(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public string Titlecase(string subject) => StringBaseBlock.Titlecase(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Convert the given string to have a capitalised first character.
         /// </summary>
         /// <param name="subject">The string upon which the method should operate.</param>
         /// <returns>The given string with the initial character capitalised.</returns>
-        public static string Capitalise(string subject)
-        {
-            return StringBaseBlock.Capitalise(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public string Capitalise(string subject) => StringBaseBlock.Capitalise(subject);
+#pragma warning restore CA1822 // Mark members as static
     }
 }

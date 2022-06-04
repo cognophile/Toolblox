@@ -12,10 +12,9 @@ namespace Cognophile.Toolblox.Blocks.Statics.Json
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value indicating whether the given string is parsable JSON</returns>
-        public static bool IsParsable(string subject)
-        {
-            return JsonBaseBlock.IsParsable(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsParsable(string subject) => JsonBaseBlock.IsParsable(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Serialize an object to JSON
@@ -24,10 +23,9 @@ namespace Cognophile.Toolblox.Blocks.Statics.Json
         /// <param name="subject"></param>
         /// <param name="pascalCase"></param>
         /// <returns></returns>
-        public static string Serialize<T>(T subject, bool pascalCase = true)
-        {
-            return JsonBaseBlock.Serialize(subject, pascalCase);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public string Serialize<T>(T subject, bool pascalCase = true) => JsonBaseBlock.Serialize(subject, pascalCase);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Deserialize a JSON string to the given object type
@@ -36,10 +34,9 @@ namespace Cognophile.Toolblox.Blocks.Statics.Json
         /// <param name="json"></param>
         /// <param name="caseInsensitive"></param>
         /// <returns></returns>
-        public static T Deserialize<T>(string json, bool caseInsensitive = true) where T : new()
-        {
-            return JsonBaseBlock.Deserialize<T>(json, caseInsensitive);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public T Deserialize<T>(string json, bool caseInsensitive = true) where T : new() => JsonBaseBlock.Deserialize<T>(json, caseInsensitive);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Deserialize a JSON string to the given object type
@@ -48,9 +45,8 @@ namespace Cognophile.Toolblox.Blocks.Statics.Json
         /// <param name="json"></param>
         /// <param name="caseInsensitive"></param>
         /// <returns></returns>
-        public static T Deserialize<T>(JsonElement json, bool caseInsensitive = true) where T : new()
-        {
-            return JsonBaseBlock.Deserialize<T>(json, caseInsensitive);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public T Deserialize<T>(JsonElement json, bool caseInsensitive = true) where T : new() => JsonBaseBlock.Deserialize<T>(json, caseInsensitive);
+#pragma warning restore CA1822 // Mark members as static
     }
 }

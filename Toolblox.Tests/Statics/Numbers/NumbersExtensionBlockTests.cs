@@ -9,16 +9,24 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
     [TestFixture]
     public class NumbersBlockTests
     {
+        private NumbersBlock _subject;
+
         [SetUp]
-        public void SetUp() { }
+        public void SetUp()
+        {
+            _subject = new();
+        }
 
         [TearDown]
-        public void TearDown() { }
+        public void TearDown()
+        {
+            _subject = null;
+        }
 
         [Test]
         public void Class_WhenReferenced_ThenExpectedTypeImplemented()
         {
-            Assert.That(new NumbersBlock(), Is.InstanceOf<IBlock>());
+            Assert.That(_subject, Is.InstanceOf<IBlock>());
         }
 
         [Test]
@@ -26,7 +34,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 0;
 
-            var actual = NumbersBlock.IsZero(subject);
+            var actual = _subject.IsZero(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -36,7 +44,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 0;
 
-            var actual = NumbersBlock.IsZero(subject);
+            var actual = _subject.IsZero(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -46,7 +54,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 1;
 
-            var actual = NumbersBlock.IsZero(subject);
+            var actual = _subject.IsZero(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -56,7 +64,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 1;
 
-            var actual = NumbersBlock.IsZero(subject);
+            var actual = _subject.IsZero(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -66,7 +74,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 0.00;
 
-            var actual = NumbersBlock.IsZero(subject);
+            var actual = _subject.IsZero(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -76,7 +84,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 0.00;
 
-            var actual = NumbersBlock.IsZero(subject);
+            var actual = _subject.IsZero(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -86,7 +94,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 1.50;
 
-            var actual = NumbersBlock.IsZero(subject);
+            var actual = _subject.IsZero(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -96,7 +104,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 1.50;
 
-            var actual = NumbersBlock.IsZero(subject);
+            var actual = _subject.IsZero(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -106,7 +114,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 0.00M;
 
-            var actual = NumbersBlock.IsZero(subject);
+            var actual = _subject.IsZero(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -116,7 +124,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 0.00M;
 
-            var actual = NumbersBlock.IsZero(subject);
+            var actual = _subject.IsZero(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -126,7 +134,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 1.50M;
 
-            var actual = NumbersBlock.IsZero(subject);
+            var actual = _subject.IsZero(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -136,7 +144,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 1.50M;
 
-            var actual = NumbersBlock.IsZero(subject);
+            var actual = _subject.IsZero(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -146,7 +154,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 1;
 
-            var actual = NumbersBlock.IsPositive(subject);
+            var actual = _subject.IsPositive(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -156,7 +164,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 1;
 
-            var actual = NumbersBlock.IsPositive(subject);
+            var actual = _subject.IsPositive(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -166,7 +174,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = -1;
 
-            var actual = NumbersBlock.IsPositive(subject);
+            var actual = _subject.IsPositive(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -176,7 +184,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = -1;
 
-            var actual = NumbersBlock.IsPositive(subject);
+            var actual = _subject.IsPositive(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -186,7 +194,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 1.00;
 
-            var actual = NumbersBlock.IsPositive(subject);
+            var actual = _subject.IsPositive(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -196,7 +204,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 1.00;
 
-            var actual = NumbersBlock.IsPositive(subject);
+            var actual = _subject.IsPositive(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -206,7 +214,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = -1.00;
 
-            var actual = NumbersBlock.IsPositive(subject);
+            var actual = _subject.IsPositive(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -216,7 +224,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = -1.00;
 
-            var actual = NumbersBlock.IsPositive(subject);
+            var actual = _subject.IsPositive(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -226,7 +234,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 1.00M;
 
-            var actual = NumbersBlock.IsPositive(subject);
+            var actual = _subject.IsPositive(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -236,7 +244,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 1.00M;
 
-            var actual = NumbersBlock.IsPositive(subject);
+            var actual = _subject.IsPositive(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -246,7 +254,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = -1.00M;
 
-            var actual = NumbersBlock.IsPositive(subject);
+            var actual = _subject.IsPositive(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -256,7 +264,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = -1.00M;
 
-            var actual = NumbersBlock.IsPositive(subject);
+            var actual = _subject.IsPositive(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -266,7 +274,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = -1;
 
-            var actual = NumbersBlock.IsNegative(subject);
+            var actual = _subject.IsNegative(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -276,7 +284,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = -1;
 
-            var actual = NumbersBlock.IsNegative(subject);
+            var actual = _subject.IsNegative(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -286,7 +294,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 1;
 
-            var actual = NumbersBlock.IsNegative(subject);
+            var actual = _subject.IsNegative(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -296,7 +304,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 1;
 
-            var actual = NumbersBlock.IsNegative(subject);
+            var actual = _subject.IsNegative(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -306,7 +314,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = -1.00;
 
-            var actual = NumbersBlock.IsNegative(subject);
+            var actual = _subject.IsNegative(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -316,7 +324,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = -1.00;
 
-            var actual = NumbersBlock.IsNegative(subject);
+            var actual = _subject.IsNegative(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -326,7 +334,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 1.00;
 
-            var actual = NumbersBlock.IsNegative(subject);
+            var actual = _subject.IsNegative(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -336,7 +344,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 1.00;
 
-            var actual = NumbersBlock.IsNegative(subject);
+            var actual = _subject.IsNegative(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -346,7 +354,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = -1.00M;
 
-            var actual = NumbersBlock.IsNegative(subject);
+            var actual = _subject.IsNegative(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -356,7 +364,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = -1.00M;
 
-            var actual = NumbersBlock.IsNegative(subject);
+            var actual = _subject.IsNegative(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -366,7 +374,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 1.00M;
 
-            var actual = NumbersBlock.IsNegative(subject);
+            var actual = _subject.IsNegative(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -376,7 +384,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 1.00M;
 
-            var actual = NumbersBlock.IsNegative(subject);
+            var actual = _subject.IsNegative(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -386,7 +394,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 1;
 
-            var actual = NumbersBlock.IsLessThan(subject, 2);
+            var actual = _subject.IsLessThan(subject, 2);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -396,7 +404,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 1;
 
-            var actual = NumbersBlock.IsLessThan(subject, 2);
+            var actual = _subject.IsLessThan(subject, 2);
 
             Assert.That(actual, Is.True);
         }
@@ -406,7 +414,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 2;
 
-            var actual = NumbersBlock.IsLessThan(subject, 1);
+            var actual = _subject.IsLessThan(subject, 1);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -416,7 +424,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 2;
 
-            var actual = NumbersBlock.IsLessThan(subject, 1);
+            var actual = _subject.IsLessThan(subject, 1);
 
             Assert.That(actual, Is.False);
         }
@@ -426,7 +434,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 1.00;
 
-            var actual = NumbersBlock.IsLessThan(subject, 2.00);
+            var actual = _subject.IsLessThan(subject, 2.00);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -436,7 +444,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 1.00;
 
-            var actual = NumbersBlock.IsLessThan(subject, 2.00);
+            var actual = _subject.IsLessThan(subject, 2.00);
 
             Assert.That(actual, Is.True);
         }
@@ -446,7 +454,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 2.00;
 
-            var actual = NumbersBlock.IsLessThan(subject, 1.00);
+            var actual = _subject.IsLessThan(subject, 1.00);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -456,7 +464,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 2.00;
 
-            var actual = NumbersBlock.IsLessThan(subject, 1.00);
+            var actual = _subject.IsLessThan(subject, 1.00);
 
             Assert.That(actual, Is.False);
         }
@@ -466,7 +474,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 1.00M;
 
-            var actual = NumbersBlock.IsLessThan(subject, 2.00M);
+            var actual = _subject.IsLessThan(subject, 2.00M);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -476,7 +484,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 1.00M;
 
-            var actual = NumbersBlock.IsLessThan(subject, 2.00M);
+            var actual = _subject.IsLessThan(subject, 2.00M);
 
             Assert.That(actual, Is.True);
         }
@@ -486,7 +494,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 2.00M;
 
-            var actual = NumbersBlock.IsLessThan(subject, 1.00M);
+            var actual = _subject.IsLessThan(subject, 1.00M);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -496,7 +504,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 2.00M;
 
-            var actual = NumbersBlock.IsLessThan(subject, 2.00M);
+            var actual = _subject.IsLessThan(subject, 2.00M);
 
             Assert.That(actual, Is.False);
         }
@@ -506,7 +514,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 2;
 
-            var actual = NumbersBlock.IsGreaterThan(subject, 1);
+            var actual = _subject.IsGreaterThan(subject, 1);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -516,7 +524,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 2;
 
-            var actual = NumbersBlock.IsGreaterThan(subject, 1);
+            var actual = _subject.IsGreaterThan(subject, 1);
 
             Assert.That(actual, Is.True);
         }
@@ -526,7 +534,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 1;
 
-            var actual = NumbersBlock.IsGreaterThan(subject, 2);
+            var actual = _subject.IsGreaterThan(subject, 2);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -536,7 +544,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 1;
 
-            var actual = NumbersBlock.IsGreaterThan(subject, 2);
+            var actual = _subject.IsGreaterThan(subject, 2);
 
             Assert.That(actual, Is.False);
         }
@@ -546,7 +554,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 2.00;
 
-            var actual = NumbersBlock.IsGreaterThan(subject, 1.00);
+            var actual = _subject.IsGreaterThan(subject, 1.00);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -556,7 +564,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 2.00;
 
-            var actual = NumbersBlock.IsGreaterThan(subject, 1.00);
+            var actual = _subject.IsGreaterThan(subject, 1.00);
 
             Assert.That(actual, Is.True);
         }
@@ -566,7 +574,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 1.00;
 
-            var actual = NumbersBlock.IsGreaterThan(subject, 2.00);
+            var actual = _subject.IsGreaterThan(subject, 2.00);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -576,7 +584,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 1.00;
 
-            var actual = NumbersBlock.IsGreaterThan(subject, 2.00);
+            var actual = _subject.IsGreaterThan(subject, 2.00);
 
             Assert.That(actual, Is.False);
         }
@@ -586,7 +594,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 2.00M;
 
-            var actual = NumbersBlock.IsGreaterThan(subject, 1.00M);
+            var actual = _subject.IsGreaterThan(subject, 1.00M);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -596,7 +604,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 2.00M;
 
-            var actual = NumbersBlock.IsGreaterThan(subject, 1.00M);
+            var actual = _subject.IsGreaterThan(subject, 1.00M);
 
             Assert.That(actual, Is.True);
         }
@@ -606,7 +614,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 1.00M;
 
-            var actual = NumbersBlock.IsGreaterThan(subject, 2.00M);
+            var actual = _subject.IsGreaterThan(subject, 2.00M);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -616,7 +624,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 1.00M;
 
-            var actual = NumbersBlock.IsGreaterThan(subject, 2.00M);
+            var actual = _subject.IsGreaterThan(subject, 2.00M);
 
             Assert.That(actual, Is.False);
         }
@@ -626,7 +634,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 4;
 
-            var actual = NumbersBlock.IsDivisibleBy(subject, 2);
+            var actual = _subject.IsDivisibleBy(subject, 2);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -636,7 +644,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 4;
 
-            var actual = NumbersBlock.IsDivisibleBy(subject, 2);
+            var actual = _subject.IsDivisibleBy(subject, 2);
 
             Assert.That(actual, Is.True);
         }
@@ -646,7 +654,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 3;
 
-            var actual = NumbersBlock.IsDivisibleBy(subject, 2);
+            var actual = _subject.IsDivisibleBy(subject, 2);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -656,7 +664,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 3;
 
-            var actual = NumbersBlock.IsDivisibleBy(subject, 2);
+            var actual = _subject.IsDivisibleBy(subject, 2);
 
             Assert.That(actual, Is.False);
         }
@@ -666,7 +674,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 4;
 
-            var actual = NumbersBlock.IsMultipleOf(subject, 2);
+            var actual = _subject.IsMultipleOf(subject, 2);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -676,7 +684,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 4;
 
-            var actual = NumbersBlock.IsMultipleOf(subject, 2);
+            var actual = _subject.IsMultipleOf(subject, 2);
 
             Assert.That(actual, Is.True);
         }
@@ -686,7 +694,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 3;
 
-            var actual = NumbersBlock.IsMultipleOf(subject, 2);
+            var actual = _subject.IsMultipleOf(subject, 2);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -696,7 +704,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 3;
 
-            var actual = NumbersBlock.IsMultipleOf(subject, 2);
+            var actual = _subject.IsMultipleOf(subject, 2);
 
             Assert.That(actual, Is.False);
         }
@@ -707,7 +715,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
             int subject = 12;
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB", false);
 
-            var actual = NumbersBlock.AsCurrency(subject);
+            var actual = _subject.AsCurrency(subject);
 
             Assert.That(actual, Is.InstanceOf<string>());
         }
@@ -718,7 +726,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
             int subject = 12;
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB", false);
 
-            var actual = NumbersBlock.AsCurrency(subject);
+            var actual = _subject.AsCurrency(subject);
 
             Assert.That(actual, Is.EqualTo("£12.00"));
         }
@@ -729,7 +737,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
             double subject = 12.25;
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB", false);
 
-            var actual = NumbersBlock.AsCurrency(subject);
+            var actual = _subject.AsCurrency(subject);
 
             Assert.That(actual, Is.InstanceOf<string>());
         }
@@ -740,7 +748,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
             double subject = 12.25;
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB", false);
 
-            var actual = NumbersBlock.AsCurrency(subject);
+            var actual = _subject.AsCurrency(subject);
 
             Assert.That(actual, Is.EqualTo("£12.25"));
         }
@@ -751,7 +759,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
             decimal subject = 12.25M;
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB", false);
 
-            var actual = NumbersBlock.AsCurrency(subject);
+            var actual = _subject.AsCurrency(subject);
 
             Assert.That(actual, Is.InstanceOf<string>());
         }
@@ -762,7 +770,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
             decimal subject = 12.25M;
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB", false);
 
-            var actual = NumbersBlock.AsCurrency(subject);
+            var actual = _subject.AsCurrency(subject);
 
             Assert.That(actual, Is.EqualTo("£12.25"));
         }
@@ -772,7 +780,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 12;
 
-            var actual = NumbersBlock.AsCurrency(subject, "en-GB");
+            var actual = _subject.AsCurrency(subject, "en-GB");
 
             Assert.That(actual, Is.InstanceOf<string>());
         }
@@ -782,7 +790,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             int subject = 12;
 
-            var actual = NumbersBlock.AsCurrency(subject, "en-GB");
+            var actual = _subject.AsCurrency(subject, "en-GB");
 
             Assert.That(actual, Is.EqualTo("£12.00"));
         }
@@ -792,7 +800,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 12.25;
 
-            var actual = NumbersBlock.AsCurrency(subject, "en-GB");
+            var actual = _subject.AsCurrency(subject, "en-GB");
 
             Assert.That(actual, Is.InstanceOf<string>());
         }
@@ -802,7 +810,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             double subject = 12.25;
 
-            var actual = NumbersBlock.AsCurrency(subject, "en-GB");
+            var actual = _subject.AsCurrency(subject, "en-GB");
 
             Assert.That(actual, Is.EqualTo("£12.25"));
         }
@@ -812,7 +820,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 12.25M;
 
-            var actual = NumbersBlock.AsCurrency(subject, "en-GB");
+            var actual = _subject.AsCurrency(subject, "en-GB");
 
             Assert.That(actual, Is.InstanceOf<string>());
         }
@@ -822,7 +830,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Numbers
         {
             decimal subject = 12.25M;
 
-            var actual = NumbersBlock.AsCurrency(subject, "en-GB");
+            var actual = _subject.AsCurrency(subject, "en-GB");
 
             Assert.That(actual, Is.EqualTo("£12.25"));
         }

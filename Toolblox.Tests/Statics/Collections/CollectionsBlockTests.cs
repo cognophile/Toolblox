@@ -10,16 +10,24 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
     [TestFixture]
     public class CollectionsBlockTests
     {
+        private CollectionsBlock _subject;
+
         [SetUp]
-        public void SetUp() { }
+        public void SetUp()
+        {
+            _subject = new();
+        }
 
         [TearDown]
-        public void TearDown() { }
+        public void TearDown()
+        {
+            _subject = null;
+        }
 
         [Test]
         public void Class_WhenReferenced_ThenExpectedTypeImplemented()
         {
-            Assert.That(new CollectionsBlock(), Is.InstanceOf<IBlock>());
+            Assert.That(_subject, Is.InstanceOf<IBlock>());
         }
 
         [Test]
@@ -27,7 +35,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
         {
             var subject = new List<int>();
 
-            var actual = CollectionsBlock.IsEmpty(subject);
+            var actual = _subject.IsEmpty(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -37,7 +45,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
         {
             var subject = new List<int>();
 
-            var actual = CollectionsBlock.IsEmpty(subject);
+            var actual = _subject.IsEmpty(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -50,7 +58,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
                 Fixtures.GetEntityFixture(123, "foo")
             };
 
-            var actual = CollectionsBlock.GetByPropertyMin(subject, p => p.ExampleInt);
+            var actual = _subject.GetByPropertyMin(subject, p => p.ExampleInt);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -63,7 +71,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
                 Fixtures.GetEntityFixture(123, "foo")
             };
 
-            var actual = CollectionsBlock.GetByPropertyMin(subject, p => p.ExampleInt);
+            var actual = _subject.GetByPropertyMin(subject, p => p.ExampleInt);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(123));
         }
@@ -78,7 +86,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
                 Fixtures.GetEntityFixture(789, "gop")
             };
 
-            var actual = CollectionsBlock.GetByPropertyMin(subject, p => p.ExampleInt);
+            var actual = _subject.GetByPropertyMin(subject, p => p.ExampleInt);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -93,7 +101,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
                 Fixtures.GetEntityFixture(789, "gop")
             };
 
-            var actual = CollectionsBlock.GetByPropertyMin(subject, p => p.ExampleInt);
+            var actual = _subject.GetByPropertyMin(subject, p => p.ExampleInt);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(123));
         }
@@ -106,7 +114,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
                 Fixtures.GetEntityFixture(123, "foo")
             };
 
-            var actual = CollectionsBlock.GetByPropertyMax(subject, p => p.ExampleInt);
+            var actual = _subject.GetByPropertyMax(subject, p => p.ExampleInt);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -119,7 +127,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
                 Fixtures.GetEntityFixture(123, "foo")
             };
 
-            var actual = CollectionsBlock.GetByPropertyMax(subject, p => p.ExampleInt);
+            var actual = _subject.GetByPropertyMax(subject, p => p.ExampleInt);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(123));
         }
@@ -134,7 +142,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
                 Fixtures.GetEntityFixture(789, "gop")
             };
 
-            var actual = CollectionsBlock.GetByPropertyMax(subject, p => p.ExampleInt);
+            var actual = _subject.GetByPropertyMax(subject, p => p.ExampleInt);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -149,7 +157,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
                 Fixtures.GetEntityFixture(789, "gop")
             };
 
-            var actual = CollectionsBlock.GetByPropertyMax(subject, p => p.ExampleInt);
+            var actual = _subject.GetByPropertyMax(subject, p => p.ExampleInt);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(789));
         }
@@ -159,7 +167,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
         {
             var subject = new List<int>();
 
-            var actual = CollectionsBlock.PartitionBy(subject, p => p > 2);
+            var actual = _subject.PartitionBy(subject, p => p > 2);
 
             Assert.That(actual, Is.InstanceOf<IEnumerable<IEnumerable<int>>>());
         }
@@ -169,7 +177,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
         {
             var subject = new List<int>();
 
-            var actual = CollectionsBlock.PartitionBy(subject, p => p > 2);
+            var actual = _subject.PartitionBy(subject, p => p > 2);
 
             Assert.That(actual, Is.Not.Empty);
         }
@@ -179,9 +187,9 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
         {
             var subject = new List<int>();
 
-            var actual = CollectionsBlock.PartitionBy(subject, p => p > 2);
+            var actual = _subject.PartitionBy(subject, p => p > 2);
 
-            Assert.IsTrue(actual.All(e => CollectionsBlock.IsEmpty(e)));
+            Assert.IsTrue(actual.All(e => _subject.IsEmpty(e)));
         }
 
         [Test]
@@ -189,7 +197,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
         {
             var subject = new List<int>();
 
-            var actual = CollectionsBlock.PartitionBy(subject, p => p > 2);
+            var actual = _subject.PartitionBy(subject, p => p > 2);
 
             Assert.That(actual, Is.InstanceOf<IEnumerable<IEnumerable<int>>>());
         }
@@ -199,9 +207,9 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
         {
             var subject = new List<int>() { 1, 2, 3, 4 };
 
-            var actual = CollectionsBlock.PartitionBy(subject, p => p > 2);
+            var actual = _subject.PartitionBy(subject, p => p > 2);
 
-            Assert.IsTrue(!actual.All(e => CollectionsBlock.IsEmpty(e)));
+            Assert.IsTrue(!actual.All(e => _subject.IsEmpty(e)));
         }
 
         [Test]
@@ -209,7 +217,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
         {
             var subject = new List<int>() { 1, 2, 3, 4 };
 
-            var actual = CollectionsBlock.PartitionBy(subject, p => p > 2);
+            var actual = _subject.PartitionBy(subject, p => p > 2);
 
             Assert.IsTrue(actual.First().All(i => i > 2));
         }
@@ -219,7 +227,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Collections
         {
             var subject = new List<int>() { 1, 2, 3, 4 };
 
-            var actual = CollectionsBlock.PartitionBy(subject, p => p > 2);
+            var actual = _subject.PartitionBy(subject, p => p > 2);
 
             Assert.IsTrue(actual.Last().All(i => i <= 2));
         }

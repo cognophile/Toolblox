@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Cognophile.Toolblox.Blocks.Statics.Objects;
 using Cognophile.Toolblox.Tests.TestUtilities;
 
@@ -8,18 +7,26 @@ namespace Cognophile.Toolblox.Tests.Extensions.Objects
     [TestFixture]
     public class ObjectBlockTests
     {
+        private ObjectBlock _subject;
+
         [SetUp]
-        public void SetUp() { }
+        public void SetUp()
+        {
+            _subject = new();
+        }
 
         [TearDown]
-        public void TearDown() { }
+        public void TearDown()
+        {
+            _subject = null;
+        }
 
         [Test]
         public void IsNull_WhenSubjectIsNull_ThenExpectedTypeReturned()
         {
             object subject = null;
 
-            var actual = ObjectBlock.IsNull(subject);
+            var actual = _subject.IsNull(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -29,7 +36,7 @@ namespace Cognophile.Toolblox.Tests.Extensions.Objects
         {
             object subject = null;
 
-            var actual = ObjectBlock.IsNull(subject);
+            var actual = _subject.IsNull(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -39,7 +46,7 @@ namespace Cognophile.Toolblox.Tests.Extensions.Objects
         {
             object subject = new { Id = 1 };
 
-            var actual = ObjectBlock.IsNull(subject);
+            var actual = _subject.IsNull(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -49,9 +56,49 @@ namespace Cognophile.Toolblox.Tests.Extensions.Objects
         {
             object subject = new { Id = 1 };
 
-            var actual = ObjectBlock.IsNull(subject);
+            var actual = _subject.IsNull(subject);
 
             Assert.That(actual, Is.False);
+        }
+
+        [Test]
+        public void IsNotNull_WhenSubjectIsNull_ThenExpectedTypeReturned()
+        {
+            object subject = null;
+
+            var actual = _subject.IsNotNull(subject);
+
+            Assert.That(actual, Is.InstanceOf<bool>());
+        }
+
+        [Test]
+        public void IsNotNull_WhenSubjectIsNull_ThenExpectedValueReturned()
+        {
+            object subject = null;
+
+            var actual = _subject.IsNotNull(subject);
+
+            Assert.That(actual, Is.False);
+        }
+
+        [Test]
+        public void IsNotNull_WhenSubjectIsNotNull_ThenExpectedTypeReturned()
+        {
+            object subject = new { Id = 1 };
+
+            var actual = _subject.IsNotNull(subject);
+
+            Assert.That(actual, Is.InstanceOf<bool>());
+        }
+
+        [Test]
+        public void IsNotNull_WhenSubjectIsNotNull_ThenExpectedValueReturned()
+        {
+            object subject = new { Id = 1 };
+
+            var actual = _subject.IsNotNull(subject);
+
+            Assert.That(actual, Is.True);
         }
 
         [Test]
@@ -59,7 +106,7 @@ namespace Cognophile.Toolblox.Tests.Extensions.Objects
         {
             FakeEntity subject = null;
 
-            var actual = ObjectBlock.Clone(subject);
+            var actual = _subject.Clone(subject);
 
             Assert.That(actual, Is.Null);
         }
@@ -69,7 +116,7 @@ namespace Cognophile.Toolblox.Tests.Extensions.Objects
         {
             FakeUnserializableEntity subject = new(1, "Foobar");
 
-            var actual = ObjectBlock.Clone(subject);
+            var actual = _subject.Clone(subject);
 
             Assert.That(actual, Is.Null);
         }
@@ -83,7 +130,7 @@ namespace Cognophile.Toolblox.Tests.Extensions.Objects
                 ExampleString = "Foobar"
             };
 
-            var actual = ObjectBlock.Clone(subject);
+            var actual = _subject.Clone(subject);
 
             Assert.That(actual, Is.InstanceOf<FakeEntity>());
         }
@@ -97,7 +144,7 @@ namespace Cognophile.Toolblox.Tests.Extensions.Objects
                 ExampleString = "Foobar"
             };
 
-            var actual = ObjectBlock.Clone(subject);
+            var actual = _subject.Clone(subject);
 
             Assert.That(actual.ExampleInt, Is.EqualTo(1));
             Assert.That(actual.ExampleString, Is.EqualTo("Foobar"));
