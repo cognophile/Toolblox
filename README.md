@@ -1,10 +1,11 @@
 <img src="Toolblox/Assets/Images/blocks.png" alt="contrast-icon" width="64" height="64" align="right" hspace="0" vspace="3" style="margin-left: 25px;"/>
-
 ## Toolblox
 A one-stop library for common utilities for developing .NET applications.
 
 ![Master Build](https://github.com/cognophile/Toolblox/actions/workflows/build.yml/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cognophile_Toolblox&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cognophile_Toolblox)
+![Nuget](https://img.shields.io/nuget/v/Cognophile.Toolblox)
+
 ---
 
 ### Introduction
