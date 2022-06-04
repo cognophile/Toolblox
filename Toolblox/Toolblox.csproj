@@ -5,7 +5,7 @@
     <PackageId>cognophile_toolblox</PackageId>
     <PackageVersion>0.0.1</PackageVersion>
     <Authors>cognophile</Authors>
-    <Description>A one-stop library for common utilities for developing .NET applications</Description>
+    <Description>A one-stop library for common extension behaviours to aid you in developing your .NET applications.</Description>
     <Copyright>cognophile © 2021</Copyright>
     <NeutralLanguage>en-GB</NeutralLanguage>
     <Owners>cognophile</Owners>
@@ -18,8 +18,14 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/cognophile/Toolblox</RepositoryUrl>
     <PackageIcon>blocks.png</PackageIcon>
+    <ReleaseVersion>1.0.0</ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
   <ItemGroup>
     <None Remove="Blocks\" />
     <None Remove="Blocks\Extensions\" />
