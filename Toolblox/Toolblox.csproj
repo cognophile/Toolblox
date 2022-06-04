@@ -6,7 +6,7 @@
     <PackageVersion>0.0.1</PackageVersion>
     <Authors>cognophile</Authors>
     <Description>A one-stop library for common extension behaviours to aid you in developing your .NET applications.</Description>
-    <Copyright>cognophile © 2021</Copyright>
+    <Copyright>cognophile © 2022</Copyright>
     <NeutralLanguage>en-GB</NeutralLanguage>
     <Owners>cognophile</Owners>
     <PackageProjectUrl>https://github.com/cognophile/Toolblox</PackageProjectUrl>
@@ -20,6 +20,8 @@
     <PackageIcon>blocks.png</PackageIcon>
     <ReleaseVersion>1.0.0</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageReleaseNotes>The first release of Toolbox adds easy-to-use common utilities to your projects including Strings, Numbers, Booleans, Collections, Json, Dates, Objects, and OperationResults</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -90,6 +92,7 @@
       <PackagePath>\</PackagePath>
     </None>
     <None Include="Assets\Images\blocks.png" Pack="true" PackagePath="" />
+    <None Include="LICENSE.md" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Ardalis.GuardClauses" Version="3.3.0" />
