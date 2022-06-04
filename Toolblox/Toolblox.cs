@@ -1,4 +1,9 @@
 ﻿using Cognophile.Toolblox.Blocks.Statics.Boolean;
+using Cognophile.Toolblox.Blocks.Statics.Collections;
+using Cognophile.Toolblox.Blocks.Statics.Dates;
+using Cognophile.Toolblox.Blocks.Statics.Json;
+using Cognophile.Toolblox.Blocks.Statics.Numbers;
+using Cognophile.Toolblox.Blocks.Statics.Objects;
 using Cognophile.Toolblox.Blocks.Statics.Strings;
 
 /// <summary>
@@ -27,5 +32,30 @@ namespace Cognophile.Toolblox
         /// Access to common boolean-based extension behaviours.
         /// </summary>
         public static BooleanBlock Booleans { get; } = new();
+
+        /// <summary>
+        /// Access to common collection-based extension behaviours.
+        /// </summary>
+        public static CollectionsBlock Collections { get; } = new();
+
+        /// <summary>
+        /// Access to common date-based extension behaviours.
+        /// </summary>
+        public static DateBlock Dates { get; } = new();
+
+        /// <summary>
+        /// Access to common json-based extension behaviours.
+        /// </summary>
+        public static JsonBlock Json { get; } = new();
+
+        /// <summary>
+        /// Access to common numeric-based extension behaviours.
+        /// </summary>
+        public static NumbersBlock Numbers { get; } = new();
+
+        /// <summary>
+        /// Access to common object-based extension behaviours.
+        /// </summary>
+        public static ObjectBlock Objects { get; } = new();
     }
 }
