@@ -18,13 +18,6 @@ A one-stop library for common utilities for developing .NET applications.
 * Dates: Access to common date extension behaviours.
 * Validation: Access to common data validation behaviours.
 * JSON: Access to common JSON-based behaviours.
-* Exceptions: Access to common exception extension behaviours.
-* Guards: Access to guard clause behaviours.
-* MVC: Access to common MVC extension behaviours.
-* Guid: Access to common guid extension behaviours.
-* Http: Access to common HTTP extension behaviours.
-* Enum: Access to common enum extension behaviours.
-* Boolean: Access to common boolean extension behaviours.
 
 ### Support
 If you find this library useful and wish to take a moment to say a simple thanks, or support its development, then a star or donation would be hugely appreciated!
