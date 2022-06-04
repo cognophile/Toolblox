@@ -42,5 +42,6 @@ Global
 		$4.TabsToSpaces = True
 		$4.scope = text/plain
 		$0.StandardHeader = $5
+		version = 1.0.0
 	EndGlobalSection
 EndGlobal
