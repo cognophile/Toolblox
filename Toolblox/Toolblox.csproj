@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <PackageId>Cognophile.Toolblox</PackageId>
-    <PackageVersion>0.0.1</PackageVersion>
+    <PackageVersion>1.0.0</PackageVersion>
     <Authors>cognophile</Authors>
     <Description>A one-stop library for common extension behaviours to aid you in developing your .NET applications.</Description>
     <Copyright>cognophile © 2022</Copyright>
