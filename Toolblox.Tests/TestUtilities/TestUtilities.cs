@@ -20,4 +20,14 @@ namespace Cognophile.Toolblox.Tests.TestUtilities
 
         public FakeEntity() { }
     }
+
+    internal class FakeUnserializableEntity
+    {
+        public int ExampleInt { get; set; }
+        public string ExampleString { get; set; }
+
+        public FakeUnserializableEntity(int exampleInt) { ExampleInt = exampleInt; }
+        public FakeUnserializableEntity(string exampleString) { ExampleString = exampleString; }
+        public FakeUnserializableEntity(int exampleInt, string exampleString) { ExampleInt = exampleInt; ExampleString = exampleString; }
+    }
 }

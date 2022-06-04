@@ -1,19 +1,17 @@
-﻿using System;
-using System.Globalization;
-using System.Threading;
+﻿using Cognophile.Toolblox.Blocks.Base.Numbers;
 
-namespace Cognophile.Toolblox.Blocks.Base.Numbers
+namespace Cognophile.Toolblox.Blocks.Extensions.Numbers
 {
-    public static class NumbersBaseBlock
+    public static class NumbersExtensionBlock
     {
         /// <summary>
         /// Determines whether the subject's value is zero
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsZero(int subject)
+        public static bool IsZero(this int subject)
         {
-            return subject.Equals(0);
+            return NumbersBaseBlock.IsZero(subject);
         }
 
         /// <summary>
@@ -21,9 +19,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsZero(double subject)
+        public static bool IsZero(this double subject)
         {
-            return subject.Equals(0);
+            return NumbersBaseBlock.IsZero(subject);
         }
 
         /// <summary>
@@ -31,9 +29,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsZero(decimal subject)
+        public static bool IsZero(this decimal subject)
         {
-            return subject.Equals(0);
+            return NumbersBaseBlock.IsZero(subject);
         }
 
         /// <summary>
@@ -41,9 +39,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsPositive(int subject)
+        public static bool IsPositive(this int subject)
         {
-            return subject > 0;
+            return NumbersBaseBlock.IsPositive(subject);
         }
 
         /// <summary>
@@ -51,19 +49,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsPositive(double subject)
+        public static bool IsPositive(this double subject)
         {
-            return subject > 0;
-        }
-
-        /// <summary>
-        /// Determines whether the subject's value is positive
-        /// </summary>
-        /// <param name="subject"></param>
-        /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsPositive(decimal subject)
-        {
-            return subject > 0;
+            return NumbersBaseBlock.IsPositive(subject);
         }
 
         /// <summary>
@@ -71,9 +59,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsNegative(int subject)
+        public static bool IsPositive(this decimal subject)
         {
-            return subject < 0;
+            return NumbersBaseBlock.IsPositive(subject);
         }
 
         /// <summary>
@@ -81,9 +69,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsNegative(double subject)
+        public static bool IsNegative(this int subject)
         {
-            return subject < 0;
+            return NumbersBaseBlock.IsNegative(subject);
         }
 
         /// <summary>
@@ -91,9 +79,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsNegative(decimal subject)
+        public static bool IsNegative(this double subject)
         {
-            return subject < 0;
+            return NumbersBaseBlock.IsNegative(subject);
         }
 
         /// <summary>
@@ -101,9 +89,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsLessThan(int subject, int threshold)
+        public static bool IsNegative(this decimal subject)
         {
-            return threshold > subject;
+            return NumbersBaseBlock.IsNegative(subject);
         }
 
         /// <summary>
@@ -111,9 +99,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsLessThan(double subject, double threshold)
+        public static bool IsLessThan(this int subject, int threshold)
         {
-            return threshold > subject;
+            return NumbersBaseBlock.IsLessThan(subject, threshold);
         }
 
         /// <summary>
@@ -121,9 +109,19 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsLessThan(decimal subject, decimal threshold)
+        public static bool IsLessThan(this double subject, double threshold)
         {
-            return threshold > subject;
+            return NumbersBaseBlock.IsLessThan(subject, threshold);
+        }
+
+        /// <summary>
+        /// Determines whether the subject's value is less than the given threshold
+        /// </summary>
+        /// <param name="subject"></param>
+        /// <returns>Boolean value representing whether the subject passes the condition</returns>
+        public static bool IsLessThan(this decimal subject, decimal threshold)
+        {
+            return NumbersBaseBlock.IsLessThan(subject, threshold);
         }
 
         /// <summary>
@@ -131,9 +129,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsGreaterThan(int subject, int threshold)
+        public static bool IsGreaterThan(this int subject, int threshold)
         {
-            return threshold < subject;
+            return NumbersBaseBlock.IsGreaterThan(subject, threshold);
         }
 
         /// <summary>
@@ -141,9 +139,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsGreaterThan(double subject, double threshold)
+        public static bool IsGreaterThan(this double subject, double threshold)
         {
-            return threshold < subject;
+            return NumbersBaseBlock.IsGreaterThan(subject, threshold);
         }
 
         /// <summary>
@@ -151,9 +149,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsGreaterThan(decimal subject, decimal threshold)
+        public static bool IsGreaterThan(this decimal subject, decimal threshold)
         {
-            return threshold < subject;
+            return NumbersBaseBlock.IsGreaterThan(subject, threshold);
         }
 
         /// <summary>
@@ -161,9 +159,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsDivisibleBy(int subject, int divisor)
+        public static bool IsDivisibleBy(this int subject, int divisor)
         {
-            return subject % divisor == 0;
+            return NumbersBaseBlock.IsDivisibleBy(subject, divisor);
         }
 
         /// <summary>
@@ -171,9 +169,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
-        public static bool IsMultipleOf(int subject, int multiplier)
+        public static bool IsMultipleOf(this int subject, int multiplier)
         {
-            return subject % multiplier == 0;
+            return NumbersBaseBlock.IsMultipleOf(subject, multiplier);
         }
 
         /// <summary>
@@ -183,14 +181,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// <param name="subject"></param>
         /// <param name="culture"></param>
         /// <returns>The numeric value as a local currency string</returns>
-        public static string AsCurrency(int subject, string culture = null)
+        public static string AsCurrency(this int subject, string culture = null)
         {
-            if (culture is null)
-            {
-                culture = Thread.CurrentThread.CurrentCulture.Name;
-            }
-
-            return subject.ToString("C", CultureInfo.CreateSpecificCulture(culture));
+            return NumbersBaseBlock.AsCurrency(subject, culture);
         }
 
         /// <summary>
@@ -200,14 +193,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// <param name="subject"></param>
         /// <param name="culture"></param>
         /// <returns>The numeric value as a local currency string</returns>
-        public static string AsCurrency(double subject, string culture = null)
+        public static string AsCurrency(this double subject, string culture = null)
         {
-            if (culture is null)
-            {
-                culture = Thread.CurrentThread.CurrentCulture.Name;
-            }
-
-            return subject.ToString("C", CultureInfo.CreateSpecificCulture(culture));
+            return NumbersBaseBlock.AsCurrency(subject, culture);
         }
 
         /// <summary>
@@ -217,14 +205,9 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// <param name="subject"></param>
         /// <param name="culture"></param>
         /// <returns>The numeric value as a local currency string</returns>
-        public static string AsCurrency(decimal subject, string culture = null)
+        public static string AsCurrency(this decimal subject, string culture = null)
         {
-            if (culture is null)
-            {
-                culture = Thread.CurrentThread.CurrentCulture.Name;
-            }
-
-            return subject.ToString("C", CultureInfo.CreateSpecificCulture(culture));
+            return NumbersBaseBlock.AsCurrency(subject, culture);
         }
     }
 }

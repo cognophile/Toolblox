@@ -11,30 +11,27 @@ namespace Cognophile.Toolblox.Blocks.Statics.Dates
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
-        public static bool IsPast(DateTime subject)
-        {
-            return DatesBaseBlock.IsPast(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsPast(DateTime subject) => DatesBaseBlock.IsPast(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the subject is equal to today's date
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
-        public static bool IsToday(DateTime subject)
-        {
-            return DatesBaseBlock.IsToday(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsToday(DateTime subject) => DatesBaseBlock.IsToday(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the subject is a date in the future
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
-        public static bool IsFuture(DateTime subject)
-        {
-            return DatesBaseBlock.IsFuture(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsFuture(DateTime subject) => DatesBaseBlock.IsFuture(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the subject came before the given comparitor
@@ -42,10 +39,9 @@ namespace Cognophile.Toolblox.Blocks.Statics.Dates
         /// <param name="subject"></param>
         /// <param name="comparitor"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
-        public static bool IsBefore(DateTime subject, DateTime comparitor)
-        {
-            return DatesBaseBlock.IsBefore(subject, comparitor);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsBefore(DateTime subject, DateTime comparitor) => DatesBaseBlock.IsBefore(subject, comparitor);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the subject comes after the given comparitor
@@ -53,10 +49,9 @@ namespace Cognophile.Toolblox.Blocks.Statics.Dates
         /// <param name="subject"></param>
         /// <param name="comparitor"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
-        public static bool IsAfter(DateTime subject, DateTime comparitor)
-        {
-            return DatesBaseBlock.IsAfter(subject, comparitor);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsAfter(DateTime subject, DateTime comparitor) => DatesBaseBlock.IsAfter(subject, comparitor);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Determines whether the subject is equal to the provided comparitor
@@ -64,20 +59,18 @@ namespace Cognophile.Toolblox.Blocks.Statics.Dates
         /// <param name="subject"></param>
         /// <param name="comparitor"></param>
         /// <returns>Boolean representing the result of the temporal evaluation condition</returns>
-        public static bool IsEqual(DateTime subject, DateTime comparitor)
-        {
-            return DatesBaseBlock.IsEqual(subject, comparitor);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public bool IsEqual(DateTime subject, DateTime comparitor) => DatesBaseBlock.IsEqual(subject, comparitor);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Converts the subject to a unix timestamp
         /// </summary>
         /// <param name="subject"></param>
         /// <returns>The equivelent unix representation</returns>
-        public static long ToUnix(DateTime subject)
-        {
-            return DatesBaseBlock.ToUnix(subject);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public long ToUnix(DateTime subject) => DatesBaseBlock.ToUnix(subject);
+#pragma warning restore CA1822 // Mark members as static
 
         /// <summary>
         /// Formats the subject as the given pattern
@@ -85,9 +78,8 @@ namespace Cognophile.Toolblox.Blocks.Statics.Dates
         /// <param name="subject"></param>
         /// <param name="pattern"></param>
         /// <returns>The subject DateTime in the requested format</returns>
-        public static string FormatAs(DateTime subject, string pattern)
-        {
-            return DatesBaseBlock.FormatAs(subject, pattern);
-        }
+#pragma warning disable CA1822 // Mark members as static
+        public string FormatAs(DateTime subject, string pattern) => DatesBaseBlock.FormatAs(subject, pattern);
+#pragma warning restore CA1822 // Mark members as static
     }
 }

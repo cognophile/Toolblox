@@ -8,16 +8,24 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
     [TestFixture]
     public class DatesBlockTests
     {
+        private DateBlock _subject;
+
         [SetUp]
-        public void SetUp() { }
+        public void SetUp()
+        {
+            _subject = new();
+        }
 
         [TearDown]
-        public void TearDown() { }
+        public void TearDown()
+        {
+            _subject = null;
+        }
 
         [Test]
         public void Class_WhenReferenced_ThenExpectedTypeImplemented()
         {
-            Assert.That(new DateBlock(), Is.InstanceOf<IBlock>());
+            Assert.That(_subject, Is.InstanceOf<IBlock>());
         }
 
         [Test]
@@ -25,7 +33,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2016, 05, 01);
 
-            var actual = DateBlock.IsPast(subject);
+            var actual = _subject.IsPast(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -35,7 +43,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2016, 05, 01);
 
-            var actual = DateBlock.IsPast(subject);
+            var actual = _subject.IsPast(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -45,7 +53,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime();
 
-            var actual = DateBlock.IsPast(subject);
+            var actual = _subject.IsPast(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -55,7 +63,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(3016, 05, 01);
 
-            var actual = DateBlock.IsPast(subject);
+            var actual = _subject.IsPast(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -65,7 +73,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2016, 05, 01);
 
-            var actual = DateBlock.IsToday(subject);
+            var actual = _subject.IsToday(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -75,7 +83,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2016, 05, 01);
 
-            var actual = DateBlock.IsToday(subject);
+            var actual = _subject.IsToday(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -85,7 +93,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = DateTime.Now;
 
-            var actual = DateBlock.IsToday(subject);
+            var actual = _subject.IsToday(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -95,7 +103,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(3016, 05, 01);
 
-            var actual = DateBlock.IsToday(subject);
+            var actual = _subject.IsToday(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -105,7 +113,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2016, 05, 01);
 
-            var actual = DateBlock.IsFuture(subject);
+            var actual = _subject.IsFuture(subject);
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -115,7 +123,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2016, 05, 01);
 
-            var actual = DateBlock.IsFuture(subject);
+            var actual = _subject.IsFuture(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -125,7 +133,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime();
 
-            var actual = DateBlock.IsFuture(subject);
+            var actual = _subject.IsFuture(subject);
 
             Assert.That(actual, Is.False);
         }
@@ -135,7 +143,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(3016, 05, 01);
 
-            var actual = DateBlock.IsFuture(subject);
+            var actual = _subject.IsFuture(subject);
 
             Assert.That(actual, Is.True);
         }
@@ -145,7 +153,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2022, 02, 22);
 
-            var actual = DateBlock.IsBefore(subject, new DateTime(2020, 03, 23));
+            var actual = _subject.IsBefore(subject, new DateTime(2020, 03, 23));
 
             Assert.That(actual, Is.InstanceOf<bool>());
         }
@@ -155,7 +163,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2020, 02, 02);
 
-            var actual = DateBlock.IsBefore(subject, new DateTime(2022, 02, 22));
+            var actual = _subject.IsBefore(subject, new DateTime(2022, 02, 22));
 
             Assert.That(actual, Is.True);
         }
@@ -165,7 +173,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2022, 02, 22);
 
-            var actual = DateBlock.IsBefore(subject, new DateTime(2022, 02, 22));
+            var actual = _subject.IsBefore(subject, new DateTime(2022, 02, 22));
 
             Assert.That(actual, Is.False);
         }
@@ -175,7 +183,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2022, 02, 22);
 
-            var actual = DateBlock.IsBefore(subject, new DateTime(2020, 02, 02));
+            var actual = _subject.IsBefore(subject, new DateTime(2020, 02, 02));
 
             Assert.That(actual, Is.False);
         }
@@ -185,7 +193,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2020, 02, 02);
 
-            var actual = DateBlock.IsAfter(subject, new DateTime(2022, 02, 22));
+            var actual = _subject.IsAfter(subject, new DateTime(2022, 02, 22));
 
             Assert.That(actual, Is.False);
         }
@@ -195,7 +203,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2022, 02, 22);
 
-            var actual = DateBlock.IsAfter(subject, new DateTime(2022, 02, 22));
+            var actual = _subject.IsAfter(subject, new DateTime(2022, 02, 22));
 
             Assert.That(actual, Is.False);
         }
@@ -205,7 +213,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2022, 02, 22);
 
-            var actual = DateBlock.IsAfter(subject, new DateTime(2020, 02, 02));
+            var actual = _subject.IsAfter(subject, new DateTime(2020, 02, 02));
 
             Assert.That(actual, Is.True);
         }
@@ -215,7 +223,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2020, 02, 02);
 
-            var actual = DateBlock.IsEqual(subject, new DateTime(2022, 02, 22));
+            var actual = _subject.IsEqual(subject, new DateTime(2022, 02, 22));
 
             Assert.That(actual, Is.False);
         }
@@ -225,7 +233,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2022, 02, 22);
 
-            var actual = DateBlock.IsEqual(subject, new DateTime(2022, 02, 22));
+            var actual = _subject.IsEqual(subject, new DateTime(2022, 02, 22));
 
             Assert.That(actual, Is.True);
         }
@@ -235,7 +243,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2022, 02, 22);
 
-            var actual = DateBlock.IsEqual(subject, new DateTime(2020, 02, 02));
+            var actual = _subject.IsEqual(subject, new DateTime(2020, 02, 02));
 
             Assert.That(actual, Is.False);
         }
@@ -245,7 +253,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
 
-            var actual = DateBlock.ToUnix(subject);
+            var actual = _subject.ToUnix(subject);
 
             Assert.That(actual, Is.InstanceOf<long>());
         }
@@ -255,7 +263,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
 
-            var actual = DateBlock.ToUnix(subject);
+            var actual = _subject.ToUnix(subject);
 
             Assert.That(actual, Is.EqualTo(1577883600));
         }
@@ -265,7 +273,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
 
-            var actual = DateBlock.FormatAs(subject, "MMMM dd, yyyy HH:mm:ss");
+            var actual = _subject.FormatAs(subject, "MMMM dd, yyyy HH:mm:ss");
 
             Assert.That(actual, Is.InstanceOf<string>());
         }
@@ -276,7 +284,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
             var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString("g");
 
-            var actual = DateBlock.FormatAs(subject, "g");
+            var actual = _subject.FormatAs(subject, "g");
 
             Assert.That(actual, Is.EqualTo(expected));
         }
@@ -286,7 +294,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
         {
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
 
-            var actual = DateBlock.FormatAs(subject, "MMMM dd, yyyy HH:mm:ss");
+            var actual = _subject.FormatAs(subject, "MMMM dd, yyyy HH:mm:ss");
 
             Assert.That(actual, Is.EqualTo("January 01, 2020 13:00:00"));
         }
@@ -297,7 +305,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
             var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString();
 
-            var actual = DateBlock.FormatAs(subject, null);
+            var actual = _subject.FormatAs(subject, null);
 
             Assert.That(actual, Is.EqualTo(expected));
         }
@@ -308,7 +316,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
             var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString();
 
-            var actual = DateBlock.FormatAs(subject, string.Empty);
+            var actual = _subject.FormatAs(subject, string.Empty);
 
             Assert.That(actual, Is.EqualTo(expected));
         }
@@ -319,7 +327,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Dates
             var subject = new DateTime(2020, 01, 01, 13, 0, 0);
             var expected = new DateTime(2020, 01, 01, 13, 0, 0).ToString();
 
-            var actual = DateBlock.FormatAs(subject, "   ");
+            var actual = _subject.FormatAs(subject, "   ");
 
             Assert.That(actual, Is.EqualTo(expected));
         }

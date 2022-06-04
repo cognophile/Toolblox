@@ -48,6 +48,7 @@
     <None Remove="Blocks\Extensions\Json\" />
     <None Remove="Blocks\Extensions\Numbers\" />
     <None Remove="Blocks\Extensions\Objects\" />
+    <None Remove="Blocks\Results\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Blocks\Extensions\" />
@@ -75,6 +76,7 @@
     <Folder Include="Blocks\Extensions\Json\" />
     <Folder Include="Blocks\Extensions\Numbers\" />
     <Folder Include="Blocks\Extensions\Objects\" />
+    <Folder Include="Blocks\Results\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">

@@ -7,16 +7,24 @@ namespace Cognophile.Toolblox.Tests.Statics.Boolean
     [TestFixture]
     public class BooleanBlockTests
     {
+        private BooleanBlock _subject;
+
         [SetUp]
-        public void SetUp() { }
+        public void SetUp()
+        {
+            _subject = new();
+        }
 
         [TearDown]
-        public void TearDown() { }
+        public void TearDown()
+        {
+            _subject = null;
+        }
 
         [Test]
         public void Class_WhenReferenced_ThenExpectedTypeImplemented()
         {
-            Assert.That(new BooleanBlock(), Is.InstanceOf<IBlock>());
+            Assert.That(_subject, Is.InstanceOf<IBlock>());
         }
 
         [Test]
@@ -24,7 +32,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Boolean
         {
             bool subject = true;
 
-            var actual = BooleanBlock.ToTextual(subject);
+            var actual = _subject.ToTextual(subject);
 
             Assert.IsInstanceOf<string>(actual);
         }
@@ -34,7 +42,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Boolean
         {
             bool subject = true;
 
-            var actual = BooleanBlock.ToTextual(subject);
+            var actual = _subject.ToTextual(subject);
 
             Assert.That(actual, Is.EqualTo("Yes"));
         }
@@ -44,7 +52,7 @@ namespace Cognophile.Toolblox.Tests.Statics.Boolean
         {
             bool subject = false;
 
-            var actual = BooleanBlock.ToTextual(subject);
+            var actual = _subject.ToTextual(subject);
 
             Assert.IsInstanceOf<string>(actual);
         }
@@ -54,9 +62,49 @@ namespace Cognophile.Toolblox.Tests.Statics.Boolean
         {
             bool subject = false;
 
-            var actual = BooleanBlock.ToTextual(subject);
+            var actual = _subject.ToTextual(subject);
 
             Assert.That(actual, Is.EqualTo("No"));
+        }
+
+        [Test]
+        public void IsFalse_WhenArgumentFalse_ThenExpectedValueReturned()
+        {
+            bool subject = false;
+
+            var actual = _subject.IsFalse(subject);
+
+            Assert.That(actual, Is.True);
+        }
+
+        [Test]
+        public void IsFalse_WhenArgumentTrue_ThenExpectedValueReturned()
+        {
+            bool subject = true;
+
+            var actual = _subject.IsFalse(subject);
+
+            Assert.That(actual, Is.False);
+        }
+
+        [Test]
+        public void IsTrue_WhenArgumentFalse_ThenExpectedValueReturned()
+        {
+            bool subject = false;
+
+            var actual = _subject.IsTrue(subject);
+
+            Assert.That(actual, Is.False);
+        }
+
+        [Test]
+        public void IsTrue_WhenArgumentTrue_ThenExpectedValueReturned()
+        {
+            bool subject = true;
+
+            var actual = _subject.IsTrue(subject);
+
+            Assert.That(actual, Is.True);
         }
     }
 }
