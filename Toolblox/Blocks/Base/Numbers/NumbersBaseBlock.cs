@@ -100,6 +100,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// Determines whether the subject's value is less than the given threshold
         /// </summary>
         /// <param name="subject"></param>
+        /// <param name="threshold"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
         public static bool IsLessThan(int subject, int threshold)
         {
@@ -110,6 +111,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// Determines whether the subject's value is less than the given threshold
         /// </summary>
         /// <param name="subject"></param>
+        /// <param name="threshold"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
         public static bool IsLessThan(double subject, double threshold)
         {
@@ -120,6 +122,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// Determines whether the subject's value is less than the given threshold
         /// </summary>
         /// <param name="subject"></param>
+        /// <param name="threshold"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
         public static bool IsLessThan(decimal subject, decimal threshold)
         {
@@ -130,6 +133,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// Determines whether the subject's value is greater than the given threshold
         /// </summary>
         /// <param name="subject"></param>
+        /// <param name="threshold"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
         public static bool IsGreaterThan(int subject, int threshold)
         {
@@ -140,6 +144,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// Determines whether the subject's value is greater than the given threshold
         /// </summary>
         /// <param name="subject"></param>
+        /// <param name="threshold"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
         public static bool IsGreaterThan(double subject, double threshold)
         {
@@ -150,6 +155,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// Determines whether the subject's value is greater than the given threshold
         /// </summary>
         /// <param name="subject"></param>
+        /// <param name="threshold"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
         public static bool IsGreaterThan(decimal subject, decimal threshold)
         {
@@ -160,6 +166,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// Determines whether the subject's value is divisable by the given divisor
         /// </summary>
         /// <param name="subject"></param>
+        /// <param name="divisor"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
         public static bool IsDivisibleBy(int subject, int divisor)
         {
@@ -170,6 +177,7 @@ namespace Cognophile.Toolblox.Blocks.Base.Numbers
         /// Determines whether the subject's value is a multiple of by the given multiplier
         /// </summary>
         /// <param name="subject"></param>
+        /// <param name="multiplier"></param>
         /// <returns>Boolean value representing whether the subject passes the condition</returns>
         public static bool IsMultipleOf(int subject, int multiplier)
         {
