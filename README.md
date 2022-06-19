@@ -76,6 +76,7 @@ public static void DoSomething(string myString)
 
 ### Dependencies 
 * [Aradlis GuardClauses](https://github.com/ardalis/GuardClauses)
+* [Newtonsoft.json](https://github.com/JamesNK/Newtonsoft.Json)
 
 ### Contributing
 Contributions of all kinds are welcome - whether it be submitting a suggestion for how the library could be improved or extended, or by submitting a pull request with the completed work to the project. However, before submitting any suggestions, please read through [`CONTRIBUTING.md`](https://github.com/cognophile/Toolblox/blob/master/CONTRIBUTING.md) to ensure your work is in the best state to be accepted.
